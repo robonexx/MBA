@@ -4,6 +4,7 @@ import clientConfig from './config/clientconfig'
 import { Page } from "@/types/Page";
 import { Blog } from "@/types/Blog";
 
+
 export async function getProjects(): Promise<Project[]> {
   return createClient(clientConfig).fetch(
     groq`*[_type == "project"]{
