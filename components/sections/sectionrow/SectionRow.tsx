@@ -1,12 +1,12 @@
-import React, {ReactNode} from 'react';
+import React, { ReactNode } from 'react';
 
 type PropsWithChildren = {
-  children?: ReactNode
+  children?: ReactNode;
 };
 
 const SectionRow = ({ children }: PropsWithChildren) => {
   return (
-    <div className='w-screen h-screen block bg-fuchsia-950 m-0 p-0' >
+    <div className='w-screen h-screen block bg-slate-800 m-0 p-0'>
       {children}
     </div>
   );

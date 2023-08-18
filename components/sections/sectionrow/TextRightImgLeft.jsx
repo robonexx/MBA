@@ -8,7 +8,7 @@ const TextRightImgLeft = ({ children }) => {
       <div className='w-full h-full relative z-1 grid place-content-center p-20 md:p-20 lg:p-40 xs:order-2'>
         {children}
       </div>
-      <div className='w-full md:w-2/3 h-full relative z-1 grid place-content-center xs:order-1'>
+      <div className='w-full h-full relative z-1 grid place-content-center xs:order-1'>
         <Image
           className='object-cover'
           quality={100}
