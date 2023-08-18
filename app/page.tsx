@@ -2,15 +2,24 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { Audiowide } from 'next/font/google';
 import { getProjects } from '@/sanity/sanity-utils';
+import SectionRow from '@/components/sections/sectionrow/SectionRow';
+import TextRightImgLeft from '@/components/sections/sectionrow/TextRightImgLeft';
+import TextHeadline from '@/components/texts/TextHeadline';
+import SingleItem from '@/components/singleitem/SingleItem';
 
 const audiowide = Audiowide({ subsets: ['latin-ext'], weight: '400' });
-
 
 export default async function Home() {
   const projects = await getProjects();
 
   return (
-    <main className='flex flex-col items-center justify-between p-24'>
+    <main className='flex flex-col items-center justify-between'>
+      <SectionRow>
+        <TextHeadline title='Written work' />
+        <TextRightImgLeft>
+          <SingleItem />
+        </TextRightImgLeft>
+      </SectionRow>
       <div>
         <h1 className='text-4xl md:text-6xl font-extrabold'>
           Welcome to
