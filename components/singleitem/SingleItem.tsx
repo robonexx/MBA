@@ -26,7 +26,7 @@ const SingleItem = () => {
     songLink,
   } = data;
   return (
-    <div className='w-full flex flex-col items-start justify-between text-sm tracking-wide'>
+    <div className='w-full flex flex-col items-start justify-between text-sm box-border'>
       <h3 className='text-base mb-10 text-orange-300'> {author}</h3>
       <div className='flex items-center justify-between mb-6'>
         <h3 className='text-base pr-6'>{title}</h3>
