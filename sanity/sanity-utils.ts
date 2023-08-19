@@ -1,8 +1,52 @@
 import { createClient, groq } from "next-sanity";
 import { Project } from "@/types/Project";
+import { WorkTypes } from "@/types/WorkType";
 import clientConfig from './config/clientconfig'
 import { Page } from "@/types/Page";
 import { Blog } from "@/types/Blog";
+
+export async function getWorks(): Promise<WorkTypes[]> {
+  return createClient(clientConfig).fetch(
+    groq`*[_type == "work"]{
+      _id,
+      _createdAt,
+      title,
+      author,
+      customer,
+      year,
+      desc,
+      duration,
+      premier,
+      score,
+      songUrl,
+      "slug": slug.current,
+      "image": image.asset->url,
+      url
+    }`
+  )
+}
+
+export async function getWork(slug: string): Promise<WorkTypes> {
+  return createClient(clientConfig).fetch(
+    groq`*[_type == "work" && slug.current == $slug][0]{
+      _id,
+      _createdAt,
+      title,
+      author,
+      customer,
+      year,
+      desc,
+      duration,
+      premier,
+      score,
+      songUrl,
+      "slug": slug.current,
+      "image": image.asset->url,
+      url
+    }`,
+    { slug }
+  )
+}
 
 
 export async function getProjects(): Promise<Project[]> {

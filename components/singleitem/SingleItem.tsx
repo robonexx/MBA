@@ -8,9 +8,9 @@ const data = {
   year: '2023',
   desc: 'The concept of this piece touches on the theme of expansion. Working with an instrument that is (most often) placed in spaces with very rich acoustics, I was thinking of how I can take usage of this in my own way, reaching every wall that holds it, and that is too a part of the instrument. I was also curious of getting in contact with the inner world of the instrument. I am trying to create a vivacity and a subtlety that embraces the listener and speaks with a (for me) new voice. With this liveliness, it harmonically and dynamically expands, as well uses the incredible range of this instrument.',
   duration: '7',
-  altInfo: 'Premiere January 2023 in Lund, Sweden, performed by Robert Bennesh',
-  scoreLink: 'view score',
-  songLink: 'play',
+  premier: 'Premiere January 2023 in Lund, Sweden, performed by Robert Bennesh',
+  score: 'view score',
+  songUrl: 'play',
 };
 
 const SingleItem = () => {
@@ -21,9 +21,9 @@ const SingleItem = () => {
     year,
     desc,
     duration,
-    altInfo,
-    scoreLink,
-    songLink,
+    premier,
+    score,
+    songUrl,
   } = data;
   return (
     <div className='w-full flex flex-col items-start justify-between text-sm box-border'>
@@ -40,11 +40,11 @@ const SingleItem = () => {
           <span className='pr-6 text-xl'>
             <GiPlayButton />
           </span>
-          {songLink}
+          {songUrl}
         </p>
-        <p>{scoreLink}</p>
+        <p>{score}</p>
       </div>
-      <p>{altInfo}</p>
+      <p>{premier}</p>
     </div>
   );
 };
