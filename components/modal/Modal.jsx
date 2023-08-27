@@ -8,7 +8,7 @@ const dropIn = {
   hidden: {
     y: '0',
     x: '0',
-    scale: 0,
+    scale: 1,
     opacity: 0,
   },
   visible: {
@@ -17,7 +17,7 @@ const dropIn = {
     scale: 1,
     opacity: '1',
     transition: {
-      duration: 0.3,
+      duration: 0.4,
       ease: [0.76, 0, 0.24, 1],
       type: 'spring',
       damping: 50,
