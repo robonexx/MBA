@@ -1,6 +1,9 @@
+'use client';
+import React, { useState } from 'react';
 import '@/app/globals.css'
 import type { Metadata } from 'next'
-import {  Inter } from 'next/font/google'
+import { Inter } from 'next/font/google'
+
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -16,7 +19,27 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`${inter.className}`}>{children}</body>
+      <body className={`${inter.className}`}>
+      <Header>
+          <MenuBtn active={active} setActive={setActive} />
+        </Header>
+        <AnimatePresence mode='wait'>
+          {active && (
+            <Nav active={active} setActive={setActive}>
+              {navData.map(({ title, path, cls, id }, i) => (
+                <NavItem
+                  title={title}
+                  path={path}
+                  cls={cls}
+                  key={id}
+                  i={i}
+                  active={active}
+                />
+              ))}
+            </Nav>
+          )}
+        </AnimatePresence>
+        {children}</body>
     </html>
   )
 }
