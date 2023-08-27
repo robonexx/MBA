@@ -44,13 +44,12 @@ export default async function Home() {
               className='relative h-96 w-full border-2 border-gray-500 rounded-xs p-1 hover:scale-105 hover:border-blue-500 transition shadow-lg'
             >
               {project.image && (
-
-                  <Image
-                    src={project.image}
-                    alt={project.name}
-                    fill
-                    className='object-cover'
-                  />
+                <Image
+                  src={project.image}
+                  alt={project.name}
+                  fill
+                  className='object-cover'
+                />
               )}
               <div className='mt-2 font-extrabold bg-gradient-to-r from-orange-400 via-red-500 to-purple-600 bg-clip-text text-transparent'>
                 {project.name}

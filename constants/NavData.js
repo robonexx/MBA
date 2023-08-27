@@ -1,25 +1,31 @@
 export const navData = [
   {
-    title: 'home',
+    title: 'written',
     path: '/',
     cls: 'nav_item',
     id: 1,
   },
   {
-    title: 'about',
-    path: '/#about',
+    title: 'stage',
+    path: '/',
     cls: 'nav_item',
     id: 2,
   },
   {
-    title: 'projects',
-    path: '/#projects',
+    title: 'film',
+    path: '/',
     cls: 'nav_item',
     id: 3,
   },
   {
+    title: 'about',
+    path: '/',
+    cls: 'nav_item',
+    id: 4,
+  },
+  {
     title: 'contact',
-    path: '/contact',
+    path: '/',
     cls: 'nav_item',
     id: 4,
   },

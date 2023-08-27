@@ -17,7 +17,7 @@ nav.scroll {
 nav > ul {
   height: 100svh;
   position: relative;
-  background-color: rgb(41, 41, 41);
+  background-color: rgba(41,41,41);
   list-style-type: none;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -29,7 +29,7 @@ nav > ul {
   flex-direction: column;
   -webkit-box-align: flex-start;
   -ms-flex-align: flex-start;
-  align-items: flex-start;
+  align-items: center;
   -webkit-box-pack: center;
   -ms-flex-pack: center;
   justify-content: center;
@@ -51,8 +51,9 @@ nav > ul {
 
 @media (min-width: 768px) {
   nav {
+    top: 10vh;
     right: 0;
-    height: 100svh;
+    height: 80px;
     border-radius: 0%;
     z-index: 49;
   }
@@ -65,6 +66,12 @@ nav > ul {
     position: relative;
     margin: 0 auto;
     padding: 0 50px;
+    height: 80px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    background-color: rgba(139, 139, 139, 0.534);
     /* -webkit-transform: translateX(110%);
     -ms-transform: translateX(110%);
     transform: translateX(110%); */
