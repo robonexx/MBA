@@ -28,9 +28,6 @@ const testData = {
 export default async function Home() {
   const projects = await getProjects();
   const works = await getWorks();
-
-  console.log(works)
-
   return (
     <main className='min-h-full w-screen flex flex-col items-center justify-between bg-stone-950'>
       <div>
@@ -69,8 +66,8 @@ export default async function Home() {
             </Link>
           ))}
         </div>
+        <TextHeadline title='Written work' />
         <h2 className='mt-24 font-thin text-white text-3xl'>Lorem ipsum</h2>
-
         <div className='mt-10 mb-10 grid md:grid-cols-2 gap-10'>
           {works.map((work) => (
             <Link
@@ -99,7 +96,6 @@ export default async function Home() {
         </div>
       </div>
       <SectionRow>
-        <TextHeadline title='Written work' />
         <TextRightImgLeft>
           <SingleItem data={testData} />
         </TextRightImgLeft>
