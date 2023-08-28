@@ -11,14 +11,13 @@ import { navData } from '@/constants/NavData';
 
 const inter = Inter({ subsets: ['latin'] });
 
-
 export default function RootLayout({ children }) {
   const [active, setActive] = useState(false);
   return (
     <html lang='en'>
       <body className={`${inter.className}`}>
         <Header>
-          <h2>Markus B Almqvist</h2>
+          <span>Markus B Almqvist</span>
         </Header>
         <MenuBtn active={active} setActive={setActive} />
         <AnimatePresence mode='wait'>

@@ -4,21 +4,8 @@ import { GiPlayButton } from 'react-icons/gi';
 import Modal from '@/components/modal/Modal';
 import ModalContent from '@/components/modal/ModalContent'
 
-const data = {
-  author: 'Markus B. Almqvist',
-  title: 'Beings',
-  customer: 'for solo organ',
-  year: '2023',
-  desc: 'The concept of this piece touches on the theme of expansion. Working with an instrument that is (most often) placed in spaces with very rich acoustics, I was thinking of how I can take usage of this in my own way, reaching every wall that holds it, and that is too a part of the instrument. I was also curious of getting in contact with the inner world of the instrument. I am trying to create a vivacity and a subtlety that embraces the listener and speaks with a (for me) new voice. With this liveliness, it harmonically and dynamically expands, as well uses the incredible range of this instrument.',
-  duration: '7',
-  premier: 'Premiere January 2023 in Lund, Sweden, performed by Robert Bennesh',
-  score: 'view score',
-  songUrl: 'play',
-};
 
-
-
-const SingleItem = () => {
+const SingleItem = ({data}) => {
   const [modalOpen, setModalOpen] = useState(false);
 
   const close = () => setModalOpen(false);

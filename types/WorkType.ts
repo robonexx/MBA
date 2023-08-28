@@ -11,7 +11,7 @@ export type WorkTypes = {
     duration: number;
     premier: string;
     score: string;
-    songUrl: string
+    songUrl: string;
     image: string;
     url: string;
     desc: PortableTextBlock[];

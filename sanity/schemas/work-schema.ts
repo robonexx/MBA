@@ -52,7 +52,7 @@ const work = {
         },
         {
             name: "songUrl",
-            title: "Song",
+            title: "Song url",
             type: "url",
         },
         {
@@ -75,11 +75,6 @@ const work = {
                     type: "string",
                 }
             ]
-        },
-        {
-            name: "url",
-            title: "URL",
-            type: 'url'
         },
     ]
 }
