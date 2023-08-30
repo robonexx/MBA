@@ -7,7 +7,7 @@ header {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    z-index: 10;
+    z-index: 100;
 
     @media screen and (min-width: 768px) {
         top: 27.5vh;

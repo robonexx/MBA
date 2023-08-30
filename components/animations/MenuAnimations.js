@@ -1,9 +1,13 @@
 export const navSlide = {
-  initial: { x: 'calc(100% + 200px)' },
-  enter: { x: '0', transition: { duration: 0.8, ease: [0.76, 0, 0.24, 1] } },
+  initial: { x: 'calc(100% + 200px)', opacity: 0 },
+  enter: {
+    x: '0',
+    opacity: 1,
+    transition: { duration: 0.8, ease: [0.76, 0, 0.24, 1] },
+  },
   exit: {
     x: 'calc(100% + 200px)',
-    transition: { duration: 0.8, ease: [0.76, 0, 0.24, 1] },
+    transition: { duration: 0.8, opacity: 0, ease: [0.76, 0, 0.24, 1] },
   },
 };
 
