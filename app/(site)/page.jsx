@@ -6,6 +6,7 @@ import SectionRow from '@/components/sections/sectionrow/SectionRow';
 import TextRightImgLeft from '@/components/sections/sectionrow/TextRightImgLeft';
 import TextHeadline from '@/components/texts/TextHeadline';
 import SingleItem from '@/components/singleitem/SingleItem';
+import SectionOneFourth from '@/components/sections/SectionOneFourthScreen'
 
 const playfair = Playfair_Display({ subsets: ['latin-ext'], weight: '400' });
 
@@ -30,6 +31,18 @@ export default async function Home() {
   const works = await getWorks();
   return (
     <main className='min-h-full w-screen flex flex-col items-center justify-between bg-stone-950'>
+      <SectionOneFourth>
+        <p className='h-64'>yay</p>
+      </SectionOneFourth>
+      <SectionOneFourth>
+        <p className='h-64'>yay</p>
+      </SectionOneFourth>
+      <SectionOneFourth>
+        <p className='h-64'>yay</p>
+      </SectionOneFourth>
+      <SectionOneFourth>
+        <p className='h-64'>yay</p>
+      </SectionOneFourth>
       <div>
         <h1 className='mt-20 text-4xl md:text-6xl font-thin text-center'>
           <span

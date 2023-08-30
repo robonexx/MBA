@@ -51,8 +51,9 @@ nav > ul {
 
 @media (min-width: 768px) {
   nav {
-    top: 10vh;
+    top: 26vh;
     right: 0;
+    width: 65vw;
     height: 80px;
     border-radius: 0%;
     z-index: 49;
@@ -65,13 +66,13 @@ nav > ul {
   nav > ul {
     position: relative;
     margin: 0 auto;
-    padding: 0 50px;
+    padding: 0 25px;
     height: 80px;
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
     align-items: center;
-    background-color: rgba(139, 139, 139, 0.534);
+    background-color: rgb(20, 20, 20);
     /* -webkit-transform: translateX(110%);
     -ms-transform: translateX(110%);
     transform: translateX(110%); */

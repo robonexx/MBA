@@ -23,12 +23,12 @@ export default function RootLayout({ children }) {
         <AnimatePresence mode='wait'>
           {active && (
             <Nav active={active} setActive={setActive}>
-              <NavItem
+              {/* <NavItem
                 title='Markus B Almqvist'
                 path='/'
                 key='mba2024'
                 active={active}
-              />
+              /> */}
               {navData.map(({ title, path, cls, id }, i) => (
                 <NavItem
                   title={title}
