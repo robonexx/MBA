@@ -13,13 +13,16 @@ const inter = Inter({ subsets: ['latin'] });
 
 export default function RootLayout({ children }) {
   const [active, setActive] = useState(false);
+
+  
+
   return (
     <html lang='en'>
       <body className={`${inter.className}`}>
         <Header>
           <span>Markus B Almqvist</span>
         </Header>
-        <MenuBtn active={active} setActive={setActive} />
+        <MenuBtn active={active} setActive={setActive}/>
         <AnimatePresence mode='wait'>
           {active && (
             <Nav active={active} setActive={setActive}>

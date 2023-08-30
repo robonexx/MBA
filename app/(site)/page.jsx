@@ -6,7 +6,10 @@ import SectionRow from '@/components/sections/sectionrow/SectionRow';
 import TextRightImgLeft from '@/components/sections/sectionrow/TextRightImgLeft';
 import TextHeadline from '@/components/texts/TextHeadline';
 import SingleItem from '@/components/singleitem/SingleItem';
-import SectionOneFourth from '@/components/sections/SectionOneFourthScreen'
+import SectionOneFourth from '@/components/sections/SectionOneFourthScreen';
+import PianoImg from '@/public/piano.jpg';
+import PianoImg2 from '@/public/piano2.jpg';
+import Giftest from '@/public/gif_test.webp';
 
 const playfair = Playfair_Display({ subsets: ['latin-ext'], weight: '400' });
 
@@ -30,18 +33,57 @@ export default async function Home() {
   const projects = await getProjects();
   const works = await getWorks();
   return (
-    <main className='min-h-full w-screen flex flex-col items-center justify-between bg-stone-950'>
+    <main className='min-h-full w-full flex flex-col items-center justify-between bg-stone-950 box-border'>
       <SectionOneFourth>
-        <p className='h-64'>yay</p>
+        <h1 className=' text-4xl md:text-6xl font-thin text-center z-10'>
+          <span
+            className={`bg-gradient-to-r from-orange-400 via-yellow-500 to-red-600 bg-clip-text text-transparent z-10 shadow-xl ${playfair.className}`}
+          >
+            {' '}
+            Markus Bertilson
+          </span>
+        </h1>
+        <p className='mt-3 text-xl text-center text-slate-200 drop-shadow-xl z-10 px-10'>
+          Award-winning composer based in Stockholm, Sweden. Writing music for
+          ensembles, stage productions and film
+        </p>
+        <Image
+          alt='piano img'
+          src={PianoImg}
+          fill
+          priority
+          className='absolute left-0 top-0 -z-0 object-cover object-center hover:scale-110 transition-all duration-300 cursor-pointer pointer-events-auto opacity-80'
+        />
       </SectionOneFourth>
       <SectionOneFourth>
-        <p className='h-64'>yay</p>
+        <p className='relative h-fit text-white font-normal text-4xl z-10'>
+          Beings
+        </p>
+        <span className='bg-black w-full h-full absolute left-0 top-0 -z-0 opactiy-70'></span>
       </SectionOneFourth>
       <SectionOneFourth>
-        <p className='h-64'>yay</p>
+        <p className='relative h-fit text-white font-normal text-4xl z-10'>
+          Gif test
+        </p>
+        <Image
+          alt='piano img'
+          src={Giftest}
+          fill
+          priority
+          className='absolute left-0 top-0 -z-0 object-cover object-center hover:scale-110 transition-all duration-300 cursor-pointer pointer-events-auto'
+        />
       </SectionOneFourth>
       <SectionOneFourth>
-        <p className='h-64'>yay</p>
+        <p className='relative h-fit text-white font-normal text-4xl z-10 '>
+          lorem ipsum
+        </p>
+        <Image
+          alt='piano img'
+          src={PianoImg2}
+          fill
+          priority
+          className='absolute left-0 top-0 -z-0 object-cover object-center'
+        />
       </SectionOneFourth>
       <div>
         <h1 className='mt-20 text-4xl md:text-6xl font-thin text-center'>
@@ -73,7 +115,7 @@ export default async function Home() {
                   className='object-cover'
                 />
               )}
-              <div className='mt-2 absolute z-10 font-semibold  bg-gradient-to-r from-slate-400 via-black-500 to-white-600 bg-clip-text text-white'>
+              <div className='mt-2 absolute z-10 font-normal  bg-gradient-to-r from-slate-400 via-black-500 to-white-600 bg-clip-text text-white'>
                 {project.name}
               </div>
             </Link>

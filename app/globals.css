@@ -17,6 +17,8 @@
 }
 
 body {
+  width: 100%;
+  height: 100%;
   color: rgb(var(--foreground-rgb));
   background: linear-gradient(
       to bottom,
@@ -25,3 +27,4 @@ body {
     )
     rgb(var(--background-start-rgb));
 }
+

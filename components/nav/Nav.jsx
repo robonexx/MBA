@@ -1,10 +1,13 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { navSlide } from '../animations/MenuAnimations';
+import { Playfair_Display } from 'next/font/google';
 
 // styles
 import './Nav.scss';
 import Curve from '../curve/Curve';
+
+const playfair = Playfair_Display({ subsets: ['latin-ext'], weight: '400' });
 
 export default function Nav({ active, setActive, children }) {
   return (
@@ -14,8 +17,17 @@ export default function Nav({ active, setActive, children }) {
       initial='initial'
       animate='enter'
       exit='exit'
+      /*  onMouseLeave={() => setActive(false)} */
     >
-      <ul className={`menu ${active ? 'open' : ''}`}>{children}</ul>
+      <ul className={`menu ${active ? 'open' : ''}`}>
+        {' '}
+        <span
+          className={`${playfair.className} text-thin text-2xl md:text-3xl`}
+        >
+          Markus B Almqvist
+        </span>
+        {children}
+      </ul>
       <Curve />
     </motion.nav>
   );

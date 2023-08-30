@@ -2,7 +2,7 @@ import React from 'react';
 
 const SectionOneFourthScreen = ({ children }) => {
   return (
-    <div className='w-full min-h-62 h-1/4 bg-slate-200 border-2 border-red-700'>
+    <div className='relative w-full h-56 max-h-60 md:h-62 md:max-h-72 bg-black flex flex-col items-center justify-center overflow-hidden pointer-events-none'>
       {children}
     </div>
   );

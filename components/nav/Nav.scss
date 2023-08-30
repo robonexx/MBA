@@ -51,9 +51,9 @@ nav > ul {
 
 @media (min-width: 768px) {
   nav {
-    top: 26vh;
+    top: 24vh;
     right: 0;
-    width: 65vw;
+    width: 100vw;
     height: 80px;
     border-radius: 0%;
     z-index: 49;
@@ -78,3 +78,18 @@ nav > ul {
     transform: translateX(110%); */
   }
 }
+
+/* 
+.hide {
+  width: 100%;
+  z-index: 40;
+  border-bottom: 10px solid $color-client-2;
+  position: fixed;
+  transform: translateY(-54px);
+  transition: all 0.4s ease;
+}
+
+.bgorange {
+  transition: 0.3s ease;
+  background-color: $color-client-2; 
+} */

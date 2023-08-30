@@ -16,15 +16,18 @@ export default async function Work({ params }: Props) {
   const work = await getWork(slug);
 
   return (
-    <div className='w-full h-screen flex flex-col-reverse md:flex-row items-center justify-center text-sm box-border'>
+    <div className='w-full h-screen flex flex-col-reverse md:flex-row items-center justify-center text-sm box-border bg-slate-300'>
       {/* <header className="flex items-center justify-between">
       <h1 className="bg-gradient-to-r from-orange-400 via-red-500 to-purple-600 bg-clip-text text-transparent text-5xl drop-shadow font-extrabold">{work?.title}</h1>
       <a href={work?.url} title="View Project" target="_blank" rel="noopener noreferrer" className="bg-gray-100 rounded-lg text-gray-500 font-bold py-3 px-4 whitespace-nowrap hover:bg-pink-500 hover:text-pink-100 transition">
         View Project
       </a>
     </header> */}
-      <div className='w-full h-full flex flex-col items-start justify-evenly text-sm box-border py-20 px-10 md:px-20 md:py-40'>
-        <h3 className='text-base mb-10 text-orange-300'> {work?.author}</h3>
+      <div className='w-full h-full flex flex-col items-start justify-evenly text-sm box-border py-20 px-10 md:px-60 md:py-50 text-black'>
+        <h3 className='text-base mt-10 mb-20 text-orange-800'>
+          {' '}
+          {work?.author}
+        </h3>
         <div className='flex items-center justify-between mb-6'>
           <h3 className='text-base pr-6'>{work?.title}</h3>
           <p className='px-4'>{work?.customer}</p>
@@ -34,10 +37,10 @@ export default async function Work({ params }: Props) {
         <PortableText value={work?.desc} />
         <div className='w-full mb-6 flex items-center justify-betweeen text-sm'>
           <p className='flex w-1/2 items-center'>
-            <span className='pr-6 text-xl'>
+            <span className='pr-6 text-xl cursor-pointer'>
               <GiPlayButton />
             </span>
-            {work?.songUrl}
+            {/* {work?.songUrl} */}
           </p>
           <p
             /*  onClick={() => (modalOpen ? close() : open())} */

@@ -27,6 +27,6 @@ export const navData = [
     title: 'contact',
     path: '/',
     cls: 'nav_item',
-    id: 4,
+    id: 5,
   },
 ];
