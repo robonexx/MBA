@@ -1,7 +1,10 @@
 import React from 'react';
+import ImageLightBox from '@/components/imageLightBox/ImageLightBox'
 
 const about = () => {
-  return <div>about</div>;
+  return <div>
+    <ImageLightBox />
+  </div>;
 };
 
 export default about;

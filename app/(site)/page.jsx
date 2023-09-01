@@ -10,6 +10,7 @@ import SectionOneFourth from '@/components/sections/SectionOneFourthScreen';
 import PianoImg from '@/public/piano.jpg';
 import PianoImg2 from '@/public/piano2.jpg';
 import Giftest from '@/public/gif_test.webp';
+import ImageGrid from '@/components/imageGrid/ImageGrid'
 
 const playfair = Playfair_Display({ subsets: ['latin-ext'], weight: '400' });
 
@@ -155,6 +156,7 @@ export default async function Home() {
           <SingleItem data={testData} />
         </TextRightImgLeft>
       </SectionRow>
+      <ImageGrid />
     </main>
   );
 }

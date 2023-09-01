@@ -19,7 +19,7 @@ export const navData = [
   },
   {
     title: 'about',
-    path: '/',
+    path: '/about',
     cls: 'nav_item',
     id: 4,
   },
