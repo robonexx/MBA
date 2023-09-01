@@ -1,7 +1,10 @@
+'use client';
 import Image from 'next/image';
 import Link from 'next/link';
 import { Playfair_Display } from 'next/font/google';
-import { getProjects, getWorks } from '@/sanity/sanity-utils';
+/* import { getProjects, getWorks } from '@/sanity/sanity-utils'; */
+import Written from '@/components/works/Written';
+import Stage from '@/components/works/Stage';
 import SectionRow from '@/components/sections/sectionrow/SectionRow';
 import TextRightImgLeft from '@/components/sections/sectionrow/TextRightImgLeft';
 import TextHeadline from '@/components/texts/TextHeadline';
@@ -10,13 +13,12 @@ import SectionOneFourth from '@/components/sections/SectionOneFourthScreen';
 import PianoImg from '@/public/piano.jpg';
 import PianoImg2 from '@/public/piano2.jpg';
 import Giftest from '@/public/gif_test.webp';
-import ImageGrid from '@/components/imageGrid/ImageGrid'
+import ImageGrid from '@/components/imageGrid/ImageGrid';
+
+import { motion, AnimatePresence } from 'framer-motion';
+import { fadeIn, fadeInUp } from '@/components/animations/Animations';
 
 const playfair = Playfair_Display({ subsets: ['latin-ext'], weight: '400' });
-
-export const revalidate = 20;
-export const fetchCache = 'force-no-store';
-export const dynamic = 'force-dynamic';
 
 const testData = {
   author: 'Markus B. Almqvist',
@@ -30,24 +32,36 @@ const testData = {
   songUrl: 'play',
 };
 
-export default async function Home() {
-  const projects = await getProjects();
-  const works = await getWorks();
+export default function Home() {
+  /*  const projects = await getProjects();
+  const works = await getWorks(); */
   return (
     <main className='min-h-full w-full flex flex-col items-center justify-between bg-stone-950 box-border'>
       <SectionOneFourth>
-        <h1 className=' text-4xl md:text-6xl font-thin text-center z-10'>
+        <motion.h1
+          className=' text-4xl md:text-6xl font-thin text-center z-10'
+          variants={fadeIn}
+          initial='initial'
+          animate='enter'
+          exit='exit'
+        >
           <span
             className={`bg-gradient-to-r from-orange-400 via-yellow-500 to-red-600 bg-clip-text text-transparent z-10 shadow-xl ${playfair.className}`}
           >
             {' '}
             Markus Bertilson
           </span>
-        </h1>
-        <p className='mt-3 text-xl text-center text-slate-200 drop-shadow-xl z-10 px-10'>
+        </motion.h1>
+        <motion.p
+          className='mt-3 text-xl text-center text-slate-200 drop-shadow-xl z-10 px-10'
+          variants={fadeInUp}
+          initial='initial'
+          animate='enter'
+          exit='exit'
+        >
           Award-winning composer based in Stockholm, Sweden. Writing music for
           ensembles, stage productions and film
-        </p>
+        </motion.p>
         <Image
           alt='piano img'
           src={PianoImg}
@@ -99,57 +113,14 @@ export default async function Home() {
           Award-winning composer based in Stockholm, Sweden. Writing music for
           ensembles, stage productions and film
         </p>
+        <TextHeadline title='Written work' />
         <h2 className='mt-24 font-thin text-gray-700 text-3xl'>Lorem ipsum</h2>
 
-        <div className='mt-5 grid md:grid-cols-2 gap-5'>
-          {projects.map((project) => (
-            <Link
-              href={`/${project.slug}`}
-              key={project._id}
-              className='relative h-72 w-full border-2 border-transparent p-1 hover:scale-105 hover:border-slate-950 transition shadow-lg'
-            >
-              {project.image && (
-                <Image
-                  src={project.image}
-                  alt={project.name}
-                  fill
-                  className='object-cover'
-                />
-              )}
-              <div className='mt-2 absolute z-10 font-normal  bg-gradient-to-r from-slate-400 via-black-500 to-white-600 bg-clip-text text-white'>
-                {project.name}
-              </div>
-            </Link>
-          ))}
-        </div>
-        <TextHeadline title='Written work' />
+        <Written />
+
+        <TextHeadline title='Stage' />
         <h2 className='mt-24 font-thin text-white text-3xl'>Lorem ipsum</h2>
-        <div className='mt-10 mb-10 grid md:grid-cols-2 gap-10'>
-          {works.map((work) => (
-            <Link
-              href={`/work/${work.slug}`}
-              key={work._id}
-              className='relative h-72 w-full border-2 border-transparent p-1 hover:scale-105 hover:border-slate-950 transition shadow-lg'
-            >
-              {work.image && (
-                <Image
-                  src={work.image}
-                  alt={work.title}
-                  fill
-                  priority
-                  className='object-cover'
-                />
-              )}
-              <div className='mt-2 font-extrabold bg-gradient-to-r from-orange-400 via-red-500 to-purple-600 bg-clip-text text-transparent'>
-                {work.title}
-              </div>
-              <p>Author: {work.author}</p>
-              <p>For {work.author}</p>
-              <p>Year: {work.year}</p>
-              <p>Duration {work.duration}</p>
-            </Link>
-          ))}
-        </div>
+        <Stage />
       </div>
       <SectionRow>
         <TextRightImgLeft>

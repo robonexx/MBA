@@ -4,6 +4,8 @@ import { AnimatePresence } from 'framer-motion';
 import '@/app/globals.css';
 import { Inter } from 'next/font/google';
 import Header from '@/components/header/Header';
+/* import AOS from 'aos'; */
+/* import 'aos/dist/aos.css'; */
 import MenuBtn from '@/components/menuBtn/MenuBtn';
 import Nav from '@/components/nav/Nav';
 import NavItem from '@/components/nav/NavItem';
@@ -14,7 +16,12 @@ const inter = Inter({ subsets: ['latin'] });
 export default function RootLayout({ children }) {
   const [active, setActive] = useState(false);
 
-  
+  /*   useEffect(() => {
+    // here you can add your aos options
+    AOS.init({
+      offset: 100,
+    });
+  }, []); */
 
   return (
     <html lang='en'>
@@ -22,7 +29,7 @@ export default function RootLayout({ children }) {
         <Header>
           <span>Markus B Almqvist</span>
         </Header>
-        <MenuBtn active={active} setActive={setActive}/>
+        <MenuBtn active={active} setActive={setActive} />
         <AnimatePresence mode='wait'>
           {active && (
             <Nav active={active} setActive={setActive}>

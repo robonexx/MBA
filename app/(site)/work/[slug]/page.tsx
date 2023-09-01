@@ -16,15 +16,15 @@ export default async function Work({ params }: Props) {
   const work = await getWork(slug);
 
   return (
-    <div className='w-full h-screen flex flex-col-reverse md:flex-row items-center justify-center text-sm box-border bg-slate-300'>
+    <div className='w-full h-screen flex flex-col-reverse md:flex-row items-center justify-center text-sm box-border bg-slate-800'>
       {/* <header className="flex items-center justify-between">
       <h1 className="bg-gradient-to-r from-orange-400 via-red-500 to-purple-600 bg-clip-text text-transparent text-5xl drop-shadow font-extrabold">{work?.title}</h1>
       <a href={work?.url} title="View Project" target="_blank" rel="noopener noreferrer" className="bg-gray-100 rounded-lg text-gray-500 font-bold py-3 px-4 whitespace-nowrap hover:bg-pink-500 hover:text-pink-100 transition">
         View Project
       </a>
     </header> */}
-      <div className='w-full h-full flex flex-col items-start justify-evenly text-sm box-border py-20 px-10 md:px-60 md:py-50 text-black'>
-        <h3 className='text-base mt-10 mb-20 text-orange-800'>
+      <div className='w-full h-full flex flex-col items-start justify-evenly text-sm box-border py-20 px-10 md:px-60 md:py-50 text-slate-200'>
+        <h3 className='text-base mt-10 mb-20 text-orange-400'>
           {' '}
           {work?.author}
         </h3>
