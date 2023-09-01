@@ -73,11 +73,11 @@ function NavbarScroll({ isScrolling }) {
       variants={NavAnimations}
       className='fixed z-20 flex justify-between px-4 py-2 rounded-full ts-bg left-1/2 top-10'
     >
-      <div className='flex items-center gap-2 text-white'>
+      {/* <div className='flex items-center gap-2 text-white'>
         <Link href='/' className='text-xl text-white'>
           Markus B Almqvist
         </Link>
-      </div>
+      </div> */}
       <ul className='w-full flex items-center'>
         <li className='px-2 text-white text-md'>
           <Link href={'/pods'}>Written</Link>

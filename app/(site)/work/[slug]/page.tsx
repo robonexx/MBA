@@ -2,6 +2,9 @@ import { getWork } from '@/sanity/sanity-utils';
 import { PortableText } from '@portabletext/react';
 import Image from 'next/image';
 import { GiPlayButton } from 'react-icons/gi';
+import { Playfair_Display } from 'next/font/google';
+
+const playfair = Playfair_Display({ subsets: ['latin-ext'], weight: '400' });
 
 type Props = {
   params: { slug: string };
@@ -23,16 +26,18 @@ export default async function Work({ params }: Props) {
         View Project
       </a>
     </header> */}
-      <div className='w-full h-full flex flex-col items-start justify-evenly text-sm box-border py-20 px-10 md:px-60 md:py-50 text-slate-200'>
-        <h3 className='text-base mt-10 mb-20 text-orange-400'>
+      <div className='w-full h-full flex flex-col items-start justify-evenly text-sm box-border py-20 px-10 md:px-20 md:py-50 text-slate-200'>
+        <h3
+          className={`${playfair.className} text-thin text-2xl lg:text-3xl mt-10 mb-5 md:mb-10 md:mt-20 lg:mt-10 text-orange-400`}
+        >
           {' '}
           {work?.author}
         </h3>
-        <div className='flex items-center justify-between mb-6'>
-          <h3 className='text-base pr-6'>{work?.title}</h3>
-          <p className='px-4'>{work?.customer}</p>
-          <p className='px-4'>{work?.year}</p>
-          <p className='px-4'>Durata ca. {work?.duration}&apos;</p>
+        <div className='flex items-center flex-wrap justify-start sm:justify-between mt-0 md:mt-20 w-full'>
+          <p className='pr-6 py-2'>{work?.title}</p>
+          <p className='pr-6 py-2'>{work?.customer}</p>
+          <p className='pr-6 py-2'>{work?.year}</p>
+          <p className='py-2'>Durata ca. {work?.duration}&apos;</p>
         </div>
         <PortableText value={work?.desc} />
         <div className='w-full mb-6 flex items-center justify-betweeen text-sm'>
@@ -63,7 +68,7 @@ export default async function Work({ params }: Props) {
       {/* <div className='text-lg text-gray-700 mt-5 text-center'>
         <PortableText value={work?.desc} />
       </div> */}
-      <div className='w-full h-full relative z-1 grid place-content-center xs:order-1 p-20 md:p-20 lg:p-40'>
+      <div className='w-full h-72  md:h-full relative z-1 grid place-content-center xs:order-1 p-20 md:p-20 lg:p-40'>
         <Image
           className='object-cover'
           quality={100}

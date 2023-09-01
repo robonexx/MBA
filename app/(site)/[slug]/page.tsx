@@ -28,6 +28,7 @@ export default async function Project({ params }: Props) {
       </header>
 
       <div className='text-lg text-gray-700 mt-5 text-center'>
+        <p className='text-red-600'>Detta är bara för att testa... ingen desing än!</p>
         <PortableText value={project?.content} />
       </div>
       <div>

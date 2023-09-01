@@ -22,7 +22,7 @@ export default function Nav({ active, setActive, children }) {
       <ul className={`menu ${active ? 'open' : ''}`}>
         {' '}
         <span
-          className={`${playfair.className} text-thin text-2xl md:text-3xl`}
+          className={`${playfair.className} text-thin text-base md:text-2xl lg:text-3xl`}
         >
           Markus B Almqvist
         </span>

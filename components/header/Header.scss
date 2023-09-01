@@ -7,12 +7,9 @@ header {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    z-index: 100;
+    z-index: 50;
 
     @media screen and (min-width: 768px) {
-        top: 27.5vh;
-        right: 6svw;
-        left: auto;
-        display: none;
+        background-color: transparent;
       }
 }
