@@ -46,14 +46,14 @@ export default function Home() {
           exit='exit'
         >
           <span
-            className={`bg-gradient-to-r from-orange-400 via-yellow-500 to-red-600 bg-clip-text text-transparent z-0 shadow-xl ${playfair.className}`}
+            className={`bg-gradient-to-r from-orange-400 via-yellow-500 to-red-600 bg-clip-text text-transparent z-10 drop-shadow-sm ${playfair.className}`}
           >
             {' '}
             Markus Bertilson
           </span>
         </motion.h1>
         <motion.p
-          className='mt-3 text-sm md:text-l text-center text-slate-200 drop-shadow-xl z-0 px-10'
+          className='mt-3 text-sm md:text-l text-center text-slate-200 drop-shadow-md z-10 px-10'
           variants={fadeInUp}
           initial='initial'
           animate='enter'
@@ -71,7 +71,7 @@ export default function Home() {
         />
       </SectionOneFourth>
       <SectionOneFourth>
-        <p className='relative h-fit text-white font-normal text-4xl z-0'>
+        <p className='relative h-fit text-white font-normal text-4xl z-10'>
           Beings
         </p>
         <span className='bg-black w-full h-full absolute left-0 top-0 -z-0 opactiy-70'></span>
