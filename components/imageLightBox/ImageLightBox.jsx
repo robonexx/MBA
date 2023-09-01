@@ -31,7 +31,7 @@ function ImageGallery() {
   const [imageToShow, setImageToShow] = useState('');
   const [lightboxDisplay, setLightBoxDisplay] = useState(false);
 
-  //looping through our images array to create img elements
+  
   const imageCards = images.map((image, i) => (
     <div key={i} className='imgWrapper'>
       <img
@@ -42,7 +42,7 @@ function ImageGallery() {
     </div>
   ));
 
-  //function to show a specific image in the lightbox, amd make lightbox visible
+
   const showImage = (image) => {
     setImageToShow(image);
     setLightBoxDisplay(true);
