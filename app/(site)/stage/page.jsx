@@ -23,6 +23,7 @@ const btnList = [{ title: 'watch' }, { title: 'listen' }, { title: 'read' }];
 
 const Stage = () => {
   const [modalOpen, setModalOpen] = useState(false);
+  const [currentEl, setCurrentEl] = useState(null);
 
   const close = () => setModalOpen(false);
   const open = () => setModalOpen(true);
@@ -50,7 +51,7 @@ const Stage = () => {
         animate={{ opacity: 1 }}
         transition={{ delay: 0.6, duration: 0.3, ease: 'easeOut' }}
       >
-        {btnList.map(({ title, content }, i) => (
+        {btnList.map(({ title }, i) => (
           <motion.div
             key={i}
             initial={{ opacity: 0, y: i % 2 === 0 ? 100 : 100 }}
@@ -60,7 +61,12 @@ const Stage = () => {
             <Button
               variant='default'
               title={title}
-              onClick={() => (modalOpen ? close() : open())}
+              /* onClick={() => (modalOpen ? close() : open())} */
+              onClick={(e) => {
+                console.log((i, title));
+                modalOpen ? close() : open();
+                setCurrentEl(title);
+              }}
             />
           </motion.div>
         ))}
@@ -70,7 +76,7 @@ const Stage = () => {
         <Modal
           modalOpen={modalOpen}
           handleClose={close}
-          content={<Watch />}
+          content={currentEl === 'watch' ? <Watch /> : null}
         ></Modal>
       )}
 
