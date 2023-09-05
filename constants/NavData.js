@@ -7,7 +7,7 @@ export const navData = [
   },
   {
     title: 'stage',
-    path: '/',
+    path: '/stage',
     cls: 'nav_item',
     id: 2,
   },

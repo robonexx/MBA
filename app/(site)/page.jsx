@@ -1,4 +1,4 @@
-'use client'
+'use client';
 import Image from 'next/image';
 import Link from 'next/link';
 import { Playfair_Display } from 'next/font/google';
@@ -18,6 +18,7 @@ import SectionFullScreen from '@/components/sections/SectionFullScreen';
 
 import { motion, AnimatePresence } from 'framer-motion';
 import { fadeIn, fadeInUp } from '@/components/animations/Animations';
+import { Reveal } from '@/components/animations/reveal/Reveal';
 
 const playfair = Playfair_Display({ subsets: ['latin-ext'], weight: '400' });
 
@@ -37,7 +38,7 @@ export default function Home() {
   /*  const projects = await getProjects();
   const works = await getWorks(); */
   return (
-    <main className='min-h-full w-full flex flex-col items-center justify-between bg-stone-950 box-border snap-y snap-mandatory'>
+    <main className='min-h-full w-full flex flex-col items-center justify-between bg-stone-950 box-border'>
       <SectionFullScreen>
         <SectionOneFourth>
           <motion.h1
@@ -73,10 +74,15 @@ export default function Home() {
           />
         </SectionOneFourth>
         <SectionOneFourth>
-          <p className='relative h-fit text-white font-black text-4xl z-10'>
-            Beings
-          </p>
-          <span className='bg-black w-full h-full absolute left-0 top-0 -z-0 opactiy-70'></span>
+          <Reveal>
+            <p className='relative h-fit text-white font-black text-4xl z-10'>
+              Beings
+            </p>
+            <p className='relative text-slate-200 text-base z-10'>
+              A contempory in motion
+            </p>
+            <span className='bg-black w-full h-full absolute left-0 top-0 -z-0 opactiy-70'></span>
+          </Reveal>
         </SectionOneFourth>
         <SectionOneFourth>
           <p className='relative h-fit text-white font-semibold text-4xl z-10'>
@@ -91,9 +97,11 @@ export default function Home() {
           />
         </SectionOneFourth>
         <SectionOneFourth>
-          <p className='relative h-fit text-white font-normal text-4xl z-10 '>
-            lorem ipsum
-          </p>
+          <Reveal>
+            <p className='relative h-fit text-white font-normal text-4xl z-10 '>
+              lorem ipsum
+            </p>
+          </Reveal>
           <Image
             alt='piano img'
             src={PianoImg2}
@@ -103,40 +111,67 @@ export default function Home() {
           />
         </SectionOneFourth>
       </SectionFullScreen>
-      <SectionFullScreen className='snap-start shrink-0' >
-        <h1 className='mt-20 text-4xl md:text-6xl font-thin text-center'>
-          <span
-            className={`bg-gradient-to-r from-orange-400 via-yellow-500 to-red-600 bg-clip-text text-transparent ${playfair.className}`}
-          >
-            {' '}
-            Markus Bertilson
-          </span>
-        </h1>
-        <p className='mt-3 text-xl text-center text-gray-600'>
-          Award-winning composer based in Stockholm, Sweden. Writing music for
-          ensembles, stage productions and film
-        </p>
-        <div className='w-full h-full relative py-20'>
+      <SectionFullScreen>
+        <Reveal>
+          <h1 className='mt-20 text-4xl md:text-6xl font-thin text-center'>
+            <span
+              className={`bg-gradient-to-r from-orange-400 via-yellow-500 to-red-600 bg-clip-text text-transparent ${playfair.className}`}
+            >
+              {' '}
+              Markus Bertilson
+            </span>
+          </h1>
+          <p className='mt-3 text-xl text-center text-gray-600'>
+            Award-winning composer based in Stockholm, Sweden. Writing music for
+            ensembles, stage productions and film
+          </p>
+        </Reveal>
+        <div className='w-full h-2/5 relative py-80'>
           <Image
             alt='piano img'
             src={PianoImg}
             fill
             priority
-            className='absolute left-0 top-0 -z-0 object-cover object-center hover:scale-110 transition-all duration-300 cursor-pointer pointer-events-auto opacity-80'
+            className='relative -z-0 object-cover object-center transition-all duration-300 cursor-pointer pointer-events-auto opacity-80'
           />
         </div>
       </SectionFullScreen>
-      <SectionFullScreen className='snap-start shrink-0'>
-        <TextHeadline title='Written work' />
-        <h2 className='mt-24 font-thin text-gray-700 text-3xl'>Lorem ipsum</h2>
-        <Written />
+      <SectionFullScreen>
+        <Reveal>
+          <TextHeadline title='Written work' />
+        </Reveal>
+        <Reveal>
+          <h2 className='mt-24 font-thin text-gray-700 text-3xl'>
+            Lorem ipsum
+          </h2>
+        </Reveal>
+        <motion.div
+          variants={fadeIn}
+          initial='initial'
+          animate='enter'
+          exit='exit'
+        >
+          <Written />
+        </motion.div>
       </SectionFullScreen>
       <SectionFullScreen>
-        <TextHeadline title='Stage' />
-        <h2 className='mt-24 font-thin text-white text-3xl'>Lorem ipsum</h2>
-        <Stage />
+        <Reveal>
+          <TextHeadline title='Stage' />
+        </Reveal>
+        <Reveal>
+          <h2 className='mt-24 font-thin text-white text-3xl'>Lorem ipsum</h2>
+        </Reveal>
+        <motion.div
+          variants={fadeIn}
+          initial='initial'
+          animate='enter'
+          exit='exit'
+        >
+          <Stage />
+        </motion.div>
       </SectionFullScreen>
 
+      <Reveal></Reveal>
       <SectionRow>
         <TextRightImgLeft>
           <SingleItem data={testData} />

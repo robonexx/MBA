@@ -27,11 +27,3 @@ body {
     )
     rgb(var(--background-start-rgb));
 }
-
-main {
-  scroll-snap-type: y mandatory;
-}
-
-.child {
-  scroll-snap-align: start;
-}
