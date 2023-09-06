@@ -1,4 +1,5 @@
 import React from 'react';
+import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { navSlide } from '../animations/MenuAnimations';
 import { Playfair_Display } from 'next/font/google';
@@ -21,11 +22,12 @@ export default function Nav({ active, setActive, children }) {
     >
       <ul className={`menu ${active ? 'open' : ''}`}>
         {' '}
-        <span
+        <Link
           className={`${playfair.className} text-thin text-base md:text-2xl lg:text-3xl`}
+          href='/'
         >
           Markus B Almqvist
-        </span>
+        </Link>
         {children}
       </ul>
       <Curve />

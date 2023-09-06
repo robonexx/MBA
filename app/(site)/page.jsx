@@ -38,7 +38,7 @@ export default function Home() {
   /*  const projects = await getProjects();
   const works = await getWorks(); */
   return (
-    <main className='min-h-full w-full flex flex-col items-center bg-stone-950 box-border'>
+    <main className='min-h-full w-full flex flex-col items-center bg-stone-950 box-border mt-20 md:mt-0'>
       <SectionFullScreen>
         <SectionOneFourth>
           <motion.h1
@@ -113,7 +113,7 @@ export default function Home() {
         </SectionOneFourth>
       </SectionFullScreen>
       <SectionFullScreen>
-        <Reveal>
+       {/*  <Reveal>
           <h1 className='mt-20 text-4xl md:text-6xl font-thin text-center'>
             <span
               className={`bg-gradient-to-r from-orange-400 via-yellow-500 to-red-600 bg-clip-text text-transparent ${playfair.className}`}
@@ -126,7 +126,7 @@ export default function Home() {
             Award-winning composer based in Stockholm, Sweden. Writing music for
             ensembles, stage productions and film
           </p>
-        </Reveal>
+        </Reveal> */}
         <div className='w-full h-2/5 relative py-80'>
           <Image
             alt='piano img'
