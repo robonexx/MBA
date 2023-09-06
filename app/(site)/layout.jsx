@@ -27,7 +27,7 @@ export default function RootLayout({ children }) {
     <html lang='en'>
       <body className={`${inter.className}`}>
         <Header>
-          <span>Markus B Almqvist</span>
+         {/*  <span>Markus B Almqvist</span> */}
         </Header>
         <MenuBtn active={active} setActive={setActive} />
         <AnimatePresence mode='wait'>

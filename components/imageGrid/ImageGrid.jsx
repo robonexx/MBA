@@ -2,7 +2,7 @@ import React from 'react';
 import './ImageGrid.scss';
 const ImageGrid = () => {
   return (
-    <div>
+    <div className='imageGrid'>
       <section id='photos'>
         <div className='imgWrapper'>
           <img src='https://images.unsplash.com/photo-1507838153414-b4b713384a76?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8bXVzaWN8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=500&q=60' />

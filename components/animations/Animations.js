@@ -16,10 +16,34 @@ export const fadeInUp = {
   enter: {
     y: 0,
     opacity: 1,
-    transition: { delay: 0.3, duration: 0.6, ease: 'linear' },
+    transition: { duration: 0.6, ease: 'linear' },
   },
   exit: {
     y: 0,
+    transition: { duration: 0.4, opacity: 0, ease: 'ease-in-out' },
+  },
+};
+export const fadeInLEft = {
+  initial: { x: 1000, opacity: 0 },
+  enter: {
+    x: 0,
+    opacity: 1,
+    transition: { duration: 0.4, ease: 'linear' },
+  },
+  exit: {
+    opacity: 0,
+    transition: { duration: 0.4, opacity: 0, ease: 'ease-in-out' },
+  },
+};
+export const fadeInRight = {
+  initial: { x: -1000, opacity: 0 },
+  enter: {
+    x: 0,
+    opacity: 1,
+    transition: { duration: 0.4, ease: 'linear' },
+  },
+  exit: {
+    opacity: 0,
     transition: { duration: 0.4, opacity: 0, ease: 'ease-in-out' },
   },
 };

@@ -51,7 +51,7 @@ nav > ul {
 
 @media (min-width: 768px) {
   nav {
-    top: 24vh;
+    top: calc(25% - 80px);
     right: 0;
     width: 100vw;
     height: 80px;

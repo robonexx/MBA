@@ -38,11 +38,12 @@ export default function Home() {
   /*  const projects = await getProjects();
   const works = await getWorks(); */
   return (
-    <main className='min-h-full w-full flex flex-col items-center justify-between bg-stone-950 box-border'>
+    <main className='min-h-full w-full flex flex-col items-center bg-stone-950 box-border'>
       <SectionFullScreen>
         <SectionOneFourth>
           <motion.h1
-            className=' text-4xl md:text-6xl font-thin text-center z-10'
+            className='text-4xl md:text-6xl font-thin text-center z-10
+            absolute top-5'
             variants={fadeIn}
             initial='initial'
             animate='enter'
@@ -56,7 +57,7 @@ export default function Home() {
             </span>
           </motion.h1>
           <motion.p
-            className='mt-3 text-sm md:text-l text-center text-slate-200 drop-shadow-md z-10 px-10'
+            className='mt-3 text-sm md:text-l text-center text-slate-200 drop-shadow-md z-10 px-10 absolute top-20'
             variants={fadeInUp}
             initial='initial'
             animate='enter'
@@ -65,13 +66,7 @@ export default function Home() {
             Award-winning composer based in Stockholm, Sweden. Writing music for
             ensembles, stage productions and film
           </motion.p>
-          <Image
-            alt='piano img'
-            src={PianoImg}
-            fill
-            priority
-            className='absolute left-0 top-0 -z-0 object-cover object-center hover:scale-110 transition-all duration-300 cursor-pointer pointer-events-auto opacity-80'
-          />
+          <span className='bg-black w-full h-full absolute left-0 top-0 -z-0 opactiy-70'></span>
         </SectionOneFourth>
         <SectionOneFourth>
           <Reveal>
@@ -81,8 +76,14 @@ export default function Home() {
             <p className='relative text-slate-200 text-base z-10'>
               A contempory in motion
             </p>
-            <span className='bg-black w-full h-full absolute left-0 top-0 -z-0 opactiy-70'></span>
           </Reveal>
+          <Image
+            alt='piano img'
+            src={PianoImg}
+            fill
+            priority
+            className='absolute left-0 top-0 -z-0 object-cover object-center hover:scale-110 transition-all duration-300 cursor-pointer pointer-events-auto'
+          />
         </SectionOneFourth>
         <SectionOneFourth>
           <p className='relative h-fit text-white font-semibold text-4xl z-10'>
