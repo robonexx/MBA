@@ -1,37 +1,105 @@
-import React from 'react'
-import Link from 'next/link';
+'use client';
+import React, { useState } from 'react';
 import Image from 'next/image';
-import { getProjects } from '@/sanity/sanity-utils';
+import BGIMG from '@/public/Hemsida.jpg';
+import Button from '@/components/button/Button';
+import './stage.scss';
+import Link from 'next/link';
+import { motion } from 'framer-motion';
+import Modal from '@/components/modal/Modal';
+import ContentWatch from '@/components/contentWatch/ContentWatch';
 
-export const revalidate = 20;
-export const fetchCache = 'force-no-store';
-export const dynamic = 'force-dynamic';
+const Watch = () => {
+  return <ContentWatch videoId='659455320' />;
+};
+const Read = () => {
+  return <div>Read the text of the project and all info here</div>;
+};
+const Listen = () => {
+  return <div>Sound link goes here</div>;
+};
 
-const Stage = async () => {
-    const projects = await getProjects();
+const btnList = [{ title: 'watch' }, { title: 'listen' }, { title: 'read' }];
+
+const Stage = () => {
+  const [modalOpen, setModalOpen] = useState(false);
+  const [currentEl, setCurrentEl] = useState(null);
+
+  const close = () => setModalOpen(false);
+  const open = () => setModalOpen(true);
   return (
-    <div className='mt-5 grid md:grid-cols-2 gap-5'>
-    {projects.map((project) => (
-      <Link
-        href={`/${project.slug}`}
-        key={project._id}
-        className='relative h-72 w-full border-2 border-transparent p-1 hover:scale-105 hover:border-slate-950 transition shadow-lg'
+    <div className='stage'>
+      <div className='contentWrapper'>
+        <motion.h1
+          initial={{ y: -100 }}
+          animate={{ y: 1, opacity: 1 }}
+          transition={{ delay: 0.6, duration: 0.3, ease: 'easeOut' }}
+        >
+          Things That Could Survive in Space
+        </motion.h1>
+        <motion.h2
+          initial={{ y: 200 }}
+          animate={{ y: 1, opacity: 1 }}
+          transition={{ delay: 0.6, duration: 1, ease: 'easeOut' }}
+        >
+          by Anika Edström Kawaji & Robin Haghi Premiere 2022
+        </motion.h2>
+      </div>
+      <motion.div
+        className='buttons'
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 0.6, duration: 0.3, ease: 'easeOut' }}
       >
-        {project.image && (
-          <Image
-            src={project.image}
-            alt={project.name}
-            fill
-            className='object-cover'
-          />
-        )}
-        <div className='mt-2 absolute z-10 font-normal  bg-gradient-to-r from-slate-400 via-black-500 to-white-600 bg-clip-text text-white'>
-          {project.name}
-        </div>
-      </Link>
-    ))}
-  </div>
-  )
-}
+        {btnList.map(({ title }, i) => (
+          <motion.div
+            key={i}
+            initial={{ opacity: 0, y: i % 2 === 0 ? 100 : 100 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1, delay: i * 0.2 }}
+          >
+            <Button
+              variant='default'
+              title={title}
+              /* onClick={() => (modalOpen ? close() : open())} */
+              onClick={(e) => {
+                console.log((i, title));
+                modalOpen ? close() : open();
+                setCurrentEl(title);
+              }}
+            />
+          </motion.div>
+        ))}
+      </motion.div>
 
-export default Stage
+      {modalOpen && (
+        <Modal
+          modalOpen={modalOpen}
+          handleClose={close}
+          content={currentEl === 'watch' ? <Watch /> : null}
+        ></Modal>
+      )}
+
+      <motion.div
+        className='bgWrapper'
+        initial={{}}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.4, ease: 'easeOut' }}
+      >
+        <Image
+          alt='background image'
+          src={BGIMG}
+          fill
+          priority
+          className='img'
+        />
+      </motion.div>
+      <div className='overlay'></div>
+      <Link href='#' className='linkToAll'>
+        See all stage work
+      </Link>
+    </div>
+  );
+};
+
+export default Stage;

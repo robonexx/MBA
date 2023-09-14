@@ -44,19 +44,19 @@ function NavbarFixed() {
       </div>
       <ul className='w-full flex items-center text-white/50'>
         <li className='px-2 text-md '>
-          <Link href={'/pods'}>Written</Link>
+          <Link href={'/written'}>Written</Link>
         </li>
         <li className='px-2 text-md'>
-          <Link href={'/'}>Stage</Link>
+          <Link href={'/Stage'}>Stage</Link>
         </li>
         <li className='px-2 text-md'>
-          <Link href={'/'}>Film</Link>
+          <Link href={'/film'}>Film</Link>
         </li>
         <li className='px-2 text-md'>
-          <Link href={'/'}>About</Link>
+          <Link href={'/about'}>About</Link>
         </li>
         <li className='px-2 text-md'>
-          <Link href={'/'}>Contact</Link>
+          <Link href={'/contact'}>Contact</Link>
         </li>
       </ul>
     </nav>
@@ -73,26 +73,21 @@ function NavbarScroll({ isScrolling }) {
       variants={NavAnimations}
       className='fixed z-20 flex justify-between px-4 py-2 rounded-full ts-bg left-1/2 top-10'
     >
-      {/* <div className='flex items-center gap-2 text-white'>
-        <Link href='/' className='text-xl text-white'>
-          Markus B Almqvist
-        </Link>
-      </div> */}
       <ul className='w-full flex items-center'>
         <li className='px-2 text-white text-md'>
-          <Link href={'/pods'}>Written</Link>
+          <Link href={'/written'}>Written</Link>
         </li>
         <li className='px-2 text-white text-md'>
-          <Link href={'/'}>Stage</Link>
+          <Link href={'/stage'}>Stage</Link>
         </li>
         <li className='px-2 text-white text-md'>
-          <Link href={'/'}>Film</Link>
+          <Link href={'/film'}>Film</Link>
         </li>
         <li className='px-2 text-white text-md'>
-          <Link href={'/'}>About</Link>
+          <Link href={'/about'}>About</Link>
         </li>
         <li className='px-4 py-2 ml-2 text-white bg-black rounded-full text-md '>
-          <Link href={'/'}>Contact</Link>
+          <Link href={'/contact'}>Contact</Link>
         </li>
       </ul>
     </motion.nav>

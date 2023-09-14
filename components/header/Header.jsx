@@ -16,7 +16,7 @@ export default function Header({ children }) {
       transition={{ duration: 0.3, ease: 'easeOut' }}
     >
        <span
-          className={`${playfair.className} text-thin text-xl md:hidden`}
+          className={`${playfair.className} text-thin text-xl md:hidden text-white`}
         >
           Markus B Almqvist
         </span>

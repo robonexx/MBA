@@ -7,7 +7,7 @@
     z-index: 1000;
             @media screen and (min-width: 768px) {
               top: calc(25% - 70px);
-              right: 1svw;
+              right: 2svw;
               left: auto;
               }
 
@@ -46,7 +46,7 @@
 }
 
 .hamburger span {
-    padding: 0.5rem 1.25rem;
+    padding: 0.25rem 1rem;
     border-radius: 25px;
     background-color: rgb(20, 20, 20);
     margin-bottom: .5rem;
@@ -54,13 +54,13 @@
     -o-transition: all 500ms ease;
     transition: all 500ms ease;
     position: relative;
+    color: #f8f8f8;
+    font-size: clamp(1rem, 1.5vw, 1.4rem);
 
     @media screen and (min-width: 768px) {
-      padding: 0.75rem 1.5rem;
+      padding: 0.5rem 1.25rem;
     }
 }
-
-
 
 
 .hamburger.active span {

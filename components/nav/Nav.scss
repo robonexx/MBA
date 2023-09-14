@@ -1,4 +1,6 @@
 nav {
+  margin: 0;
+  padding: 0;
   position: fixed;
   top: 0;
   right: 0;
@@ -53,7 +55,7 @@ nav > ul {
   nav {
     top: calc(25% - 80px);
     right: 0;
-    width: 100vw;
+    width: 100svw;
     height: 80px;
     border-radius: 0%;
     z-index: 49;
@@ -65,7 +67,7 @@ nav > ul {
 
   nav > ul {
     position: relative;
-    margin: 0 auto;
+    margin: 0;
     padding: 0 25px;
     height: 80px;
     display: flex;

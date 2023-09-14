@@ -18,12 +18,11 @@ export default function Nav({ active, setActive, children }) {
       initial='initial'
       animate='enter'
       exit='exit'
-      /*  onMouseLeave={() => setActive(false)} */
     >
       <ul className={`menu ${active ? 'open' : ''}`}>
         {' '}
         <Link
-          className={`${playfair.className} text-thin text-base md:text-2xl lg:text-3xl`}
+          className={`${playfair.className} text-thin text-base md:text-2xl lg:text-3xl text-slate-100`}
           href='/'
         >
           Markus B Almqvist

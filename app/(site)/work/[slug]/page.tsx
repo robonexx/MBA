@@ -3,6 +3,7 @@ import { PortableText } from '@portabletext/react';
 import Image from 'next/image';
 import { GiPlayButton } from 'react-icons/gi';
 import { Playfair_Display } from 'next/font/google';
+import { dummyData } from '@/constants/DummyData';
 
 const playfair = Playfair_Display({ subsets: ['latin-ext'], weight: '400' });
 
@@ -16,7 +17,8 @@ export const dynamic = 'force-dynamic';
 
 export default async function Work({ params }: Props) {
   const slug = params.slug;
-  const work = await getWork(slug);
+  /* const work = await getWork(slug); */
+  const work = dummyData.map((d) => d.slug == slug)
 
   return (
     <div className='w-full h-screen flex flex-col-reverse md:flex-row items-center justify-center text-sm box-border bg-slate-800'>

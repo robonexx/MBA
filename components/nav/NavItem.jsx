@@ -12,7 +12,7 @@ const darkergrotesque = Darker_Grotesque({
   weight: ['400', '800'],
 });
 
-const NavItem = ({ title, path, cls, id, i, active }) => {
+const NavItem = ({ title, path, cls, id, i, active, setActive }) => {
   return (
     <mt.li
       className={`${cls} ${darkergrotesque.className}`}
@@ -28,6 +28,7 @@ const NavItem = ({ title, path, cls, id, i, active }) => {
     >
       <Link
         className='nav_link'
+        onClick={() => setActive(false)}
         href={path}
         variants={scale}
         animate={active ? 'open' : 'closed'}

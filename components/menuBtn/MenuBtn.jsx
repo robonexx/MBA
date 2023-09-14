@@ -6,7 +6,6 @@ import './MenuBtn.scss';
 const MenuBtn = ({ active, setActive }) => {
   const onClickHandler = () => {
     setActive(!active);
-    console.log(active);
   };
   /* 
   const navBtn = useRef();
@@ -38,7 +37,6 @@ const MenuBtn = ({ active, setActive }) => {
     <div
       className='hamburger_wrapper'
       onClick={(e) => onClickHandler()}
-      /*  onMouseEnter={(e) => setActive(true)} */
     >
       <div className={`hamburger ${active ? 'active' : ''}`} id='hamburger'>
         <span>{active ? 'Close' : 'Menu'}</span>
