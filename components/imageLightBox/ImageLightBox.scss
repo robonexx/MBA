@@ -1,9 +1,13 @@
 .imageLightBox {
   margin: 0 auto;
-  max-width: 1200px;
+  width: 100%;
   min-height: 100vh;
   background-color: rgb(243, 243, 243);
   overflow: hidden;
+
+  @media (min-width: 768px) {
+    max-width: 1200px;
+  }
 }
 
 .imageGallery {
@@ -18,43 +22,49 @@
   column-count: 1;
   column-gap: 10px;
 
-  @media screen and (max-width: 768px) {
+  @media screen and (min-width: 768px) {
     width: 100%;
-    column-gap: 0;
+    column-gap: 10px;
   }
 }
 
 .imgWrapper {
   position: relative;
-  width: 360px;
-  max-width: 420px;
+  width: 100svw;
+  height: 368px;
+ 
   max-height: 368px;
   overflow: hidden;
   cursor: pointer;
 
-  @media screen and (max-width: 768px) {
-    width: 100%;
+  @media (min-width: 768px) {
+    width: 360px;
+    max-width: 420px;
   }
 
-  > .image-card {
-    object-fit: cover;
-    cursor: pointer;
+ .image-card {
+  filter: grayscale(1);
+    height: 100%;
+    width: 100%;
     object-fit: cover;
     object-position: center;
-  }
+    cursor: pointer;
 
-  &:hover {
-    img {
+    &:hover {
       transform: scale(1.2);
       transition: transform 1.5s ease-out;
+      object-fit: cover;
+      object-position: center;
     }
   }
 }
 
 #lightbox-img {
+  filter: grayscale(1);
   height: 80vh;
   width: 90vw;
-  object-fit: cover;
+  object-fit: contain;
+  object-position: center 25%;
   transition: all 0.4s ease-in-out;
 }
 
@@ -97,9 +107,9 @@ button:hover {
   cursor: pointer;
 }
 
-@media (min-width: 640px) {
+@media (min-width: 768px) {
   .imageGallery {
-    column-count: 1;
+    column-count: 2;
   }
 }
 

@@ -11,6 +11,7 @@ import TextHeadline from '@/components/texts/TextHeadline';
 import SingleItem from '@/components/singleitem/SingleItem';
 import SectionOneFourth from '@/components/sections/SectionOneFourthScreen';
 import PianoImg from '@/public/piano.jpg';
+import PhotoGallery from '@/public/images/photogallery.jpg';
 import PianoImg2 from '@/public/piano2.jpg';
 import Giftest from '@/public/gif_test.webp';
 import ImageGrid from '@/components/imageGrid/ImageGrid';
@@ -141,9 +142,13 @@ export default function Home() {
           </p>
         </Reveal> */}
         <div className='w-full h-2/5 relative py-80'>
+          <Link
+            href={'/mytestpage'}
+            className='absolute w-full h-full top-0 left-0 z-50 cursor-pointer pointer-events-auto'
+          />
           <Image
             alt='piano img'
-            src={PianoImg}
+            src={PhotoGallery}
             fill
             priority
             className='relative -z-0 object-cover object-center transition-all duration-1000 cursor-pointer pointer-events-auto opacity-80'

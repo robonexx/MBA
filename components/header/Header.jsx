@@ -18,7 +18,7 @@ export default function Header({ children }) {
        <span
           className={`${playfair.className} text-thin text-xl md:hidden text-white`}
         >
-          Markus B Almqvist
+         Elysian Elegance 
         </span>
       <Link href='/'>{children}</Link>
     </motion.header>

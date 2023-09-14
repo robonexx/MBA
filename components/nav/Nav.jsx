@@ -22,10 +22,10 @@ export default function Nav({ active, setActive, children }) {
       <ul className={`menu ${active ? 'open' : ''}`}>
         {' '}
         <Link
-          className={`${playfair.className} text-thin text-base md:text-2xl lg:text-3xl text-slate-100`}
+          className={`${playfair.className} text-thin text-2xl md:text-3xl lg:text-4xl text-slate-100`}
           href='/'
         >
-          Markus B Almqvist
+          Elysian Elegance 
         </Link>
         {children}
       </ul>
