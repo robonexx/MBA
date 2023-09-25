@@ -35,6 +35,13 @@ const StageItem = () => {
       transition={{ delay: 1.5, duration: 0.8 }}
     >
       <div className={styles.contentWrapper}>
+        <motion.h2
+          initial={{ y: 200 }}
+          animate={{ y: 0, opacity: 1 }}
+          transition={{ delay: 0.6, duration: 1, ease: 'easeOut' }}
+        >
+          by Anika Edström Kawaji & Robin Haghi Premiere 2022
+        </motion.h2>
         <motion.h1
           initial={{ y: -100 }}
           animate={{ y: 0, opacity: 1 }}
@@ -42,15 +49,6 @@ const StageItem = () => {
         >
           Things That Could Survive in Space
         </motion.h1>
-        <motion.h2
-          initial={{ y: 200 }}
-          animate={{ y: 0, opacity: 1 }}
-          transition={{ delay: 0.6, duration: 1, ease: 'easeOut' }}
-        >
-          by Anika Edström Kawaji & Robin Haghi
-          <br />
-          Premiere 2022
-        </motion.h2>
       </div>
       <motion.div
         className={styles.buttons}
