@@ -4,7 +4,7 @@ import Link from 'next/link';
 import { Playfair_Display } from 'next/font/google';
 /* import { getProjects, getWorks } from '@/sanity/sanity-utils'; */
 import Written from '@/components/works/Written';
-import Stage from '@/components/works/Stage';
+import StageItem from '@/components/works/StageItem';
 import SectionRow from '@/components/sections/sectionrow/SectionRow';
 import TextLeftImgRight from '@/components/sections/sectionrow/TextLeftImgRight';
 import TextHeadline from '@/components/texts/TextHeadline';
@@ -38,7 +38,7 @@ export default function Home() {
   /*  const projects = await getProjects();
   const works = await getWorks(); */
   return (
-    <main className='flex flex-col items-center bg-white text-black box-border'>
+    <main className='w-full flex flex-col bg-white text-black box-border'>
       <SectionFullScreen>
         <SectionOneFourth>
           <Link
@@ -47,7 +47,7 @@ export default function Home() {
             className='absolute w-full h-full top-0 left-0 z-50 cursor-pointer pointer-events-auto'
           />
           <motion.h1
-            className='text-4xl md:text-6xl font-thin text-center z-10
+            className='text-2xl md:text-4xl lg:text-6xl font-thin text-center z-10
             absolute top-10'
             variants={fadeIn}
             initial='initial'
@@ -62,7 +62,7 @@ export default function Home() {
             </span>
           </motion.h1>
           <motion.p
-            className='m-auto w-full lg:w-2/5 mt-3 text-xs md:text-lg text-center text-zinc-800 drop-shadow-md z-10 px-10 absolute top-24 md:top-32'
+            className='m-auto w-full lg:w-2/5 mt-3 text-xs md:text-lg text-center text-zinc-800 drop-shadow-md z-10 px-10 absolute top-28 md:top-36'
             variants={fadeInUp}
             initial='initial'
             animate='enter'
@@ -79,9 +79,9 @@ export default function Home() {
             className='absolute w-full h-full top-0 left-0 z-50 cursor-pointer pointer-events-auto'
           />
           <Reveal>
-            <p className='relative h-fit text-white font-thin text-4xl z-10'>
+            <h2 className='relative h-fit text-white font-thin text-3xl md:text-4xl z-10'>
               Written work
-            </p>
+            </h2>
           </Reveal>
           <Image
             alt='piano img'
@@ -96,7 +96,7 @@ export default function Home() {
             href='/stage'
             className='absolute w-full h-full top-0 left-0 z-50 cursor-pointer pointer-events-auto'
           />
-          <h2 className='relative h-fit text-white font-thin text-3xl lg:text-4xl z-10'>
+          <h2 className='relative h-fit text-white font-thin text-3xl md:text-4xl z-10'>
             Work for stage
           </h2>
           <Image
@@ -113,7 +113,7 @@ export default function Home() {
             className='absolute w-full h-full top-0 left-0 z-50 cursor-pointer pointer-events-auto'
           />
           <Reveal>
-            <p className='relative h-fit text-white font-thin text-4xl z-10'>
+            <p className='relative h-fit text-white font-thin text-3xl md:text-4xl z-10'>
               Works for film
             </p>
           </Reveal>
@@ -160,7 +160,7 @@ export default function Home() {
           <TextHeadline title='Written work' />
         </Reveal>
         <Reveal>
-          <h2 className='mt-24 font-thin text-gray-700 text-3xl'>
+          <h2 className='mt-24 font-thin text-gray-700 text-2xl md:text-4xl'>
             Lorem ipsum
           </h2>
         </Reveal>
@@ -186,7 +186,7 @@ export default function Home() {
           animate='enter'
           exit='exit'
         >
-          <Stage />
+          <StageItem />
         </motion.div>
       </SectionFullScreen>
 

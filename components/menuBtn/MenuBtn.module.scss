@@ -1,9 +1,8 @@
 /* ========== HAMBURGER NAV BUTTON ====================== */
 .hamburger_wrapper {
-  position: fixed;
-  top: 3vh;
-  left: auto;
-  right: 10svw;
+  position: absolute;
+  top: 6vh;
+  right: 1rem;
   width: 4rem;
   height: 4rem;
   border-radius: 50%;
@@ -11,7 +10,7 @@
   place-content: center;
   background-color: rgb(137, 87, 218);
   overflow: hidden;
-  z-index: 1001;
+  z-index: 1002;
 
   &:hover {
     /* transition: all 0.3s ease-in-out;
@@ -24,9 +23,8 @@
   @media screen and (min-width: 768px) {
     width: 6rem;
     height: 6rem;
-    top: calc(25.5% - 6rem);
-    left: auto;
-    right: 5vw;
+    top: calc(25% - 5.5rem);
+    right: 0;
   }
 
   /*  .hide {

@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import Image from 'next/image';
 import BGIMG from '@/public/Hemsida.jpg';
 import Button from '@/components/button/Button';
-import './stage.scss';
+import styles from './stageItem.module.scss';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
 import Modal from '@/components/modal/Modal';
@@ -21,32 +21,39 @@ const Listen = () => {
 
 const btnList = [{ title: 'watch' }, { title: 'listen' }, { title: 'read' }];
 
-const Stage = () => {
+const StageItem = () => {
   const [modalOpen, setModalOpen] = useState(false);
   const [currentEl, setCurrentEl] = useState(null);
 
   const close = () => setModalOpen(false);
   const open = () => setModalOpen(true);
   return (
-    <div className='stage'>
-      <div className='contentWrapper'>
+    <motion.div
+      className={styles.stage}
+      initial={{ opacity: 0, y: 1000 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ delay: 1.5, duration: 0.8 }}
+    >
+      <div className={styles.contentWrapper}>
         <motion.h1
           initial={{ y: -100 }}
-          animate={{ y: 1, opacity: 1 }}
+          animate={{ y: 0, opacity: 1 }}
           transition={{ delay: 0.6, duration: 0.3, ease: 'easeOut' }}
         >
           Things That Could Survive in Space
         </motion.h1>
         <motion.h2
           initial={{ y: 200 }}
-          animate={{ y: 1, opacity: 1 }}
+          animate={{ y: 0, opacity: 1 }}
           transition={{ delay: 0.6, duration: 1, ease: 'easeOut' }}
         >
-          by Anika Edström Kawaji & Robin Haghi Premiere 2022
+          by Anika Edström Kawaji & Robin Haghi
+          <br />
+          Premiere 2022
         </motion.h2>
       </div>
       <motion.div
-        className='buttons'
+        className={styles.buttons}
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 0.6, duration: 0.3, ease: 'easeOut' }}
@@ -81,7 +88,7 @@ const Stage = () => {
       )}
 
       <motion.div
-        className='bgWrapper'
+        className={styles.bgWrapper}
         initial={{}}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.4, ease: 'easeOut' }}
@@ -91,15 +98,12 @@ const Stage = () => {
           src={BGIMG}
           fill
           priority
-          className='img'
+          className={styles.img}
         />
       </motion.div>
-      <div className='overlay'></div>
-      <Link href='#' className='linkToAll'>
-        See all stage work
-      </Link>
-    </div>
+      <div className={styles.overlay}></div>
+    </motion.div>
   );
 };
 
-export default Stage;
+export default StageItem;

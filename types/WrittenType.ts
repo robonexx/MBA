@@ -1,6 +1,6 @@
 import { PortableTextBlock } from "sanity";
 
-export type WorkTypes = {
+export type WrittenTypes = {
     _id: string;
     createdAt: Date;
     title: string;

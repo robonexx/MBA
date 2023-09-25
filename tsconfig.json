@@ -23,6 +23,15 @@
       "@/*": ["./*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "app/(site)/layout.jsx", "app/(site)/page.jsx", "components/singleitem/SingleItem.jsx", "app/(site)/stage/page.jsx"],
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    ".next/types/**/*.ts",
+    "app/(site)/layout.jsx",
+    "app/(site)/page.jsx",
+    "components/singleitem/SingleItem.jsx",
+    "app/(site)/worksforstage/page.jsx"
+  ],
   "exclude": ["node_modules"]
 }

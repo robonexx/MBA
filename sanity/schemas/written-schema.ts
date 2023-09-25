@@ -1,7 +1,7 @@
 const work = {
-    name: 'work',
+    name: 'written',
 
-    title: 'Work',
+    title: 'Written',
 
     type: 'document',
 

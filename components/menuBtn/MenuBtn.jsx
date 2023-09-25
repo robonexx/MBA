@@ -1,7 +1,7 @@
 'use client';
 import React from 'react';
 // styles
-import './MenuBtn.scss';
+import styles from './MenuBtn.module.scss';
 
 import { motion, AnimatePresence } from 'framer-motion';
 
@@ -38,7 +38,7 @@ const MenuBtn = ({ active, setActive }) => {
   return (
     <AnimatePresence mode='wait'>
       <motion.div
-        className='hamburger_wrapper'
+        className={styles.hamburger_wrapper}
         onClick={(e) => onClickHandler()}
         whileHover={{
           translateY: -2,
@@ -52,7 +52,7 @@ const MenuBtn = ({ active, setActive }) => {
           backgroundColor: 'rgb(137, 87, 218)';
         }}
       >
-        <div className={`hamburger ${active ? 'active' : ''}`} id='hamburger'>
+        <div className={`${styles.hamburger} ${active ? `${styles.active}` : ''}`} id='hamburger'>
           <span>{active ? 'Close' : 'Menu'}</span>
         </div>
       </motion.div>

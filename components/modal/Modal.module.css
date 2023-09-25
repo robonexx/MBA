@@ -5,8 +5,9 @@
   margin: 0;
   border-radius: 12px;
   display: flex;
-  flex-direction: column;
   align-items: center;
+  justify-content: center;
+  flex-flow: wrap;
 }
 
 .glass {
@@ -17,22 +18,30 @@
 
 .close_btn {
   position: absolute;
+  top: 25%;
+  left: 80%;
+  right: 0;
+  width: 4rem;
+  height: 4rem;
   display: flex;
   align-items: center;
   justify-content: center;
   outline: none;
   border: none;
-  top: 1rem;
-  right: 1rem;
   padding: 0.25rem;
-  background: rgba(0, 0, 0, 0.225);
+  background: rgb(0, 0, 0);
   color: rgba(192, 188, 188, 0.952);
   font-size: 2rem;
   border-radius: 50%;
   filter: drop-shadow(0 4px 3px rgba(0, 0, 0, 0.55));
   box-shadow: inset -2px 2px 2px rgba(0, 0, 0, 0.4);
-  z-index: 100;
+  z-index: 1100;
   cursor: pointer;
+
+  @media screen and (min-width: 768px) {
+    top: 30%;
+    left: 75%;
+  }
 }
 
 @media screen and (min-witdh: 768px) {
