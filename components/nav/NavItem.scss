@@ -1,84 +1,71 @@
 .nav_item {
-    height: unset;
-    position: relative;
-    padding: 1rem 1.25rem;
-    display: grid;
-    place-content: center;   
-    text-transform: capitalize; 
+  position: relative;
+  padding: 1rem 1.25rem;
+  text-transform: capitalize;
+  margin: 0.5rem 20% 0.5rem auto;
+  display: grid;
+  place-content: center;
 
-    &:first-of-type {
-        margin-top: 2rem;
-
-        @media screen and (min-width: 768px) {
-            margin-top: 0;
-          }
-    }
-
-
-    &:last-of-type {
-        margin-right: 0rem;
-
-        @media screen and (min-width: 768px) {
-            margin-right: 5rem;
-            padding: 1rem;
-          }
-    }
-
-    .nav_link {   
-        margin: 0;
-        padding: 0.25rem;
-        position: relative;
-        width: 100%;
-        height: 100%;   
-        text-decoration: none;
-        color: lightgray;
-        font-size: clamp(1.5rem, 1.5vw, 1.8rem);
-
-        
   @media screen and (min-width: 768px) {
-    padding: 1rem 0.5rem;
-  }        
-
-
-  &::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;           
-    width: 0%;
-    height: 25%;
-   /*  background-color: white; */
-    z-index: -1;
-}
-&::before {
-    content: '';
-    position: absolute;
-    bottom: 25%;
-    left: 10%;           
-    width: 0%;
-    height: 2%;
-    background-color: #fafafa;
-    z-index: -1;
-}
+    margin: 0;
+    height: 100%;
+    width: 100%;   
 }
 
+  &:first-of-type {
+    margin-top: 4rem;
 
-&:hover {
-.nav_link {
-    color: #fafafa;
-    z-index: 10;
-}
-.nav_link::after {
-    width: 100%;
-    cursor: pointer;
-    transition: width 0.4s ease-in-out;
-}
+    @media screen and (min-width: 768px) {
+        margin: 0;
+        height: 100%;
+        width: 100%;
+        
+    }
+  }
 
-.nav_link::before {
-    width: 80%;
-    cursor: pointer;
-    transition: width 0.4s ease-in-out;
-}
+  &:last-of-type {
+    
+    @media screen and (min-width: 768px) {
+      margin-right: 15vw;
+    }
+  }
 
-}
+  .nav_link {
+    margin: 0;
+    display: inline-block;
+    position: relative;
+    text-decoration: none;
+    color: lightgray;
+    font-size: clamp(1.5rem, 1.5vw, 1.8rem);
+
+
+    @media screen and (min-width: 768px) {
+      padding: 1rem 0.5rem;
+    }
+
+    &::before {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      width: 0%;
+      height: 2px;
+      background-color: #fafafa;
+      transition: width 0.25s ease-out;
+
+      @media screen and (min-width: 768px) {
+        bottom: 20%;
+      }
+    }
+  }
+
+  &:hover {
+    .nav_link {
+      &::before {
+        width: 100%;
+        right: auto;
+        left: 0;
+      }
+    }
+  }
 }

@@ -38,7 +38,7 @@ export default function Home() {
   /*  const projects = await getProjects();
   const works = await getWorks(); */
   return (
-    <main className='min-h-full w-full flex flex-col items-center bg-white text-black box-border mt-20 md:mt-0'>
+    <main className='flex flex-col items-center bg-white text-black box-border'>
       <SectionFullScreen>
         <SectionOneFourth>
           <Link
@@ -96,9 +96,9 @@ export default function Home() {
             href='/stage'
             className='absolute w-full h-full top-0 left-0 z-50 cursor-pointer pointer-events-auto'
           />
-          <p className='relative h-fit text-white font-thin text-4xl z-10'>
+          <h2 className='relative h-fit text-white font-thin text-3xl lg:text-4xl z-10'>
             Work for stage
-          </p>
+          </h2>
           <Image
             alt='piano img'
             src={PianoImg2}

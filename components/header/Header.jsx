@@ -15,11 +15,12 @@ export default function Header({ children }) {
       animate={{ opacity: 1 }}
       transition={{ duration: 0.3, ease: 'easeOut' }}
     >
-       <span
-          className={`${playfair.className} text-thin text-xl md:hidden text-white`}
-        >
-         Elysian Elegance 
-        </span>
+      <Link
+        href={'/'}
+        className={`${playfair.className} text-thin text-xl md:hidden text-white`}
+      >
+        Markus B. Almqvist
+      </Link>
       <Link href='/'>{children}</Link>
     </motion.header>
   );
