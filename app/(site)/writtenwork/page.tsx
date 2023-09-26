@@ -1,12 +1,18 @@
 'use client'
-import React from 'react';
+import React, {useState} from 'react';
 import Image from 'next/image';
 import { motion } from 'framer-motion'
 import IMG from '@/public/images/markuspiano.jpg';
-
+import WrittenList from '@/components/works/WrittenList';
 import styles from './written.module.scss'
 
 const WrittenWork = () => {
+  const [show, setShow] = useState(false);
+
+  const handleShow = () => {
+    setShow((prev) => !prev);
+  };
+
   return (
     <motion.div
     className={styles.written}
@@ -34,9 +40,10 @@ const WrittenWork = () => {
       <Image src={IMG} alt='stage work' fill></Image>
     </div>
     <div className={styles.overlay}></div>
-    <button className={styles.fullList}>
+    <button className={styles.fullList} onClick={handleShow}>
       see full list of works for stage
       </button>
+      {show ? <WrittenList /> : <span></span>}
       </motion.div>
   );
 };

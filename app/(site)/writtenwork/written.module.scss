@@ -1,5 +1,6 @@
 .written {
     position: relative;
+    width: 100%;
     min-height: 100vh;
     display: block;
     
@@ -25,10 +26,11 @@
 
 .headline {
     position: absolute;
+    width: 50vw;
     top: calc(25% - 5.5rem);
-    left: 50vw;
+    left: 50%;
     right: auto;
-    transform: translateX(-25%);
+    transform: translateX(-50%);
     z-index: 30;
     font-size: clamp(26px, 5vw, 48px);
     font-weight:200;

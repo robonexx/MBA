@@ -3,14 +3,23 @@ import React, { useState } from 'react';
 import Image from 'next/image';
 import IMG from '@/public/images/stageimage.jpg';
 import { motion } from 'framer-motion';
+import { getStages } from '@/sanity/sanity-utils';
 
 // styles
 import styles from './stage.module.scss';
 import StageItem from '@/components/works/StageItem';
 import StageList from '@/components/works/StageList';
 
+export const revalidate = 20;
+export const fetchCache = 'force-no-store';
+export const dynamic = 'force-dynamic';
+
+
 const WorksForStage = () => {
   const [show, setShow] = useState(false);
+
+  const stages = getStages()
+
 
   const handleShow = () => {
     setShow((prev) => !prev);

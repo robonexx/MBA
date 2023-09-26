@@ -2,7 +2,6 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { Playfair_Display } from 'next/font/google';
-/* import { getProjects, getWorks } from '@/sanity/sanity-utils'; */
 import Written from '@/components/works/Written';
 import StageItem from '@/components/works/StageItem';
 import SectionRow from '@/components/sections/sectionrow/SectionRow';
@@ -75,7 +74,7 @@ export default function Home() {
         </SectionOneFourth>
         <SectionOneFourth>
           <Link
-            href='/written'
+            href='/writtenwork'
             className='absolute w-full h-full top-0 left-0 z-50 cursor-pointer pointer-events-auto'
           />
           <Reveal>
@@ -93,7 +92,7 @@ export default function Home() {
         </SectionOneFourth>
         <SectionOneFourth>
           <Link
-            href='/stage'
+            href='/worksforstage'
             className='absolute w-full h-full top-0 left-0 z-50 cursor-pointer pointer-events-auto'
           />
           <h2 className='relative h-fit text-white font-thin text-3xl md:text-4xl z-10'>
@@ -109,7 +108,7 @@ export default function Home() {
         </SectionOneFourth>
         <SectionOneFourth>
           <Link
-            href='/film'
+            href='/worksforfilm'
             className='absolute w-full h-full top-0 left-0 z-50 cursor-pointer pointer-events-auto'
           />
           <Reveal>

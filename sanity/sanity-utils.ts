@@ -1,7 +1,8 @@
 import { groq } from "next-sanity";
-import { FilmTypes } from "@/types/FilmType";
-import { WrittenTypes } from "@/types/WrittenType";
+import { FilmTypes } from "@/sanity/types/FilmType";
+import { WrittenTypes } from "@/sanity/types/WrittenType";
 import {client} from './lib/client'
+import { StageTypes } from "./types/StageType";
 
 export async function getWorks(): Promise<WrittenTypes[]> {
   return await client.fetch(
@@ -57,7 +58,7 @@ export async function getFilms(): Promise<FilmTypes[]> {
       "image": image.asset->url,
       producers,
       description,
-      links?,
+      link?,
       preview,
     }`
   )
@@ -73,14 +74,14 @@ export async function getFilm(slug: string): Promise<FilmTypes> {
       "image": image.asset->url,
       producers,
       description,
-      links?,
+      link?,
       preview,
     }`,
     { slug }
   )
 }
 
-export async function getStages(): Promise<FilmTypes[]> {
+export async function getStages(): Promise<StageTypes[]> {
   return await client.fetch(
     groq`*[_type == "stage"]{
       _id,
@@ -96,7 +97,7 @@ export async function getStages(): Promise<FilmTypes[]> {
   )
 }
 
-export async function getStage(slug: string): Promise<FilmTypes> {
+export async function getStage(slug: string): Promise<StageTypes> {
   return await client.fetch(
     groq`*[_type == "stage" && slug.current == $slug][0]{
       _id,
