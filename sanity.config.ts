@@ -1,11 +1,12 @@
 import { defineConfig } from 'sanity'
 import { deskTool } from 'sanity/desk'
+import { dataset, projectId, } from './sanity/env'
 import schemas from './sanity/schemas'
 
 
 const config = defineConfig<any>({
-    projectId: "hy2vked2",
-    dataset: "production",
+    projectId,
+    dataset,
     title: "mba",
     basePath: "/admin",
     apiVersion: "2023-08-12",

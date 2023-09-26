@@ -1,11 +1,11 @@
-import { createClient, groq } from "next-sanity";
-import { Project } from "@/types/Project";
+import { groq } from "next-sanity";
+import { FilmTypes } from "@/types/FilmType";
 import { WrittenTypes } from "@/types/WrittenType";
-import clientConfig from './config/clientconfig'
+import {client} from './lib/client'
 
 export async function getWorks(): Promise<WrittenTypes[]> {
-  return createClient(clientConfig).fetch(
-    groq`*[_type == "work"]{
+  return await client.fetch(
+    groq`*[_type == "written"]{
       _id,
       _createdAt,
       title,
@@ -25,8 +25,8 @@ export async function getWorks(): Promise<WrittenTypes[]> {
 }
 
 export async function getWork(slug: string): Promise<WrittenTypes> {
-  return createClient(clientConfig).fetch(
-    groq`*[_type == "work" && slug.current == $slug][0]{
+  return await client.fetch(
+    groq`*[_type == "written" && slug.current == $slug][0]{
       _id,
       _createdAt,
       title,
@@ -47,30 +47,67 @@ export async function getWork(slug: string): Promise<WrittenTypes> {
 }
 
 
-export async function getProjects(): Promise<Project[]> {
-  return createClient(clientConfig).fetch(
-    groq`*[_type == "project"]{
+export async function getFilms(): Promise<FilmTypes[]> {
+  return await client.fetch(
+    groq`*[_type == "film"]{
       _id,
-      _createdAt,
-      name,
+      createdAt,
+      title,
       "slug": slug.current,
       "image": image.asset->url,
-      url,
-      content
+      producers,
+      description,
+      links?,
+      preview,
     }`
   )
 }
 
-export async function getProject(slug: string): Promise<Project> {
-  return createClient(clientConfig).fetch(
-    groq`*[_type == "project" && slug.current == $slug][0]{
+export async function getFilm(slug: string): Promise<FilmTypes> {
+  return await client.fetch(
+    groq`*[_type == "film" && slug.current == $slug][0]{
       _id,
-      _createdAt,
-      name,
+      createdAt,
+      title,
       "slug": slug.current,
       "image": image.asset->url,
-      url,
-      content
+      producers,
+      description,
+      links?,
+      preview,
+    }`,
+    { slug }
+  )
+}
+
+export async function getStages(): Promise<FilmTypes[]> {
+  return await client.fetch(
+    groq`*[_type == "stage"]{
+      _id,
+      createdAt,
+      title,
+      "slug": slug.current,
+      "image": image.asset->url,
+      producers,
+      description,
+      links?,
+      preview,
+    }`
+  )
+}
+
+export async function getStage(slug: string): Promise<FilmTypes> {
+  return await client.fetch(
+    groq`*[_type == "stage" && slug.current == $slug][0]{
+      _id,
+      createdAt,
+      title,
+      "slug": slug.current,
+      "image": image.asset->url,
+      producers,
+      description,
+      links?,
+      preview,
     }`,
     { slug }
   )

@@ -1,15 +1,13 @@
 const work = {
     name: 'written',
-
     title: 'Written',
-
     type: 'document',
-
     fields:[
         {
             name: "title",
             title: "Title",
             type: "string",
+            validation: (rule: { required: () => any }) => rule.required(),
         },
         {
             name: "slug",
@@ -17,7 +15,8 @@ const work = {
             type: "slug",
             options: {
                 source: 'title'
-            }
+            },
+            validation: (rule: { required: () => any }) => rule.required(),
         },
         {
             name: "author",
