@@ -4,6 +4,8 @@ import Image from 'next/image';
 /* import { getWorks } from '@/sanity/sanity-utils'; */
 import { dummyDataWritten } from 'constants/DummyData';
 
+import styles from './itemsList.module.scss';
+
 export const revalidate = 20;
 export const fetchCache = 'force-no-store';
 export const dynamic = 'force-dynamic';
@@ -11,10 +13,13 @@ export const dynamic = 'force-dynamic';
 const ItemsList = async () => {
   const works = await dummyDataWritten;
   return (
-    <div className='mt-10 mb-10 px-5 grid md:grid-cols-2 gap-2'>
+    <div className={styles.wrapper}>
       {works ? (
         works.slice(0, 4).map((work) => (
-          <Link
+          <div key={work._id || work.id}>
+            
+            </div>
+        /*   <Link
             href={`/work/${work.slug}`}
             key={work._id || work.id}
             className='relative h-72 w-full border-2 border-transparent p-1 shadow-lg'
@@ -48,7 +53,7 @@ const ItemsList = async () => {
               </p>
             </section>
           </Link>
-        ))
+        )) */
       ) : (
         <div>Loading data...</div>
       )}

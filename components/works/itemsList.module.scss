@@ -1,0 +1,14 @@
+.wrapper {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(calc(50% - 8px), 1fr));
+    grid-gap: 12px; /* Adjust the grid gap as needed */
+    padding: 0 8px 8px;
+  
+    @media (min-width: 768px) {
+      grid-template-columns: repeat(auto-fill, minmax(calc(33.333% - 8px), 1fr));
+    }
+  
+    @media (min-width: 1024px) {
+      grid-template-columns: repeat(auto-fill, minmax(calc(25% - 8px), 1fr));
+    }
+  }

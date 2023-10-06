@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import Image from 'next/image';
 import IMG from '/public/images/stageimage.jpg';
 import { motion } from 'framer-motion';
-import { getStages } from 'sanity/sanity-utils';
+import { getStages } from '@/sanity/sanity-utils';
 
 // styles
 import styles from './stage.module.scss';

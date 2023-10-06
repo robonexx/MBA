@@ -1,4 +1,4 @@
-import { getWork } from 'sanity/sanity-utils';
+import { getWork } from '@/sanity/sanity-utils';
 import { PortableText } from '@portabletext/react';
 import Image from 'next/image';
 import { GiPlayButton } from 'react-icons/gi';
@@ -18,7 +18,7 @@ export const dynamic = 'force-dynamic';
 export default async function Work({ params }: Props) {
   const slug = params.slug;
   const work = await getWork(slug);
-/*   const work = dummyData.map((d) => d.slug == slug) */
+  /*   const work = dummyData.map((d) => d.slug == slug) */
 
   return (
     <div className='w-full h-screen flex flex-col-reverse md:flex-row items-center justify-center text-sm box-border bg-slate-800'>

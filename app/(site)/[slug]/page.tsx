@@ -1,4 +1,4 @@
-import { getWork } from 'sanity/sanity-utils';
+import { getWork } from '@/sanity/sanity-utils';
 import { PortableText } from '@portabletext/react';
 import Image from 'next/image';
 import { GiPlayButton } from 'react-icons/gi';

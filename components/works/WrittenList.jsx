@@ -1,8 +1,7 @@
-import React, {useEffect, useState} from 'react';
+import React, { useEffect, useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import { getWorks } from 'sanity/sanity-utils';
-/* import { dummyData } from '@/constants/DummyData'; */
+import { getWorks } from '@/sanity/sanity-utils';
 
 import { motion } from 'framer-motion';
 
@@ -11,18 +10,17 @@ export const fetchCache = 'force-no-store';
 export const dynamic = 'force-dynamic';
 
 const WrittenList = () => {
-    const [works, setWorks] = useState([])
-    /* const works = dummyData; */
-    
-    async function getWrittenWorks(){
-        const w = await getWorks();
-        setWorks(w)
-    }
-   
-    
-    useEffect(() => {
-        getWrittenWorks()
-    }, [])
+  const [works, setWorks] = useState([]);
+  /* const works = dummyData; */
+
+  async function getWrittenWorks() {
+    const w = await getWorks();
+    setWorks(w);
+  }
+
+  useEffect(() => {
+    getWrittenWorks();
+  }, []);
   return (
     <motion.div className='absolute top-0 left-0 w-full h-screen mt-10 mb-10 px-5 grid md:grid-cols-2 gap-10 z-50'>
       {works ? (

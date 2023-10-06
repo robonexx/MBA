@@ -1,0 +1,57 @@
+.work_card {
+    position: relative;
+    width: 100%;
+    border: 2px solid transparent;
+    padding: 1rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: border-color 0.3s ease, transform 0.3s ease;
+  
+    &:hover {
+      border-color: #3182ce;
+      transform: scale(1.05);
+    }
+  
+    .image_container {
+      position: relative;
+      overflow: hidden;
+      height: 0;
+      padding-bottom: 60%; /* Adjust the aspect ratio as needed */
+  
+      .image {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.7s ease;
+  
+        &:hover {
+          transform: scale(1.05);
+        }
+      }
+    }
+  
+    .content {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      padding: 1rem;
+      background-color: rgba(39, 48, 78, 0.5); /* Adjust the background color and opacity */
+      color: #fff;
+  
+      .title {
+        font-weight: bold;
+        font-size: 1.5rem;
+        background: linear-gradient(to right, #4b5563, #1a202c); /* Adjust the gradient colors */
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+        margin-bottom: 0.5rem;
+      }
+  
+      .info {
+        font-size: 0.9rem;
+        margin-bottom: 0.3rem;
+      }
+    }
+  }
+  
