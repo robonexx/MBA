@@ -3,7 +3,7 @@ import Image from 'next/image';
 
 const TextRightImgLeft = ({ children, imgSrc }) => {
   return (
-    <div className='h-full w-full flex flex-col md:flex-row justify-center items-center'>
+    <div className='h-full w-full flex flex-col justify-center md:flex-row md:justify-between items-center'>
        <div className='w-full h-96 relative z-1 grid place-content-center xs:order-1 p-20 md:p-20 lg:p-40'>
         <Image
           className='object-cover'

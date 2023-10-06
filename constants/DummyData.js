@@ -4,7 +4,7 @@ import IMG3 from '@/public/images/mb_film_1.png';
 import IMG4 from '@/public/piano.jpg';
 import IMG5 from '@/public/images/testimage.jpg';
 
-export const dummyData = [
+export const dummyDataWritten = [
   {
     author: 'Markus B. Almqvist',
     title: 'Beings',

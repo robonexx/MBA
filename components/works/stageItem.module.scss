@@ -1,54 +1,49 @@
 .stage {
   position: relative;
   width: 100%;
-  height: 100svh;
+  height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
 
-  /*   .modalContent {
+  .modalContent {
     position: relative;
     max-width: 1200px;
     width: 100%;
     display: grid;
     place-content: center;
     z-index: 1;
-  } */
+  }
 
   .contentWrapper {
-    margin-top: 250px;
-    position: relative;
-    max-width: 1200px;
-    width: 100%;
-    min-height: 30vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-evenly;
-    z-index: 1;
+        position: relative;
+        max-width: 1200px;
+        width: 100%;
+        display: grid;
+        place-content: center;
+        z-index: 1;
 
-    h2 {
-      margin-bottom: 2rem;
-      font-size: clamp(1.25rem, 1.5vw, 2rem);
-      color: white;
-      font-weight: 400;
-      width: 100%;
-      text-align: center;
-      text-shadow: 1px 1px 2px rgb(20, 20, 20);
-      opacity: 0;
-      text-align: left;
-    }
+        h1 {
+          font-size: clamp(2rem, 3vw, 5rem);
+          margin: 1rem auto;
+          color: white;
+          font-weight: 600;
+          text-align: center;
+          text-shadow: 3px 4px 7px rgba(36, 35, 31, 0.8);
+          opacity: 0;
+        }
 
-    h1 {
-      margin: 2rem 0;
-      font-size: clamp(2rem, 3vw, 5rem);
-      color: white;
-      font-weight: 600;
-      text-align: center;
-      text-shadow: 3px 4px 7px rgba(36, 35, 31, 0.8);
-      opacity: 0;
-    }
+        h2 {
+          font-size: clamp(1.25rem, 2vw, 2.25rem);
+          margin: 1rem auto;
+          color: white;
+          font-weight: 400;
+          max-width: 80%;
+          text-align: center;
+          text-shadow: 1px 1px 2px rgb(20, 20, 20);
+          opacity: 0
+        }
   }
 
   .bgWrapper {
@@ -61,8 +56,8 @@
     opacity: 0;
 
     .img {
-      object-fit: cover;
-      object-position: center;
+        object-fit: cover;
+        object-position: center;
     }
   }
 
@@ -73,7 +68,7 @@
     height: 100%;
     left: 0;
     top: 0;
-    background-color: rgba(0, 0, 0, 0.325);
+    background-color: rgba(0,0,0,.325);
   }
 
   .buttons {
