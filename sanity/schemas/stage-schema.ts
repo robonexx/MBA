@@ -24,10 +24,8 @@ const stage = {
         {
             name: 'producers',
             title: 'Producers',
-            type: 'array',
-            description: 'Who did the piece',
-            of: [{ type: 'block' }],
-            validation: false,
+            description: 'Producers of the stage piece',
+            type: 'string',
         },
         {
             name: 'description',
