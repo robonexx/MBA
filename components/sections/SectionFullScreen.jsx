@@ -5,7 +5,7 @@ import styles from './sectionFullScreen.module.scss'
 
 const SectionFullScreen = ({ children }) => {
   return (
-    <motion.div
+    <motion.section
       className={styles.fullscreen}
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
@@ -15,7 +15,7 @@ const SectionFullScreen = ({ children }) => {
       }}
     >
       {children}
-    </motion.div>
+    </motion.section>
   );
 };
 

@@ -14,7 +14,7 @@ body {
 
 :root {
   --black: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
+  --background-start-rgb: 12, 12, 12;
   --white: 255, 255, 255;
 }
 
@@ -30,6 +30,7 @@ body {
   height: 100%;
   width: 100vw;
   color: rgb(var(--black));
-  background: linear-gradient(to bottom, rgb(var(--white))) rgb(var(--white));
+  background: linear-gradient(to bottom, rgb(var(--black)))
+    rgb(var(--background-start-rgb));
   overflow-x: hidden;
 }

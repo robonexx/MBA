@@ -19,6 +19,8 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { fadeIn, fadeInUp } from 'components/animations/Animations';
 import { Reveal } from 'components/animations/reveal/Reveal';
 
+import styles from './homepage.module.scss';
+
 const playfair = Playfair_Display({ subsets: ['latin-ext'], weight: '400' });
 
 const testData = {
@@ -37,7 +39,7 @@ export default function Home() {
   /*  const projects = await getProjects();
   const works = await getWorks(); */
   return (
-    <main className='w-full flex flex-col bg-white text-black box-border'>
+    <main className={styles.homepage}>
       <SectionFullScreen>
         <SectionOneFourth>
           <Link
@@ -92,6 +94,9 @@ export default function Home() {
             src={StageImg}
             fill
             priority
+            sizes='(max-width: 768px) 100vw,
+              (max-width: 1200px) 50vw,
+              33vw'
             className='absolute left-0 top-0 -z-0 object-cover object-center group-hover:scale-110 transition-all duration-1000 cursor-pointer pointer-events-auto'
           />
         </SectionOneFourth>
@@ -110,26 +115,15 @@ export default function Home() {
             src={VidGif}
             fill
             priority
+            sizes='(max-width: 768px) 100vw,
+              (max-width: 1200px) 50vw,
+              33vw'
             className='absolute left-0 top-0 -z-0 object-cover object-center group-hover:scale-110 transition-all duration-1000 cursor-pointer pointer-events-auto'
           />
         </SectionOneFourth>
       </SectionFullScreen>
       <SectionFullScreen>
-        {/*  <Reveal>
-          <h1 className='mt-20 text-4xl md:text-6xl font-thin text-center'>
-            <span
-              className={`bg-gradient-to-r from-orange-400 via-yellow-500 to-red-600 bg-clip-text text-transparent ${playfair.className}`}
-            >
-              {' '}
-              Markus Bertilson
-            </span>
-          </h1>
-          <p className='mt-3 text-xl text-center text-gray-600'>
-            Award-winning composer based in Stockholm, Sweden. Writing music for
-            ensembles, stage productions and film
-          </p>
-        </Reveal> */}
-        <div className='w-full h-full relative py-80'>
+        <div className={styles.container}>
           <Link
             href={'/mytestpage'}
             className='absolute w-full h-full top-0 left-0 z-50 cursor-pointer pointer-events-auto'
@@ -139,35 +133,43 @@ export default function Home() {
             src={PhotoGallery}
             fill
             priority
+            sizes='(max-width: 768px) 100vw,
+              (max-width: 1200px) 50vw,
+              33vw'
             className='relative -z-0 object-cover object-center transition-all duration-1000 cursor-pointer pointer-events-auto opacity-80'
           />
         </div>
       </SectionFullScreen>
-      <div className='w-screen h-full'>
+      <SectionFullScreen>
+        <div className='w-screen h-full'>
+          <Reveal>
+            <TextHeadline title='Written work' />
+          </Reveal>
+          <Reveal>
+            <h2 className='mt-24 font-thin text-gray-700 text-2xl md:text-4xl'>
+              Lorem ipsum
+            </h2>
+          </Reveal>
+          <motion.div
+            variants={fadeIn}
+            initial='initial'
+            animate='enter'
+            exit='exit'
+          >
+            <ItemsList />
+          </motion.div>
+        </div>
+      </SectionFullScreen>
+      <div className={styles.container}>
         <Reveal>
-          <TextHeadline title='Written work' />
+          <TextHeadline title='Stage' />
         </Reveal>
         <Reveal>
-          <h2 className='mt-24 font-thin text-gray-700 text-2xl md:text-4xl'>
-            Lorem ipsum
+          <h2 className='mt-24 font-thin text-white text-3xl'>
+            My work for stage art
           </h2>
         </Reveal>
-        <motion.div
-          variants={fadeIn}
-          initial='initial'
-          animate='enter'
-          exit='exit'
-        >
-          <ItemsList />
-        </motion.div>
       </div>
-
-      <Reveal>
-        <TextHeadline title='Stage' />
-      </Reveal>
-      <Reveal>
-        <h2 className='mt-24 font-thin text-white text-3xl'>Lorem ipsum</h2>
-      </Reveal>
       <SectionFullScreen>
         <motion.div
           variants={fadeIn}
@@ -178,8 +180,6 @@ export default function Home() {
           <StageItem />
         </motion.div>
       </SectionFullScreen>
-
-      <Reveal></Reveal>
       <SectionFullScreen>
         <SectionRow>
           <TextLeftImgRight imgSrc={PianoImg} title='written work'>
@@ -187,7 +187,9 @@ export default function Home() {
           </TextLeftImgRight>
         </SectionRow>
       </SectionFullScreen>
-      <ImageGrid />
+      <SectionFullScreen>
+        <ImageGrid />
+      </SectionFullScreen>
     </main>
   );
 }

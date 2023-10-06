@@ -25,7 +25,10 @@ const Written = async () => {
                   src={work?.image}
                   alt={work.title}
                   fill
-                  priority
+                            priority
+                            sizes="(max-width: 768px) 100vw,
+              (max-width: 1200px) 50vw,
+              33vw"
                   className='object-cover hover:scale-105 transition duration-700'
                 />
               </div>

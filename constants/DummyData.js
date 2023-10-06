@@ -17,7 +17,7 @@ export const dummyDataWritten = [
       'Premiere January 2023 in Lund, Sweden, performed by Robert Bennesh',
     score: 'view score',
     songUrl: 'https://www.youtube.com/watch?v=B-4QThvO-8Q',
-    id: 1,
+    _id: 1,
     image: IMG1,
   },
   {
@@ -32,7 +32,7 @@ export const dummyDataWritten = [
       'Premiere in June 2024 at the Sydney Opera House, performed by the Sydney Chamber Ensemble',
     score: 'view score',
     songUrl: 'play',
-    id: 2,
+    _id: 2,
     image: IMG2,
   },
   {
@@ -47,7 +47,7 @@ export const dummyDataWritten = [
       'Premiere in November 2022 at the Royal Albert Hall, London, performed by the London Philharmonic Orchestra',
     score: 'view score',
     songUrl: 'play',
-    id: 3,
+    _id: 3,
     image: IMG3,
   },
   {
@@ -62,7 +62,7 @@ export const dummyDataWritten = [
       'Premiere in July 2023 at the Carnegie Hall, New York City, performed by the renowned pianist Sarah Walker',
     score: 'view score',
     songUrl: 'play',
-    id: 4,
+    _id: 4,
     image: IMG4,
   },
   {
@@ -77,7 +77,7 @@ export const dummyDataWritten = [
       'Premiere in April 2025 at the JazzFest City Festival, performed by the Daniel Martin Jazz Ensemble',
     score: 'view score',
     songUrl: 'play',
-    id: 5,
+    _id: 5,
     image: IMG5,
   },
 ];
