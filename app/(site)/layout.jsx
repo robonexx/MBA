@@ -4,11 +4,11 @@ import { useRouter } from 'next/router';
 import { AnimatePresence } from 'framer-motion';
 import '@/app/globals.css';
 import { Inter } from 'next/font/google';
-import Header from '@/components/header/Header';
-import MenuBtn from '@/components/menuBtn/MenuBtn';
-import Nav from '@/components/nav/Nav';
-import NavItem from '@/components/nav/NavItem';
-import { navData } from '@/constants/NavData';
+import Header from 'components/header/Header';
+import MenuBtn from 'components/menuBtn/MenuBtn';
+import Nav from 'components/nav/Nav';
+import NavItem from 'components/nav/NavItem';
+import { navData } from 'constants/NavData';
 
 const inter = Inter({ subsets: ['latin'] });
 

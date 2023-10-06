@@ -19,8 +19,11 @@
         "name": "next"
       }
     ],
+    "baseUrl": ".",
     "paths": {
-      "@/*": ["./*"]
+      "@/components": ["components/*"],
+      "@/sanity": ["sanity/*"],
+      "@/constants": ["constants/*"]
     }
   },
   "include": [

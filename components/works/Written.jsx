@@ -2,7 +2,7 @@ import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 /* import { getWorks } from '@/sanity/sanity-utils'; */
-import { dummyDataWritten } from '@/constants/DummyData';
+import { dummyDataWritten } from 'constants/DummyData';
 
 export const revalidate = 20;
 export const fetchCache = 'force-no-store';
@@ -11,7 +11,7 @@ export const dynamic = 'force-dynamic';
 const Written = async () => {
   const works = await dummyDataWritten;
   return (
-    <div className='mt-10 mb-10 px-5 grid md:grid-cols-2 gap-10'>
+    <div className='mt-10 mb-10 px-5 grid md:grid-cols-2 gap-2'>
       {works ? (
         works.map((work) => (
           <Link

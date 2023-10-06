@@ -1,6 +1,6 @@
 import { groq } from "next-sanity";
-import { FilmTypes } from "@/sanity/types/FilmType";
-import { WrittenTypes } from "@/sanity/types/WrittenType";
+import { FilmTypes } from "sanity/types/FilmType";
+import { WrittenTypes } from "sanity/types/WrittenType";
 import {client} from './lib/client'
 import { StageTypes } from "./types/StageType";
 

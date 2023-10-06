@@ -2,22 +2,22 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { Playfair_Display } from 'next/font/google';
-import Written from '@/components/works/Written';
-import StageItem from '@/components/works/StageItem';
-import SectionRow from '@/components/sections/sectionrow/SectionRow';
-import TextLeftImgRight from '@/components/sections/sectionrow/TextLeftImgRight';
-import TextHeadline from '@/components/texts/TextHeadline';
-import SingleItem from '@/components/singleitem/SingleItem';
-import SectionOneFourth from '@/components/sections/SectionOneFourthScreen';
-import PianoImg from '@/public/piano.jpg';
-import PhotoGallery from '@/public/images/photogallery.jpg';
-import PianoImg2 from '@/public/piano2.jpg';
-import Giftest from '@/public/gif_test.webp';
-import ImageGrid from '@/components/imageGrid/ImageGrid';
-import SectionFullScreen from '@/components/sections/SectionFullScreen';
+import ItemsList from 'components/works/ItemsList';
+import StageItem from 'components/works/StageItem';
+import SectionRow from 'components/sections/sectionrow/SectionRow';
+import TextLeftImgRight from 'components/sections/sectionrow/TextLeftImgRight';
+import TextHeadline from 'components/texts/TextHeadline';
+import SingleItem from 'components/singleitem/SingleItem';
+import SectionOneFourth from 'components/sections/SectionOneFourthScreen';
+import PianoImg from '/public/PianoHands.gif';
+import PhotoGallery from '/public/images/photogallery.jpg';
+import StageImg from '/public/Hemsida.jpg';
+import VidGif from '/public/shiro.gif';
+import ImageGrid from 'components/imageGrid/ImageGrid';
+import SectionFullScreen from 'components/sections/SectionFullScreen';
 import { motion, AnimatePresence } from 'framer-motion';
-import { fadeIn, fadeInUp } from '@/components/animations/Animations';
-import { Reveal } from '@/components/animations/reveal/Reveal';
+import { fadeIn, fadeInUp } from 'components/animations/Animations';
+import { Reveal } from 'components/animations/reveal/Reveal';
 
 const playfair = Playfair_Display({ subsets: ['latin-ext'], weight: '400' });
 
@@ -73,22 +73,11 @@ export default function Home() {
           <span className='bg-slate-100 w-full h-full absolute left-0 top-0 -z-0 opactiy-70'></span>
         </SectionOneFourth>
         <SectionOneFourth>
-          <Link
-            href='/writtenwork'
-            className='absolute w-full h-full top-0 left-0 z-50 cursor-pointer pointer-events-auto'
-          />
+          <Link href='/writtenwork' />
           <Reveal>
-            <h2 className='relative h-fit text-white font-thin text-3xl md:text-4xl z-10'>
-              Written work
-            </h2>
+            <h2>Written work</h2>
           </Reveal>
-          <Image
-            alt='piano img'
-            src={PianoImg}
-            fill
-            priority
-            className='absolute left-0 top-0 -z-0 object-cover object-center group-hover:scale-110 transition-all duration-1000 cursor-pointer pointer-events-auto'
-          />
+          <Image alt='piano img' src={PianoImg} fill priority />
         </SectionOneFourth>
         <SectionOneFourth>
           <Link
@@ -100,7 +89,7 @@ export default function Home() {
           </h2>
           <Image
             alt='piano img'
-            src={PianoImg2}
+            src={StageImg}
             fill
             priority
             className='absolute left-0 top-0 -z-0 object-cover object-center group-hover:scale-110 transition-all duration-1000 cursor-pointer pointer-events-auto'
@@ -118,7 +107,7 @@ export default function Home() {
           </Reveal>
           <Image
             alt='piano img'
-            src={Giftest}
+            src={VidGif}
             fill
             priority
             className='absolute left-0 top-0 -z-0 object-cover object-center group-hover:scale-110 transition-all duration-1000 cursor-pointer pointer-events-auto'
@@ -169,16 +158,17 @@ export default function Home() {
           animate='enter'
           exit='exit'
         >
-          <Written />
+          <ItemsList />
         </motion.div>
       </div>
+
+      <Reveal>
+        <TextHeadline title='Stage' />
+      </Reveal>
+      <Reveal>
+        <h2 className='mt-24 font-thin text-white text-3xl'>Lorem ipsum</h2>
+      </Reveal>
       <SectionFullScreen>
-        <Reveal>
-          <TextHeadline title='Stage' />
-        </Reveal>
-        <Reveal>
-          <h2 className='mt-24 font-thin text-white text-3xl'>Lorem ipsum</h2>
-        </Reveal>
         <motion.div
           variants={fadeIn}
           initial='initial'
@@ -191,11 +181,11 @@ export default function Home() {
 
       <Reveal></Reveal>
       <SectionFullScreen>
-      <SectionRow>
-        <TextLeftImgRight imgSrc={PianoImg}>
-          <SingleItem data={testData} />
-        </TextLeftImgRight>
-      </SectionRow>
+        <SectionRow>
+          <TextLeftImgRight imgSrc={PianoImg} title='written work'>
+            <SingleItem data={testData} />
+          </TextLeftImgRight>
+        </SectionRow>
       </SectionFullScreen>
       <ImageGrid />
     </main>

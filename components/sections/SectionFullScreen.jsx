@@ -1,10 +1,12 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 
+import styles from './sectionFullScreen.module.scss'
+
 const SectionFullScreen = ({ children }) => {
   return (
     <motion.div
-      className={`w-screen h-screen block relative p-0 m-0`}
+      className={styles.fullscreen}
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{

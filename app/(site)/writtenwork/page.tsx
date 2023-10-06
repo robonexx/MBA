@@ -2,8 +2,8 @@
 import React, {useState} from 'react';
 import Image from 'next/image';
 import { motion } from 'framer-motion'
-import IMG from '@/public/images/markuspiano.jpg';
-import WrittenList from '@/components/works/WrittenList';
+import IMG from '/public/images/markuspiano.jpg';
+import WrittenList from 'components/works/WrittenList';
 import styles from './written.module.scss'
 
 const WrittenWork = () => {

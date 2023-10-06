@@ -1,6 +1,6 @@
 import React from 'react';
 import Image from 'next/image';
-import IMG from '@/public/images/markusB.jpg';
+import IMG from '/public/images/markusB.jpg';
 import { Playfair_Display } from 'next/font/google';
 
 

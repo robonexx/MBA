@@ -2,7 +2,7 @@ import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 /* import { getWorks } from '@/sanity/sanity-utils'; */
-import { dummyData } from '@/constants/DummyData';
+import { dummyData } from 'constants/DummyData';
 
 import { motion } from 'framer-motion';
 

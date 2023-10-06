@@ -1,0 +1,55 @@
+.onefourth {
+    position: relative;
+    width: 100%;
+    height: 25svh;
+    max-height: 25vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    pointer-events: none;
+    transition: all .2s ease-in-out;
+
+    
+      a {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        z-index: 50;
+        pointer-events: auto;
+
+        &:hover {
+
+           ~ img {
+                transform: scale(1.2);
+            }
+          }
+
+      }
+    
+      h2 {
+        position: relative;
+        height: fit-content;
+        color: #fff;
+        font-weight: thin;
+        font-size: 1.5rem; /* Adjust the font size as needed */
+        z-index: 10;
+    
+        @media (min-width: 768px) {
+          font-size: 2rem;
+        }
+      }
+    
+      img {
+        position: absolute;
+        left: 0;
+        top: 0;
+        z-index: 1;
+        object-fit: cover;
+        object-position: center;
+        transition: transform 1s ease-in-out;
+      }
+  }

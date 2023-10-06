@@ -1,13 +1,13 @@
 'use client';
 import React, { useState } from 'react';
 import Image from 'next/image';
-import BGIMG from '@/public/Hemsida.jpg';
-import Button from '@/components/button/Button';
+import BGIMG from 'public/Hemsida.jpg';
+import Button from 'components/button/Button';
 import styles from './stageItem.module.scss';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
-import Modal from '@/components/modal/Modal';
-import ContentWatch from '@/components/contentWatch/ContentWatch';
+import Modal from 'components/modal/Modal';
+import ContentWatch from 'components/contentWatch/ContentWatch';
 
 const Watch = () => {
   return <ContentWatch videoId='659455320' />;
