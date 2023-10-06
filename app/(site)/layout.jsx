@@ -14,6 +14,24 @@ const inter = Inter({ subsets: ['latin'] });
 
 export default function RootLayout({ children }) {
   const [active, setActive] = useState(false);
+
+  const [scrollY, setScrollY] = useState(0);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrollY(window.scrollY);
+    };
+
+    handleScroll();
+
+    window.addEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
   return (
     <html lang='en'>
       <body className={`${inter.className}`}>
@@ -36,6 +54,11 @@ export default function RootLayout({ children }) {
             </Nav>
           )}
         </AnimatePresence>
+        <div className='scrolling'>
+        {scrollY > 500
+          ? 'Scrolled more than 500px'
+          : 'Still somewhere near the top!'}
+        </div>
         {children}
       </body>
     </html>

@@ -18,7 +18,7 @@ const ItemsList = async () => {
             className={styles.item}
           >
             {work.image && (
-              <div className={`${styles.item__image_container}`}>
+              <div className={`${styles.image_container}`}>
                 <Image
                   src={work?.image}
                   alt={work.title}
@@ -27,20 +27,16 @@ const ItemsList = async () => {
                   sizes='(max-width: 768px) 100vw,
                     (max-width: 1200px) 50vw,
                     33vw'
-                  className={`${styles.item__image}`}
+                  className={`${styles.image}`}
                 />
               </div>
             )}
-            <section className={styles.item__info}>
-              <div className={`${styles.item__info__title}`}>{work.title}</div>
-              <p className={`${styles.item__info__author}`}>
-                Author: {work.author}
-              </p>
-              <p className={`${styles.item__info__for}`}>For {work.author}</p>
-              <p className={`${styles.item__info__year}`}>Year: {work.year}</p>
-              <p className={`${styles.item__info__duration}`}>
-                Duration {work.duration}
-              </p>
+            <section className={styles.info}>
+              <div className={`${styles.title}`}>{work.title}</div>
+             {/*  <p className={`${styles.author}`}>Author: {work.author}</p>
+              <p className={`${styles.for}`}>For {work.author}</p>
+              <p className={`${styles.year}`}>Year: {work.year}</p>
+              <p className={`${styles.duration}`}>Duration {work.duration}</p> */}
             </section>
           </Link>
         ))

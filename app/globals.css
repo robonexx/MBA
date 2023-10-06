@@ -34,3 +34,10 @@ body {
     rgb(var(--background-start-rgb));
   overflow-x: hidden;
 }
+
+.scrolling {
+  position: fixed;
+  left: 0;
+  top: 30vh;
+  z-index: 100;
+}

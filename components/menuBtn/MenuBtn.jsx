@@ -1,5 +1,5 @@
 'use client';
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 // styles
 import styles from './MenuBtn.module.scss';
 
@@ -9,36 +9,11 @@ const MenuBtn = ({ active, setActive }) => {
   const onClickHandler = () => {
     setActive(!active);
   };
-  /* 
-  const navBtn = useRef();
-
-  useEffect(() => {
-    if (window.innerWidth > 959) {
-      let prevScrollpos = window.pageYOffset;
-
-      const handleScroll = () => {
-        let currentScrollPos = window.pageYOffset;
-
-        if (prevScrollpos > currentScrollPos) {
-          navRef.current.classList.add('hamburger_wrapper bg');
-          navRef.current.classList.remove('hide');
-        } else {
-          navRef.current.classList.add('hide');
-          navRef.current.classList.remove('hamburger_wrapper bg');
-        }
-        prevScrollpos = currentScrollPos;
-      };
-      window.addEventListener('scroll', handleScroll);
-      return () => {
-        window.removeEventListener('scroll', handleScroll);
-      };
-    }
-  }, []); */
 
   return (
     <AnimatePresence mode='wait'>
       <motion.div
-        className={styles.hamburger_wrapper}
+        className={`${styles.hamburger_wrapper}`}
         onClick={(e) => onClickHandler()}
         whileHover={{
           translateY: -2,
@@ -52,7 +27,10 @@ const MenuBtn = ({ active, setActive }) => {
           backgroundColor: 'rgb(137, 87, 218)';
         }}
       >
-        <div className={`${styles.hamburger} ${active ? `${styles.active}` : ''}`} id='hamburger'>
+        <div
+          className={`${styles.hamburger} ${active ? `${styles.active}` : ''}`}
+          id='hamburger'
+        >
           <span>{active ? 'Close' : 'Menu'}</span>
         </div>
       </motion.div>

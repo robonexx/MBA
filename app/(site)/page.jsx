@@ -63,7 +63,7 @@ export default function Home() {
             </span>
           </motion.h1>
           <motion.p
-            className='m-auto w-full lg:w-2/5 mt-3 text-xs md:text-lg text-center text-zinc-800 drop-shadow-md z-10 px-10 absolute top-28 md:top-36'
+            className='m-auto w-full lg:w-3/5 mt-2 text-xs md:text-m text-center text-zinc-800 drop-shadow-md z-10 px-4 absolute top-20 md:top-36'
             variants={fadeInUp}
             initial='initial'
             animate='enter'
@@ -141,7 +141,6 @@ export default function Home() {
         </div>
       </SectionFullScreen>
       <SectionFullScreen>
-        <div className='w-screen h-full'>
           <Reveal>
             <TextHeadline title='Written work' />
           </Reveal>
@@ -150,6 +149,8 @@ export default function Home() {
               Lorem ipsum
             </h2>
           </Reveal>
+      </SectionFullScreen>
+      <SectionFullScreen>
           <motion.div
             variants={fadeIn}
             initial='initial'
@@ -158,7 +159,6 @@ export default function Home() {
           >
             <ItemsList />
           </motion.div>
-        </div>
       </SectionFullScreen>
       <div className={styles.container}>
         <Reveal>
