@@ -191,11 +191,13 @@ export default function Home() {
       </SectionFullScreen>
 
       <Reveal></Reveal>
+      <SectionFullScreen>
       <SectionRow>
         <TextLeftImgRight imgSrc={PianoImg}>
           <SingleItem data={testData} />
         </TextLeftImgRight>
       </SectionRow>
+      </SectionFullScreen>
       <ImageGrid />
     </main>
   );
