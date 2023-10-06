@@ -141,7 +141,7 @@ export default function Home() {
             ensembles, stage productions and film
           </p>
         </Reveal> */}
-        <div className='w-full h-2/5 relative py-80'>
+        <div className='w-full h-full relative py-80'>
           <Link
             href={'/mytestpage'}
             className='absolute w-full h-full top-0 left-0 z-50 cursor-pointer pointer-events-auto'
