@@ -16,8 +16,8 @@ const StageList = () => {
     <motion.div className='absolute top-0 left-0 w-full h-screen mt-10 mb-10 px-5 grid md:grid-cols-2 gap-10 z-50'>
       {works ? (
         works.map((work, i) => (
-            <motion.div
-                className='relative'
+          <motion.div
+            className='relative'
             key={i}
             initial={{ opacity: 0, y: -100 }}
             animate={{ opacity: 1, y: 0 }}
