@@ -5,7 +5,7 @@ import { SectionScreenProps } from '@/types/screenSectionTypes';
 import styles from './sectionOneThird.module.scss';
 
 
-const SectionHalfScreen: FC<SectionScreenProps> = ({ children }) => {
+const SectionOneThird: FC<SectionScreenProps> = ({ children }) => {
   return (
     <motion.section
       className={styles.oneThird}
@@ -21,4 +21,4 @@ const SectionHalfScreen: FC<SectionScreenProps> = ({ children }) => {
   );
 };
 
-export default SectionHalfScreen;
+export default SectionOneThird;

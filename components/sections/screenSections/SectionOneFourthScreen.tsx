@@ -8,9 +8,9 @@ const SectionOneFourthScreen: FC<SectionScreenProps> = ({ children }) => {
   return (
     <motion.div
       className={styles.onefourth}
-      initial={{ y: 100, opacity: 0 }}
-      animate={{ y: 0, opacity: 1 }}
-      transition={{ duration: 0.4 }}
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 0.2, ease: 'easeOut' }}
     >
       {children}
     </motion.div>

@@ -20,6 +20,8 @@ const WorksForStage = () => {
 
   const stages = getStages()
 
+  console.log(stages)
+
 
   const handleShow = () => {
     setShow((prev) => !prev);

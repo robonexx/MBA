@@ -24,7 +24,7 @@ export const Reveal = ({ children, width = 'fit-content' }: Props) => {
       mainControls.start('visible');
       slideControls.start('visible');
     }
-  }, [isInView]);
+  }, [isInView, slideControls, mainControls]);
 
   return (
     <div className={`${styles.reveal} ${width}`} ref={ref}>
@@ -35,7 +35,7 @@ export const Reveal = ({ children, width = 'fit-content' }: Props) => {
         }}
         initial='hidden'
         animate={mainControls}
-        transition={{ duration: 0.6, delay: 0.3 }}
+        transition={{ duration: 0.6, delay: 0.2 }}
       >
         {children}
       </motion.div>
@@ -47,7 +47,7 @@ export const Reveal = ({ children, width = 'fit-content' }: Props) => {
         }}
         initial='hidden'
         animate={slideControls}
-        transition={{ duration: 0.6, ease: 'easeOut' }}
+        transition={{ duration: 0.6, delay: 0.6, ease: 'easeOut' }}
       ></motion.div>
     </div>
   );

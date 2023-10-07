@@ -1,6 +1,8 @@
 import React, { useEffect, useRef } from 'react';
 import { motion, useAnimation, useInView } from 'framer-motion';
 
+import styles from './letterAnimation.module.scss';
+
 interface TextWordAnimationProps {
   text: string;
 }
@@ -19,10 +21,12 @@ const LetterAnimation: React.FC<TextWordAnimationProps> = ({ text }) => {
     }
   }, [isInView, controls]);
 
+  const words = text.split(' ');
+
   return (
     <motion.h2
       ref={ref}
-      className='textSplit'
+      className={styles.reveal}
       animate={controls}
       variants={{
         hidden: { opacity: 0 },
@@ -31,12 +35,11 @@ const LetterAnimation: React.FC<TextWordAnimationProps> = ({ text }) => {
       initial='hidden'
       transition={{ duration: 1, delay: 0.3 }}
     >
-      {text.split(' ').map((word, wordIdx, wordArr) => (
-        <React.Fragment key={wordIdx}>
-          {word.split('').map((letter, letterIdx, letterArr) => (
+      {words.map((word, wordIdx) => (
+        <motion.span key={wordIdx} className={styles.textSplit}>
+          {word.split('').map((letter, letterIdx) => (
             <motion.span
               key={letterIdx}
-              style={{ display: 'inline-block' }}
               variants={{
                 hidden: { opacity: 0, y: -50 },
                 visible: {
@@ -52,8 +55,8 @@ const LetterAnimation: React.FC<TextWordAnimationProps> = ({ text }) => {
               {letter}
             </motion.span>
           ))}
-          {wordIdx < wordArr.length - 1 && ' '}
-        </React.Fragment>
+          {wordIdx < words.length - 1 && ' '}
+        </motion.span>
       ))}
     </motion.h2>
   );

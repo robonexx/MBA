@@ -8,7 +8,7 @@ const page = () => {
     <div className='bg-black relative mt-20 md:p-20 min-h-screen w-full'>
       <ImageLightBox />
       <section className='bg-black grid place-content-center relative mt-20 md:p-20 h-screen w-full'>
-        <LetterAnimation text='I keep on falling' />
+        <LetterAnimation text='Markus B Almqvist' />
       </section>
       <section className='bg-black grid place-content-center relative mt-20 md:p-20 h-screen w-full'>
         <WordFromLeft text='Slide in from left Yoohooo!!!' />

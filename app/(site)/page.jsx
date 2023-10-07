@@ -20,6 +20,9 @@ import { fadeIn, fadeInUp } from 'components/animations/Animations';
 import { Reveal } from 'components/animations/reveal/Reveal';
 
 import styles from './homepage.module.scss';
+import SectionOneThird from '@/components/sections/screenSections/SectionOneThird';
+import { SlideUp } from '@/components/animations/reveal/SlideUp';
+import LetterAnimation from '@/components/animations/letterAnimation/LetterAnimaion';
 
 const playfair = Playfair_Display({ subsets: ['latin-ext'], weight: '400' });
 
@@ -122,6 +125,86 @@ export default function Home() {
           />
         </SectionOneFourth>
       </SectionFullScreen>
+
+      {/* test full screen första mb, sen 3 rows, på nästa projekt */}
+      {/* markus b almqivst fullscreen, test */}
+      <SectionFullScreen>
+        <div className='absolute w-full h-full top-0 left-0 z-50 cursor-pointer pointer-events-auto bg-zinc-800 flex flex-col justify-center align-items-center py-10'>
+          <Link
+            href='/'
+            prefetch={false}
+            className='absolute w-full h-full top-0 left-0 z-50 cursor-pointer pointer-events-auto'
+          />
+          <Reveal>
+            <h1
+              className={`text-2xl md:text-4xl lg:text-6xl font-thin text-center z-10 text-zinc-900 relative mt-36 ${playfair.className}`}
+            >
+              Markus B. Almqvist
+            </h1>
+          </Reveal>
+          <SlideUp>
+            <p className='m-auto w-full lg:w-3/5 text-xs md:text-m text-center text-zinc-800 drop-shadow-md z-10 px-4 relative mt-28'>
+              Award-winning composer based in Stockholm, Sweden. <br /> Writing
+              music for ensembles, stage productions and film
+            </p>
+          </SlideUp>
+          <span className='bg-slate-100 w-full h-full absolute left-0 top-0 -z-0 opactiy-70'></span>
+        </div>
+      </SectionFullScreen>
+
+      {/* one thirds  test */}
+      <SectionFullScreen>
+        <SectionOneThird>
+          <Link href='/writtenwork' />
+          <Reveal>
+            <h2>Written work</h2>
+          </Reveal>
+          <Image alt='piano img' src={PianoImg} fill priority />
+        </SectionOneThird>
+        <SectionOneThird>
+          <Link
+            href='/worksforstage'
+            className='absolute w-full h-full top-0 left-0 z-50 cursor-pointer pointer-events-auto'
+          />
+          <h2 className='relative h-fit text-white font-thin text-3xl md:text-4xl z-10'>
+            Work for stage
+          </h2>
+          <Image
+            alt='piano img'
+            src={StageImg}
+            fill
+            priority
+            sizes='(max-width: 768px) 100vw,
+              (max-width: 1200px) 50vw,
+              33vw'
+            className='absolute left-0 top-0 -z-0 object-cover object-center group-hover:scale-110 transition-all duration-1000 cursor-pointer pointer-events-auto'
+          />
+        </SectionOneThird>
+        <SectionOneThird>
+          <Link
+            href='/worksforfilm'
+            className='absolute w-full h-full top-0 left-0 z-50 cursor-pointer pointer-events-auto'
+          />
+          <Reveal>
+            <p className='relative h-fit text-white font-thin text-3xl md:text-4xl z-10'>
+              Works for film
+            </p>
+          </Reveal>
+          <Image
+            alt='piano img'
+            src={VidGif}
+            fill
+            priority
+            sizes='(max-width: 768px) 100vw,
+              (max-width: 1200px) 50vw,
+              33vw'
+            className='absolute left-0 top-0 -z-0 object-cover object-center group-hover:scale-110 transition-all duration-1000 cursor-pointer pointer-events-auto'
+          />
+        </SectionOneThird>
+      </SectionFullScreen>
+
+      {/* resterande delar */}
+
       <SectionFullScreen>
         <div className={styles.container}>
           <Link
@@ -138,7 +221,9 @@ export default function Home() {
               33vw'
             className='relative -z-0 object-cover object-center transition-all duration-1000 cursor-pointer pointer-events-auto opacity-80'
           />
-          <h2 className='absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-2xl bg-orange-600 '>Bara länk till annan sida, inget som skall finnas meds sen</h2>
+          <h2 className='absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-2xl bg-orange-600 '>
+            Bara länk till annan sida, inget som skall finnas meds sen
+          </h2>
         </div>
       </SectionFullScreen>
       <SectionFullScreen>

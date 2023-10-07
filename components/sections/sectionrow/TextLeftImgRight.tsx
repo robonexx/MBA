@@ -6,7 +6,9 @@ const TextLeftImgRight = ({ children, imgSrc, title }: any) => {
   return (
     <div className={styles.wrapper}>
       <h2>{title}</h2>
-      <div className={styles.content}>{children}</div>
+      <div className={styles.content}>
+        {children}
+      </div>
       <div className={styles.image}>
         <Image
           className='object-cover'
