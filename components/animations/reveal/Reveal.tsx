@@ -1,6 +1,8 @@
 import React, { useEffect, useRef } from 'react';
 import { motion, useInView, useAnimation } from 'framer-motion';
 
+import styles from './reveal.module.scss';
+
 interface Props {
   children: JSX.Element;
   width?: 'fit-content' | '100%';
@@ -24,7 +26,7 @@ export const Reveal = ({ children, width = 'fit-content' }: Props) => {
     }
   }, [isInView]);
   return (
-    <div className={`relative overflow-hidden ${width}`} ref={ref}>
+    <div className={`${styles.reveal} ${width}`} ref={ref}>
       <motion.div
         variants={{
           hidden: { opacity: 0, y: 75 },
@@ -32,19 +34,19 @@ export const Reveal = ({ children, width = 'fit-content' }: Props) => {
         }}
         initial='hidden'
         animate={mainControls}
-        transition={{ duration: 0.4, delay: 0.3 }}
+        transition={{ duration: 0.6, delay: 0.3 }}
       >
         {children}
       </motion.div>
       <motion.div
-        className='absolute top-2 bottom-2 left-0 right-0 bg-violet-500'
+        className={styles.effect}
         variants={{
           hidden: { left: 0, opacity: [0, 0.8] },
           visible: { left: '100%', opacity: 1 },
         }}
         initial='hidden'
         animate={slideControls}
-        transition={{ duration: 0.4, ease: 'easeOut' }}
+        transition={{ duration: 0.6, ease: 'easeOut' }}
       ></motion.div>
     </div>
   );

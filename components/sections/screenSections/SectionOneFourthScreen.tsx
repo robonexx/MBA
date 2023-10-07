@@ -1,9 +1,10 @@
-import React from 'react';
+import React, {FC } from 'react';
 import { motion } from 'framer-motion';
 
 import styles from './sectionOneFourth.module.scss';
+import { SectionScreenProps } from '@/types/screenSectionTypes';
 
-const SectionOneFourthScreen = ({ children }) => {
+const SectionOneFourthScreen: FC<SectionScreenProps> = ({ children }) => {
   return (
     <motion.div
       className={styles.onefourth}

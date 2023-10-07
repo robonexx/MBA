@@ -1,9 +1,10 @@
-import React from 'react';
+import React, { ReactNode, FC } from 'react';
 import { motion } from 'framer-motion';
 
-import styles from './sectionFullScreen.module.scss'
+import styles from './sectionFullScreen.module.scss';
+import { SectionScreenProps } from '@/types/screenSectionTypes';
 
-const SectionFullScreen = ({ children }) => {
+const SectionFullScreen: FC<SectionScreenProps> = ({ children }) => {
   return (
     <motion.section
       className={styles.fullscreen}

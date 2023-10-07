@@ -4,17 +4,17 @@ import Link from 'next/link';
 import { Playfair_Display } from 'next/font/google';
 import ItemsList from 'components/works/ItemsList';
 import StageItem from 'components/works/StageItem';
-import SectionRow from 'components/sections/sectionrow/SectionRow';
-import TextLeftImgRight from 'components/sections/sectionrow/TextLeftImgRight';
+import SectionRow from '@/components/sections/sectionRow/SectionRow';
+import TextLeftImgRight from '@/components/sections/sectionRow/TextLeftImgRight';
 import TextHeadline from 'components/texts/TextHeadline';
 import SingleItem from 'components/singleitem/SingleItem';
-import SectionOneFourth from 'components/sections/SectionOneFourthScreen';
+import SectionOneFourth from 'components/sections/screenSections/SectionOneFourthScreen';
 import PianoImg from '/public/PianoHands.gif';
 import PhotoGallery from '/public/images/photogallery.jpg';
 import StageImg from '/public/Hemsida.jpg';
 import VidGif from '/public/shiro.gif';
 import ImageGrid from 'components/imageGrid/ImageGrid';
-import SectionFullScreen from 'components/sections/SectionFullScreen';
+import SectionFullScreen from 'components/sections/screenSections/SectionFullScreen';
 import { motion, AnimatePresence } from 'framer-motion';
 import { fadeIn, fadeInUp } from 'components/animations/Animations';
 import { Reveal } from 'components/animations/reveal/Reveal';
@@ -141,24 +141,24 @@ export default function Home() {
         </div>
       </SectionFullScreen>
       <SectionFullScreen>
-          <Reveal>
-            <TextHeadline title='Written work' />
-          </Reveal>
-          <Reveal>
-            <h2 className='mt-24 font-thin text-gray-700 text-2xl md:text-4xl'>
-              Lorem ipsum
-            </h2>
-          </Reveal>
+        <Reveal>
+          <TextHeadline title='Written work' />
+        </Reveal>
+        <Reveal>
+          <h2 className='mt-24 font-thin text-gray-700 text-2xl md:text-4xl'>
+            Lorem ipsum
+          </h2>
+        </Reveal>
       </SectionFullScreen>
       <SectionFullScreen>
-          <motion.div
-            variants={fadeIn}
-            initial='initial'
-            animate='enter'
-            exit='exit'
-          >
-            <ItemsList />
-          </motion.div>
+        <motion.div
+          variants={fadeIn}
+          initial='initial'
+          animate='enter'
+          exit='exit'
+        >
+          <ItemsList />
+        </motion.div>
       </SectionFullScreen>
       <div className={styles.container}>
         <Reveal>
