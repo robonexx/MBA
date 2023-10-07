@@ -1,4 +1,5 @@
 'use client';
+import { useEffect, useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { Playfair_Display } from 'next/font/google';
@@ -23,7 +24,7 @@ import WordFromLeft from '@/components/animations/wordAnimations/WordFromLeft';
 import StageItem from '@/components/works/StageItem';
 import ItemsList from '@/components/works/ItemsList';
 import ImageGrid from '@/components/imageGrid/ImageGrid';
-import TextLeftImgRight from '@/components/sections/sectionRow/TextLeftImgRight';
+import TextLeft from '@/components/sections/TextLeft';
 
 const playfair = Playfair_Display({ subsets: ['latin-ext'], weight: '400' });
 
@@ -40,7 +41,26 @@ const testData = {
 };
 
 export default function Home() {
-  const dummyData = testData;
+  const [dummyData, setDummyData] = useState(null);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const fetchData = () => {
+      // Simulating data fetching delay
+      new Promise((resolve) => setTimeout(() => resolve(testData), 1000))
+        .then((result) => {
+          setDummyData(result);
+          setLoading(false);
+        })
+        .catch((error) => {
+          console.error('Error fetching data:', error);
+          setLoading(false);
+        });
+    };
+
+    fetchData();
+  }, []);
+
   return (
     <main className={styles.homepage}>
       <SectionFullScreen>
@@ -265,14 +285,16 @@ export default function Home() {
           <StageItem />
         </motion.div>
       </SectionFullScreen>
-      {dummyData ? (
-        <SectionFullScreen>
-          <TextLeftImgRight imgSrc={PianoImg} title='written work'>
-            <SingleItem data={dummyData} />
-          </TextLeftImgRight>
-        </SectionFullScreen>
+      {loading ? (
+        <div>Loading...</div>
       ) : (
-        <div></div>
+        dummyData && (
+          <SectionFullScreen>
+            <TextLeft imgSrc={PianoImg} title='written work'>
+              <SingleItem data={dummyData} />
+            </TextLeft>
+          </SectionFullScreen>
+        )
       )}
       <SectionFullScreen>
         <ImageGrid />

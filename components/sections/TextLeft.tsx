@@ -2,7 +2,7 @@ import React from 'react';
 import Image from 'next/image';
 import styles from './textLeftImgRight.module.scss';
 
-const TextLeftImgRight = ({ children, imgSrc, title }: any) => {
+const TextLeft = ({ children, imgSrc, title }: any) => {
   return (
     <div className={styles.wrapper}>
       <h2>{title}</h2>
@@ -21,4 +21,4 @@ const TextLeftImgRight = ({ children, imgSrc, title }: any) => {
   );
 };
 
-export default TextLeftImgRight;
+export default TextLeft;

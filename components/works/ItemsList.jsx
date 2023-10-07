@@ -1,16 +1,36 @@
-// ItemsList.js
-
-import React from 'react';
+'use client';
+import React, {useState, useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import { dummyDataWritten } from '@/constants/DummyData';
+import { dummyData } from '@/constants/DummyData';
 import styles from './itemsList.module.scss'; // Import the SASS styles
 
-const ItemsList = async () => {
-  const works = await dummyDataWritten;
+const ItemsList = () => {
+  const [works, setWorks] = useState(null);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const fetchData = () => {
+      // Simulating data fetching delay
+      new Promise((resolve) => setTimeout(() => resolve(dummyData), 1000))
+        .then((result) => {
+          setWorks(result);
+          setLoading(false);
+        })
+        .catch((error) => {
+          console.error('Error fetching data:', error);
+          setLoading(false);
+        });
+    };
+
+    fetchData();
+  }, []);
   return (
     <div className={styles.wrapper}>
-      {works ? (
+      {loading ? (
+        <div>Loading...</div>
+      ) : (
+        works &&
         works.slice(0, 4).map((work) => (
           <Link
             href={`/work/${work.slug}`}
@@ -33,15 +53,9 @@ const ItemsList = async () => {
             )}
             <section className={styles.info}>
               <div className={`${styles.title}`}>{work.title}</div>
-             {/*  <p className={`${styles.author}`}>Author: {work.author}</p>
-              <p className={`${styles.for}`}>For {work.author}</p>
-              <p className={`${styles.year}`}>Year: {work.year}</p>
-              <p className={`${styles.duration}`}>Duration {work.duration}</p> */}
             </section>
           </Link>
         ))
-      ) : (
-        <div>Loading data...</div>
       )}
     </div>
   );

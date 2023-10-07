@@ -56,7 +56,7 @@ const WrittenWorkItem: React.FC<WrittenWorkItemProps> = ({ data }) => {
             <span>
               <GiPlayButton />
             </span>
-            {songUrl}
+            {songUrl} this will be a audio file
           </p>
           {/* onClick={() => (modalOpen ? close() : open())} */}
           <p className={styles.score}>{score}</p>

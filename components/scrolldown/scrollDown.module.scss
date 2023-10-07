@@ -9,7 +9,7 @@
 }
 
 .caption h2 {
-	color: #fff;
+	color: black;
 	font-weight: lighter;
 	text-transform: uppercase;
 	font-size: .8em;
@@ -40,7 +40,7 @@
 	height: auto;
 	width: 100%;
 	text-align: center;
-	color: #fff;
+	color: #121212;
 }
 
 .scroll_indicator span {
@@ -71,7 +71,7 @@
 	content: '\00a0';
 	border-style: solid;
 	border-width: 3px 2.5px 0 2.5px;
-	border-color: #fff transparent transparent transparent;
+	border-color: #282828 transparent transparent transparent;
 	display: block;
 	position: absolute;
 	top: 0;
@@ -93,7 +93,7 @@
 	content: "\00a0";
 	background: #fff;
 	border-radius: 50%;
-	border: 1px solid #fff;
+	border: 1px solid #383838;
 	display: block;
 	position: absolute;
 	z-index: 1;

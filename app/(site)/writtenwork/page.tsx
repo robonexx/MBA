@@ -1,7 +1,7 @@
 /* 'use client'; */
 import React from 'react';
 import Image from 'next/image';
-import IMG from '/public/images/markuspiano.jpg';
+import IMG from '/public/pianoimage.jpg';
 import { getWorks } from '@/sanity/sanity-utils';
 import styles from './written.module.scss';
 import { WrittenTypes } from '@/sanity/types/WrittenType';
@@ -25,7 +25,7 @@ const WrittenWork = async () => {
  */
   return (
     <div className={styles.written}>
-      <div className={styles.wrapper}>
+      <div className={styles.top_section}>
         <h2>Markus B Almqvist</h2>
         <div className={styles.headline}>
           <h4>Written work</h4>
