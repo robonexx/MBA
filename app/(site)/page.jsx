@@ -4,8 +4,8 @@ import Link from 'next/link';
 import { Playfair_Display } from 'next/font/google';
 import ItemsList from 'components/works/ItemsList';
 import StageItem from 'components/works/StageItem';
-import SectionRow from '@/components/sections/sectionRow/SectionRow';
-import TextLeftImgRight from '@/components/sections/sectionRow/TextLeftImgRight';
+import SectionRow from 'components/sections/sectionRow/SectionRow';
+import TextLeftImgRight from 'components/sections/sectionRow/TextLeftImgRight';
 import TextHeadline from 'components/texts/TextHeadline';
 import SingleItem from 'components/singleitem/SingleItem';
 import SectionOneFourth from 'components/sections/screenSections/SectionOneFourthScreen';
@@ -20,11 +20,11 @@ import { fadeIn, fadeInUp } from 'components/animations/Animations';
 import { Reveal } from 'components/animations/reveal/Reveal';
 
 import styles from './homepage.module.scss';
-import SectionOneThird from '@/components/sections/screenSections/SectionOneThird';
-import { SlideUp } from '@/components/animations/reveal/SlideUp';
-import LetterAnimation from '@/components/animations/letterAnimation/LetterAnimaion';
-import ScrollDown from '@/components/scrolldown/ScrollDown';
-import WordFromLeft from '@/components/animations/wordAnimations/WordFromLeft';
+import SectionOneThird from 'components/sections/screenSections/SectionOneThird';
+import { SlideUp } from 'components/animations/reveal/SlideUp';
+import LetterAnimation from 'components/animations/letterAnimation/LetterAnimaion';
+import ScrollDown from 'components/scrolldown/ScrollDown';
+import WordFromLeft from 'components/animations/wordAnimations/WordFromLeft';
 
 const playfair = Playfair_Display({ subsets: ['latin-ext'], weight: '400' });
 
