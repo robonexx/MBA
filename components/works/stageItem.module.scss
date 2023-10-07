@@ -77,10 +77,14 @@
     padding: 1rem;
     width: 100%;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     z-index: 1;
+
+    @media (min-width: 768px) {
+      flex-direction: row;
+    }
   }
 
   .linkToAll {

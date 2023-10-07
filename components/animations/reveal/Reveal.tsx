@@ -25,6 +25,7 @@ export const Reveal = ({ children, width = 'fit-content' }: Props) => {
       slideControls.start('visible');
     }
   }, [isInView]);
+
   return (
     <div className={`${styles.reveal} ${width}`} ref={ref}>
       <motion.div

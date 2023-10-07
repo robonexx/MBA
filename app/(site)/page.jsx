@@ -138,6 +138,7 @@ export default function Home() {
               33vw'
             className='relative -z-0 object-cover object-center transition-all duration-1000 cursor-pointer pointer-events-auto opacity-80'
           />
+          <h2 className='absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-2xl bg-orange-600 '>Bara länk till annan sida, inget som skall finnas meds sen</h2>
         </div>
       </SectionFullScreen>
       <SectionFullScreen>
@@ -160,16 +161,16 @@ export default function Home() {
           <ItemsList />
         </motion.div>
       </SectionFullScreen>
-      <div className={styles.container}>
+      <SectionFullScreen>
         <Reveal>
           <TextHeadline title='Stage' />
         </Reveal>
         <Reveal>
-          <h2 className='mt-24 font-thin text-white text-3xl'>
+          <h2 className='mt-24 font-thin text-white text-3xl self-center'>
             My work for stage art
           </h2>
         </Reveal>
-      </div>
+      </SectionFullScreen>
       <SectionFullScreen>
         <motion.div
           variants={fadeIn}

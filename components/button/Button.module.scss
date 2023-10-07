@@ -1,8 +1,9 @@
 .btn {
     margin: 1rem 0;
     padding: 12px 16px;
+    min-width: 30vmin;
     max-width: 40vmin;
-    min-width: 20vmin;
+    min-width: 30vmin;
     font-family: "Montserrat", sans-serif;
     font-size: 16px;
     text-transform: uppercase;
@@ -12,7 +13,6 @@
     background: transparent;
     cursor: pointer;
     transition: all 0.4s ease-in-out, color 0.4s ease-in-out;
-  
     // remove outline
     outline: none;
   }
@@ -24,7 +24,7 @@
     color: #fafafa;
     font-weight: 600;
     letter-spacing: 2px;
-    margin: 0 2rem;
+    margin: 1rem 2rem;
     text-shadow: 0 2px 5px rgba(0,0,0,.775);
   
     &:hover {
