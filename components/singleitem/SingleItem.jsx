@@ -1,8 +1,8 @@
 'use client';
 import React, { useState } from 'react';
 import { GiPlayButton } from 'react-icons/gi';
-import Modal from 'components/modal/Modal';
-import ModalContent from 'components/modal/ModalContent';
+import Modal from '@/components/modal/Modal';
+import ModalContent from '@/components/modal/ModalContent';
 import styles from './singleItem.module.scss';
 
 const SingleItem = ({ data }) => {

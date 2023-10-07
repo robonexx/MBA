@@ -2,7 +2,7 @@ import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 /* import { getWorks } from '@/sanity/sanity-utils'; */
-import { dummyDataWritten } from 'constants/DummyData';
+import { dummyDataWritten } from '@/constants/DummyData';
 
 export const revalidate = 20;
 export const fetchCache = 'force-no-store';

@@ -3,7 +3,7 @@
 import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import { dummyDataWritten } from 'constants/DummyData';
+import { dummyDataWritten } from '@/constants/DummyData';
 import styles from './itemsList.module.scss'; // Import the SASS styles
 
 const ItemsList = async () => {

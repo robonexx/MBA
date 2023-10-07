@@ -23,7 +23,6 @@ import WordFromLeft from '@/components/animations/wordAnimations/WordFromLeft';
 import StageItem from '@/components/works/StageItem';
 import ItemsList from '@/components/works/ItemsList';
 import ImageGrid from '@/components/imageGrid/ImageGrid';
-import SectionRow from '@/components/sections/sectionRow/SectionRow';
 import TextLeftImgRight from '@/components/sections/sectionRow/TextLeftImgRight';
 
 const playfair = Playfair_Display({ subsets: ['latin-ext'], weight: '400' });
@@ -41,8 +40,7 @@ const testData = {
 };
 
 export default function Home() {
-  /*  const projects = await getProjects();
-  const works = await getWorks(); */
+  const dummyData = testData;
   return (
     <main className={styles.homepage}>
       <SectionFullScreen>
@@ -267,13 +265,15 @@ export default function Home() {
           <StageItem />
         </motion.div>
       </SectionFullScreen>
-      <SectionFullScreen>
-        <SectionRow>
+      {dummyData ? (
+        <SectionFullScreen>
           <TextLeftImgRight imgSrc={PianoImg} title='written work'>
-            <SingleItem data={testData} />
+            <SingleItem data={dummyData} />
           </TextLeftImgRight>
-        </SectionRow>
-      </SectionFullScreen>
+        </SectionFullScreen>
+      ) : (
+        <div></div>
+      )}
       <SectionFullScreen>
         <ImageGrid />
       </SectionFullScreen>
