@@ -1,8 +1,17 @@
+// Modal.tsx
+
+import React from 'react';
 import { motion } from 'framer-motion';
 import { FiX } from 'react-icons/fi';
 
 import Backdrop from '../backdrop/Backdrop';
 import styles from './Modal.module.css';
+
+interface ModalProps {
+  modalOpen: boolean;
+  handleClose: () => void;
+  content: React.ReactNode;
+}
 
 const dropIn = {
   hidden: {
@@ -33,7 +42,7 @@ const dropIn = {
   },
 };
 
-const Modal = ({ handleClose, content }) => {
+const Modal: React.FC<ModalProps> = ({ modalOpen, handleClose, content }) => {
   return (
     <Backdrop onClick={handleClose}>
       <motion.div

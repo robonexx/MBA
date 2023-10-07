@@ -1,13 +1,13 @@
-import type { File, Image, PortableTextBlock, Slug } from 'sanity'
+import type { File, PortableTextBlock} from 'sanity'
 
 export type FilmTypes = {
     _id: string;
     createdAt: Date;
     title: string;
-    slug: Slug;
+    slug: string;
     producers: string;
     description: PortableTextBlock[];
     links?: string;
-    image: Image;
+    image: string;
     preview: File;
 }

@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from 'react';
 import { motion, useInView, useAnimation } from 'framer-motion';
 
-import styles from './slideUp.module.scss';
+import styles from './reveal.module.scss';
 
 interface Props {
   children: JSX.Element;
@@ -9,7 +9,7 @@ interface Props {
 }
 
 const slideVariants = {
-  hidden: { opacity: 0, y: 200 },
+  hidden: { opacity: 0, y: -200 },
   visible: {
     opacity: 1,
     y: 0,
@@ -17,14 +17,14 @@ const slideVariants = {
   },
 };
 
-export const SlideUp = ({ children }: Props) => {
+export const SlideDown = ({ children }: Props) => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true });
 
   const controls = useAnimation();
 
   useEffect(() => {
-    console.log('slide up is in view');
+    console.log('slide down is in view');
     if (isInView) {
       controls.start('visible');
     }

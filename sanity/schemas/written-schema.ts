@@ -31,12 +31,12 @@ const work = {
         {
             name: "year",
             title: "Year",
-            type: 'number'
+            type: 'string'
         },
         {
             name: "duration",
             title: "Duration",
-            type: 'number'
+            type: 'string'
         },
         {
             name: "desc",

@@ -1,16 +1,16 @@
 .reveal {
-    position: relative;
-    display: inline-block;
-    overflow: hidden;
+  position: relative;
+  display: inline-block;
+  overflow: hidden;
 }
 
 .textSplit {
   padding: 0rem 0.2rem;
   display: inline-block;
-  color: rgb(25, 224, 181);
   span {
     font-size: 2rem;
-    
-    font-weight: 600;
+    color: white;
+    filter: drop-shadow(2px 2px 5px rgba(0,0,0,.455));
+    font-weight: 400;
   }
 }

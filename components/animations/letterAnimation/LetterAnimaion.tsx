@@ -33,7 +33,7 @@ const LetterAnimation: React.FC<TextWordAnimationProps> = ({ text }) => {
         visible: { opacity: 1 },
       }}
       initial='hidden'
-      transition={{ duration: 1, delay: 0.3 }}
+      transition={{ duration: 1, delay: 0.5 }}
     >
       {words.map((word, wordIdx) => (
         <motion.span key={wordIdx} className={styles.textSplit}>

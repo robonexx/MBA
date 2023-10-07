@@ -23,6 +23,8 @@ import styles from './homepage.module.scss';
 import SectionOneThird from '@/components/sections/screenSections/SectionOneThird';
 import { SlideUp } from '@/components/animations/reveal/SlideUp';
 import LetterAnimation from '@/components/animations/letterAnimation/LetterAnimaion';
+import ScrollDown from '@/components/scrolldown/ScrollDown';
+import WordFromLeft from '@/components/animations/wordAnimations/WordFromLeft';
 
 const playfair = Playfair_Display({ subsets: ['latin-ext'], weight: '400' });
 
@@ -51,7 +53,7 @@ export default function Home() {
             className='absolute w-full h-full top-0 left-0 z-50 cursor-pointer pointer-events-auto'
           />
           <motion.h1
-            className='text-2xl md:text-4xl lg:text-6xl font-thin text-center z-10
+            className='text-2xl md:text-4xl lg:text-6xl font-thin text-center z-10 invisible md:visible
             absolute top-10'
             variants={fadeIn}
             initial='initial'
@@ -66,7 +68,7 @@ export default function Home() {
             </span>
           </motion.h1>
           <motion.p
-            className='m-auto w-full lg:w-3/5 mt-2 text-xs md:text-m text-center text-zinc-800 drop-shadow-md z-10 px-4 absolute top-20 md:top-36'
+            className='m-auto w-full lg:w-3/5 mt-2 text-xs md:text-m text-center text-zinc-800 drop-shadow-md z-10 px-4 absolute  top-36'
             variants={fadeInUp}
             initial='initial'
             animate='enter'
@@ -129,26 +131,26 @@ export default function Home() {
       {/* test full screen första mb, sen 3 rows, på nästa projekt */}
       {/* markus b almqivst fullscreen, test */}
       <SectionFullScreen>
-        <div className='absolute w-full h-full top-0 left-0 z-50 cursor-pointer pointer-events-auto bg-zinc-800 flex flex-col justify-center align-items-center py-10'>
+        <div className='absolute w-full h-full top-0 left-0 z-50 cursor-pointer pointer-events-auto bg-slate-200 flex flex-col justify-center align-items-center py-10'>
           <Link
             href='/'
             prefetch={false}
             className='absolute w-full h-full top-0 left-0 z-50 cursor-pointer pointer-events-auto'
           />
-          <Reveal>
+          <SlideUp>
             <h1
               className={`text-2xl md:text-4xl lg:text-6xl font-thin text-center z-10 text-zinc-900 relative mt-36 ${playfair.className}`}
             >
               Markus B. Almqvist
             </h1>
-          </Reveal>
+          </SlideUp>
           <SlideUp>
             <p className='m-auto w-full lg:w-3/5 text-xs md:text-m text-center text-zinc-800 drop-shadow-md z-10 px-4 relative mt-28'>
               Award-winning composer based in Stockholm, Sweden. <br /> Writing
               music for ensembles, stage productions and film
             </p>
           </SlideUp>
-          <span className='bg-slate-100 w-full h-full absolute left-0 top-0 -z-0 opactiy-70'></span>
+          <ScrollDown />
         </div>
       </SectionFullScreen>
 
@@ -156,9 +158,7 @@ export default function Home() {
       <SectionFullScreen>
         <SectionOneThird>
           <Link href='/writtenwork' />
-          <Reveal>
-            <h2>Written work</h2>
-          </Reveal>
+          <WordFromLeft text='Written work' />
           <Image alt='piano img' src={PianoImg} fill priority />
         </SectionOneThird>
         <SectionOneThird>
@@ -166,9 +166,10 @@ export default function Home() {
             href='/worksforstage'
             className='absolute w-full h-full top-0 left-0 z-50 cursor-pointer pointer-events-auto'
           />
-          <h2 className='relative h-fit text-white font-thin text-3xl md:text-4xl z-10'>
-            Work for stage
-          </h2>
+          {/* <h2 className='relative h-fit text-white font-thin text-3xl md:text-4xl z-10'>
+            
+          </h2> */}
+          <LetterAnimation text='Work for stage' />
           <Image
             alt='piano img'
             src={StageImg}

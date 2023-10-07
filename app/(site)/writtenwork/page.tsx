@@ -1,40 +1,34 @@
 /* 'use client'; */
 import React from 'react';
 import Image from 'next/image';
-import { motion } from 'framer-motion';
 import IMG from '/public/images/markuspiano.jpg';
 import { getWorks } from '@/sanity/sanity-utils';
 import styles from './written.module.scss';
+import { WrittenTypes } from '@/sanity/types/WrittenType';
+import TextLeftImgRight from '@/components/sections/sectionRow/TextLeftImgRight';
+import SingleItem from '@/components/singleitem/SingleItem';
+import WrittenWorkItem from '@/components/singleitem/WrittenWorkItem';
 
-const WrittenWork = () => {
-/*   const [show, setShow] = useState(false);
+export const revalidate = 20;
+export const fetchCache = 'force-no-store';
+export const dynamic = 'force-dynamic';
+
+const WrittenWork = async () => {
+  const works: WrittenTypes[] = await getWorks();
+
+  console.log(works);
+  /*   const [show, setShow] = useState(false);
 
   const handleShow = () => {
     setShow((prev) => !prev);
   };
  */
   return (
-    <motion.div
-      className={styles.written}
-      initial={{ opacity: 0, filter: 'blur(5px)' }}
-      animate={{ opacity: 1, filter: 'blur(0px)' }}
-      transition={{ duration: 1 }}
-    >
-      <motion.h2
-        initial={{ x: -200 }}
-        animate={{ x: 0 }}
-        transition={{ delay: 0.6, duration: 0.3 }}
-      >
-        Markus B Almqvist
-      </motion.h2>
+    <div className={styles.written}>
+      <div className={styles.wrapper}>
+      <h2>Markus B Almqvist</h2>
       <div className={styles.headline}>
-        <motion.h4
-          initial={{ y: 300 }}
-          animate={{ y: 0 }}
-          transition={{ delay: 0.3, duration: 0.8 }}
-        >
-          Written work
-        </motion.h4>
+        <h4>Written work</h4>
       </div>
       <div className={styles.img}>
         <Image src={IMG} alt='stage work' fill></Image>
@@ -43,9 +37,34 @@ const WrittenWork = () => {
       <button className={styles.fullList} /* onClick={handleShow} */>
         see full list of works for stage
       </button>
+      </div>
+      <div className={styles.content_wrapper}>
+      {works ? (
+        works.map((works) => (
+          <WrittenWorkItem data={works} key={works._id + works.title} />
+        ))
+      ) : (
+        <div>No Data available</div>
+      )}
+      </div>
       {/* {show ? <WrittenList /> : <span></span>} */}
-    </motion.div>
+    </div>
   );
 };
 
 export default WrittenWork;
+
+/* 
+
+*/
+{
+  /* <TextLeftImgRight
+            title={works.title}
+            imgSrc={works.image}
+            key={works._id + works.title}
+          >
+            <SingleItem data={works} />
+          </TextLeftImgRight> 
+        
+        */
+}

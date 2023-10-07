@@ -1,4 +1,4 @@
-import { PortableTextBlock } from "sanity";
+import type { PortableTextBlock  } from 'sanity'
 
 export type WrittenTypes = {
     _id: string;
@@ -7,8 +7,8 @@ export type WrittenTypes = {
     slug: string;
     author: string;
     customer: string;
-    year: number;
-    duration: number;
+    year: string;
+    duration: string;
     premier: string;
     score: string;
     songUrl: string;
