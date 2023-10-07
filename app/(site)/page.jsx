@@ -2,8 +2,6 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { Playfair_Display } from 'next/font/google';
-import SectionRow from '@/components/sections/sectionRow/SectionRow';
-import TextLeftImgRight from '@/components/sections/sectionRow/TextLeftImgRight';
 import TextHeadline from '@/components/texts/TextHeadline';
 import SingleItem from 'components/singleitem/SingleItem';
 import SectionOneFourthScreen from '@/components/sections/screenSections/SectionOneFourthScreen';
@@ -24,7 +22,9 @@ import ScrollDown from '@/components/scrolldown/ScrollDown';
 import WordFromLeft from '@/components/animations/wordAnimations/WordFromLeft';
 import StageItem from '@/components/works/StageItem';
 import ItemsList from '@/components/works/ItemsList';
-import ImageGrid from '@/components/imageGrid/imageGrid';
+import ImageGrid from '@/components/imageGrid/ImageGrid';
+import SectionRow from '@/components/sections/sectionRow/SectionRow';
+import TextLeftImgRight from '@/components/sections/sectionRow/TextLeftImgRight';
 
 const playfair = Playfair_Display({ subsets: ['latin-ext'], weight: '400' });
 
