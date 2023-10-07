@@ -2,29 +2,29 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { Playfair_Display } from 'next/font/google';
-import ItemsList from 'components/works/ItemsList';
-import StageItem from 'components/works/StageItem';
-import SectionRow from 'components/sections/sectionRow/SectionRow';
-import TextLeftImgRight from 'components/sections/sectionRow/TextLeftImgRight';
-import TextHeadline from 'components/texts/TextHeadline';
+import SectionRow from '@/components/sections/sectionRow/SectionRow';
+import TextLeftImgRight from '@/components/sections/sectionRow/TextLeftImgRight';
+import TextHeadline from '@/components/texts/TextHeadline';
 import SingleItem from 'components/singleitem/SingleItem';
-import SectionOneFourth from 'components/sections/screenSections/SectionOneFourthScreen';
+import SectionOneFourthScreen from '@/components/sections/screenSections/SectionOneFourthScreen';
 import PianoImg from '/public/PianoHands.gif';
 import PhotoGallery from '/public/images/photogallery.jpg';
 import StageImg from '/public/Hemsida.jpg';
 import VidGif from '/public/shiro.gif';
-import ImageGrid from 'components/imageGrid/ImageGrid';
-import SectionFullScreen from 'components/sections/screenSections/SectionFullScreen';
+import SectionFullScreen from '@/components/sections/screenSections/SectionFullScreen';
 import { motion, AnimatePresence } from 'framer-motion';
-import { fadeIn, fadeInUp } from 'components/animations/Animations';
-import { Reveal } from 'components/animations/reveal/Reveal';
+import { fadeIn, fadeInUp } from '@/components/animations/Animations';
+import { Reveal } from '@/components/animations/reveal/Reveal';
 
 import styles from './homepage.module.scss';
-import SectionOneThird from 'components/sections/screenSections/SectionOneThird';
-import { SlideUp } from 'components/animations/reveal/SlideUp';
-import LetterAnimation from 'components/animations/letterAnimation/LetterAnimaion';
-import ScrollDown from 'components/scrolldown/ScrollDown';
-import WordFromLeft from 'components/animations/wordAnimations/WordFromLeft';
+import SectionOneThird from '@/components/sections/screenSections/SectionOneThird';
+import { SlideUp } from '@/components/animations/reveal/SlideUp';
+import LetterAnimation from '@/components/animations/letterAnimation/LetterAnimaion';
+import ScrollDown from '@/components/scrolldown/ScrollDown';
+import WordFromLeft from '@/components/animations/wordAnimations/WordFromLeft';
+import StageItem from '@/components/works/StageItem';
+import ItemsList from '@/components/works/ItemsList';
+import ImageGrid from '@/components/imageGrid/imageGrid';
 
 const playfair = Playfair_Display({ subsets: ['latin-ext'], weight: '400' });
 
@@ -46,7 +46,7 @@ export default function Home() {
   return (
     <main className={styles.homepage}>
       <SectionFullScreen>
-        <SectionOneFourth>
+        <SectionOneFourthScreen>
           <Link
             href='/'
             prefetch={false}
@@ -78,15 +78,15 @@ export default function Home() {
             music for ensembles, stage productions and film
           </motion.p>
           <span className='bg-slate-100 w-full h-full absolute left-0 top-0 -z-0 opactiy-70'></span>
-        </SectionOneFourth>
-        <SectionOneFourth>
+        </SectionOneFourthScreen>
+        <SectionOneFourthScreen>
           <Link href='/writtenwork' />
           <Reveal>
             <h2>Written work</h2>
           </Reveal>
           <Image alt='piano img' src={PianoImg} fill priority />
-        </SectionOneFourth>
-        <SectionOneFourth>
+        </SectionOneFourthScreen>
+        <SectionOneFourthScreen>
           <Link
             href='/worksforstage'
             className='absolute w-full h-full top-0 left-0 z-50 cursor-pointer pointer-events-auto'
@@ -104,8 +104,8 @@ export default function Home() {
               33vw'
             className='absolute left-0 top-0 -z-0 object-cover object-center group-hover:scale-110 transition-all duration-1000 cursor-pointer pointer-events-auto'
           />
-        </SectionOneFourth>
-        <SectionOneFourth>
+        </SectionOneFourthScreen>
+        <SectionOneFourthScreen>
           <Link
             href='/worksforfilm'
             className='absolute w-full h-full top-0 left-0 z-50 cursor-pointer pointer-events-auto'
@@ -125,7 +125,7 @@ export default function Home() {
               33vw'
             className='absolute left-0 top-0 -z-0 object-cover object-center group-hover:scale-110 transition-all duration-1000 cursor-pointer pointer-events-auto'
           />
-        </SectionOneFourth>
+        </SectionOneFourthScreen>
       </SectionFullScreen>
 
       {/* test full screen första mb, sen 3 rows, på nästa projekt */}

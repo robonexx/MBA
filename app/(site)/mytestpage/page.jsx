@@ -1,6 +1,6 @@
 'use client';
 import React from 'react';
-import ImageLightBox from 'components/imageLightBox/ImageLightBox';
+import ImageLightBox from '@/components/imageLightBox/ImageLightBox';
 import WordFromLeft from '@/components/animations/wordAnimations/WordFromLeft';
 import LetterAnimation from '@/components/animations/letterAnimation/LetterAnimaion';
 const page = () => {
