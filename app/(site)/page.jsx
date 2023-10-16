@@ -63,7 +63,7 @@ export default function Home() {
 
   return (
     <main className={styles.homepage}>
-      <SectionFullScreen>
+      {/*  <SectionFullScreen>
         <SectionOneFourthScreen>
           <Link
             href='/'
@@ -144,26 +144,37 @@ export default function Home() {
             className='absolute left-0 top-0 -z-0 object-cover object-center group-hover:scale-110 transition-all duration-1000 cursor-pointer pointer-events-auto'
           />
         </SectionOneFourthScreen>
-      </SectionFullScreen>
+      </SectionFullScreen> */}
 
       {/* test full screen första mb, sen 3 rows, på nästa projekt */}
       {/* markus b almqivst fullscreen, test */}
       <SectionFullScreen>
         <div className='absolute w-full h-full top-0 left-0 z-50 cursor-pointer pointer-events-auto bg-slate-200 flex flex-col justify-center align-items-center py-10'>
-          <SlideUp>
-            <h1
-              className={`h-28 text-2xl md:text-4xl lg:text-6xl font-thin text-center z-10 text-zinc-900 relative mt-36 ${playfair.className}`}
-            >
-              Markus B. Almqvist
-            </h1>
-          </SlideUp>
-          <SlideUp>
-            <p className='m-auto w-full max-h-fit lg:w-3/5 text-xs md:text-m text-center text-zinc-800 drop-shadow-md z-10 px-4 relative mt-28'>
-              Award-winning composer based in Stockholm, Sweden. <br /> Writing
-              music for ensembles, stage productions and film
-            </p>
-          </SlideUp>
-          <ScrollDown />
+          <h1
+            initial={{ y: -100, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ duration: 0.4 }}
+            className={`h-fit text-2xl md:text-4xl lg:text-6xl font-thin text-center z-10 text-zinc-900 relative mt-36 ${playfair.className}`}
+          >
+            Markus B. Almqvist
+          </h1>
+
+          <p
+            initial={{ y: -100, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ duration: 0.4, delay: 0.3 }}
+            className='m-auto w-full max-h-fit lg:w-3/5 text-xs md:text-m text-center text-zinc-800 drop-shadow-md z-10 px-4 relative mt-28'
+          >
+            Award-winning composer based in Stockholm, Sweden. <br /> Writing
+            music for ensembles, stage productions and film
+          </p>
+          <div
+            initial={{ y: -100, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ duration: 0.4, delay: 0.6 }}
+          >
+            <ScrollDown />
+          </div>
         </div>
       </SectionFullScreen>
 
@@ -200,9 +211,7 @@ export default function Home() {
             className='absolute w-full h-full top-0 left-0 z-50 cursor-pointer pointer-events-auto'
           />
           <Reveal>
-            <h2>
-              Works for film
-            </h2>
+            <h2>Works for film</h2>
           </Reveal>
           <Image
             alt='piano img'
@@ -218,28 +227,6 @@ export default function Home() {
       </SectionFullScreen>
 
       {/* resterande delar */}
-
-      <SectionFullScreen>
-        <div className={styles.container}>
-          <Link
-            href={'/mytestpage'}
-            className='absolute w-full h-full top-0 left-0 z-50 cursor-pointer pointer-events-auto'
-          />
-          <Image
-            alt='piano img'
-            src={PhotoGallery}
-            fill
-            priority
-            sizes='(max-width: 768px) 100vw,
-              (max-width: 1200px) 50vw,
-              33vw'
-            className='relative -z-0 object-cover object-center transition-all duration-1000 cursor-pointer pointer-events-auto opacity-80'
-          />
-          <h2 className='absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-2xl bg-orange-600 '>
-            Bara länk till annan sida, inget som skall finnas meds sen
-          </h2>
-        </div>
-      </SectionFullScreen>
       <SectionFullScreen>
         <Reveal>
           <TextHeadline title='Written work' />
@@ -293,6 +280,27 @@ export default function Home() {
       )}
       <SectionFullScreen>
         <ImageGrid />
+      </SectionFullScreen>
+      <SectionFullScreen>
+        <div className={styles.container}>
+          <Link
+            href={'/mytestpage'}
+            className='absolute w-full h-full top-0 left-0 z-50 cursor-pointer pointer-events-auto'
+          />
+          <Image
+            alt='piano img'
+            src={PhotoGallery}
+            fill
+            priority
+            sizes='(max-width: 768px) 100vw,
+              (max-width: 1200px) 50vw,
+              33vw'
+            className='relative -z-0 object-cover object-center transition-all duration-1000 cursor-pointer pointer-events-auto opacity-80'
+          />
+          <h2 className='absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-2xl bg-orange-600 '>
+            Bara länk till annan sida, inget som skall finnas meds sen
+          </h2>
+        </div>
       </SectionFullScreen>
     </main>
   );
