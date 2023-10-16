@@ -86,7 +86,7 @@ export default function Home() {
             </span>
           </motion.h1>
           <motion.p
-            className='m-auto w-full lg:w-3/5 mt-2 text-xs md:text-m text-center text-zinc-800 drop-shadow-md z-10 px-4 absolute  top-36'
+            className='m-auto w-full lg:w-3/5 mt-2 text-xs md:text-m text-center text-zinc-800 drop-shadow-md z-10 px-4 absolute  top-28'
             variants={fadeInUp}
             initial='initial'
             animate='enter'
@@ -150,20 +150,15 @@ export default function Home() {
       {/* markus b almqivst fullscreen, test */}
       <SectionFullScreen>
         <div className='absolute w-full h-full top-0 left-0 z-50 cursor-pointer pointer-events-auto bg-slate-200 flex flex-col justify-center align-items-center py-10'>
-          <Link
-            href='/'
-            prefetch={false}
-            className='absolute w-full h-full top-0 left-0 z-50 cursor-pointer pointer-events-auto'
-          />
           <SlideUp>
             <h1
-              className={`text-2xl md:text-4xl lg:text-6xl font-thin text-center z-10 text-zinc-900 relative mt-36 ${playfair.className}`}
+              className={`h-28 text-2xl md:text-4xl lg:text-6xl font-thin text-center z-10 text-zinc-900 relative mt-36 ${playfair.className}`}
             >
               Markus B. Almqvist
             </h1>
           </SlideUp>
           <SlideUp>
-            <p className='m-auto w-full lg:w-3/5 text-xs md:text-m text-center text-zinc-800 drop-shadow-md z-10 px-4 relative mt-28'>
+            <p className='m-auto w-full max-h-fit lg:w-3/5 text-xs md:text-m text-center text-zinc-800 drop-shadow-md z-10 px-4 relative mt-28'>
               Award-winning composer based in Stockholm, Sweden. <br /> Writing
               music for ensembles, stage productions and film
             </p>
