@@ -8,13 +8,16 @@
     display: inline-block;
     font-size: 2rem;
     padding: 0 0.25rem;
-    color: goldenrod;
-    font-weight: 600;
+    color: white;
+    font-weight: 400;
     letter-spacing: 4px;
   }
 
   :nth-child(even) {
     color: #f75a11;
+    background-color: black;
+    padding: 0rem 0.25rem;
+    
   }
 }
 

@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from 'react';
 import { useRouter } from 'next/router';
 import { AnimatePresence } from 'framer-motion';
-import '@/app/globals.css';
+import '@/app/globals.scss';
 import { Inter } from 'next/font/google';
 import Header from 'components/header/Header';
 import MenuBtn from 'components/menuBtn/MenuBtn';

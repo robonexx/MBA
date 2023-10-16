@@ -109,7 +109,7 @@ export default function Home() {
             href='/worksforstage'
             className='absolute w-full h-full top-0 left-0 z-50 cursor-pointer pointer-events-auto'
           />
-          <h2 className='relative h-fit text-white font-thin text-3xl md:text-4xl z-10'>
+          <h2>
             Work for stage
           </h2>
           <Image
@@ -129,9 +129,9 @@ export default function Home() {
             className='absolute w-full h-full top-0 left-0 z-50 cursor-pointer pointer-events-auto'
           />
           <Reveal>
-            <p className='relative h-fit text-white font-thin text-3xl md:text-4xl z-10'>
+            <h2>
               Works for film
-            </p>
+            </h2>
           </Reveal>
           <Image
             alt='piano img'
@@ -200,9 +200,9 @@ export default function Home() {
             className='absolute w-full h-full top-0 left-0 z-50 cursor-pointer pointer-events-auto'
           />
           <Reveal>
-            <p className='relative h-fit text-white font-thin text-3xl md:text-4xl z-10'>
+            <h2>
               Works for film
-            </p>
+            </h2>
           </Reveal>
           <Image
             alt='piano img'

@@ -1,0 +1,35 @@
+
+// colors
+
+$color-bg-dark: #121212;
+$color-bg-dark-alt: #1d1b1b;
+$color-bg-light: #efefef;
+$color-bg-light-alt: #fff;
+$color-text-primary: #f8f8f8;
+$color-text-secondary: #121212;
+
+
+// colors client
+$color-client-1: #fff4e9;
+$color-client-2: #1a1b1b;
+$color-client-3: #3DBDA7;
+$color-client-4: #4AA788;
+$color-client-5: #e2725b;
+$color-client-black: #080808;
+$color-shadow: #31413E;
+$color-bg: #1D1E22;
+
+$color-client-menuBtn: #3DBDA7;
+
+$color-client-alt: #067D714D;
+
+
+// color scrollbar
+$color-scrollbar-bg: $color-shadow;
+
+// color gradients
+$color-gradient-gold: linear-gradient(120deg, #BF953F, #FCF6BA, #B38728, #FBF5B7, #AA771C);
+$color-gradient-purple: linear-gradient(120deg, #574650, #E6D5DF, #6F5E68);
+$color-gradient-black: linear-gradient(120deg, $color-client-3, $color-bg-dark-alt, $color-client-2, $color-client-3);
+$color-gradient-white: linear-gradient(120deg, $color-client-1, #fff, $color-client-1, #f8f8fa, #dedede);
+

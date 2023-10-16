@@ -40,7 +40,7 @@ const WordFromLeft: React.FC<TextWordAnimationProps> = ({
           /* className={``}
           style={{ display: 'inline-block' }} */
           variants={{
-            hidden: { opacity: 0, x: -50 },
+            hidden: { opacity: 0, x: -100 },
             visible: { opacity: 1, x: 0, transition: { duration: 0.2, delay: idx * 0.2 } },
           }}
         >

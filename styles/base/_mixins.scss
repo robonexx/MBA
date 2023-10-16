@@ -1,0 +1,23 @@
+// scrollbar
+@mixin scrollbar($size, $foreground-color, $background-color: mix($foreground-color, rgb(27, 27, 27),  50%)) {
+    // For Google Chrome
+    &::-webkit-scrollbar {
+      width:  $size;
+    }
+  
+    &::-webkit-scrollbar-thumb {
+      background: $foreground-color;
+      height: 20px;
+    }
+  
+    &::-webkit-scrollbar-track {
+      background: $background-color;
+    }
+  
+    // For Internet Explorer
+    & {
+      scrollbar-face-color: $foreground-color;
+      scrollbar-track-color: $background-color;
+    }
+  }
+
