@@ -94,8 +94,9 @@ export default function Home() {
           >
             Award-winning composer based in Stockholm, Sweden. <br /> Writing
             music for ensembles, stage productions and film
-          </motion.p>
+          </motion.p>{' '}
           <span className='bg-slate-100 w-full h-full absolute left-0 top-0 -z-0 opactiy-70'></span>
+          <p className='text-black absolute left-0 top-0'>DEV</p>
         </SectionOneFourthScreen>
         <SectionOneFourthScreen>
           <Link href='/writtenwork' />
@@ -109,9 +110,7 @@ export default function Home() {
             href='/worksforstage'
             className='absolute w-full h-full top-0 left-0 z-50 cursor-pointer pointer-events-auto'
           />
-          <h2>
-            Work for stage
-          </h2>
+          <h2>Work for stage</h2>
           <Image
             alt='piano img'
             src={StageImg}
@@ -129,9 +128,7 @@ export default function Home() {
             className='absolute w-full h-full top-0 left-0 z-50 cursor-pointer pointer-events-auto'
           />
           <Reveal>
-            <h2>
-              Works for film
-            </h2>
+            <h2>Works for film</h2>
           </Reveal>
           <Image
             alt='piano img'
@@ -200,9 +197,7 @@ export default function Home() {
             className='absolute w-full h-full top-0 left-0 z-50 cursor-pointer pointer-events-auto'
           />
           <Reveal>
-            <h2>
-              Works for film
-            </h2>
+            <h2>Works for film</h2>
           </Reveal>
           <Image
             alt='piano img'
