@@ -41,11 +41,6 @@ const stage = {
             of: [{ type: 'block' }]
         
         },
-        {
-            name: 'links',
-            title: 'Links',
-            type: 'object',
-            fields: [
                 {
                     name: 'watch',
                     title: 'Link to live project',
@@ -60,9 +55,7 @@ const stage = {
                     name: 'read',
                     title: 'Link to file',
                     type: 'url'
-                }
-            ]
-        },
+                },
         {
             name: "image",
             title: "Image",

@@ -8,6 +8,8 @@ export type StageTypes = {
   producers: string;
   year: string;
   description: PortableTextBlock[];
-  links: object;
+  watch: string;
+  listen: string;
+  read: string;
   image: string;
 }

@@ -7,6 +7,7 @@ import styles from './stageItem.module.scss';
 import { motion } from 'framer-motion';
 import Modal from '@/components/modal/Modal';
 import ContentWatch from '@/components/contentWatch/ContentWatch';
+import { PortableText } from '@portabletext/react';
 
 const Watch = () => {
   return <ContentWatch videoId='659455320' />;
@@ -34,7 +35,7 @@ const StageItem = ({ data }) => {
     year,
     description,
     image,
-    links: { watch, listen, read },
+    watch, listen, read
   } = data;
 
   useEffect(() => {
@@ -60,18 +61,12 @@ const StageItem = ({ data }) => {
   return (
     <motion.div
       className={styles.stage}
-      initial={{ opacity: 0, y: 1000 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ delay: 1.5, duration: 0.8 }}
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{opacity: 0}}
+      transition={{ delay: 0.2, duration: 1 }}
     >
-      <div className={styles.contentWrapper}>
-        <motion.h2
-          initial={{ y: 200 }}
-          animate={{ y: 0, opacity: 1 }}
-          transition={{ delay: 0.6, duration: 1, ease: 'easeOut' }}
-        >
-          By: {producers} Premiere: {year}
-        </motion.h2>
+      <div className={styles.contentWrapper}>       
         <motion.h1
           initial={{ y: -100 }}
           animate={{ y: 0, opacity: 1 }}
@@ -79,6 +74,13 @@ const StageItem = ({ data }) => {
         >
           {title}
         </motion.h1>
+        <motion.h2
+          initial={{ y: 200 }}
+          animate={{ y: 0, opacity: 1 }}
+          transition={{ delay: 0.6, duration: 1, ease: 'easeOut' }}
+        >
+          By: {producers} Premiere: {year}
+        </motion.h2>
       </div>
       <motion.div
         className={styles.buttons}
@@ -113,7 +115,9 @@ const StageItem = ({ data }) => {
           content={currentEl === 'watch' ? <Watch /> : null}
         ></Modal>
       )}
-      <p>{description}</p>
+      <div className={styles.desc}>
+       <PortableText value={description} />
+      </div>
       <motion.div
         className={styles.bgWrapper}
         initial={{}}

@@ -1,63 +1,68 @@
+@use '../../../styles/base/' as *;
+
 .stage {
-    position: relative;
-    min-height: 100vh;
-    display: block;
-    
-    h2 {
-    position: absolute;
-    top: calc(25% - 4rem);
-    left: 15vw;
-    z-index: 10;
-  }
-
-  .img {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-
-    img {
-      object-fit: cover;
-    }
-  }
+  width: 100%;
+  position: relative;
+  min-height: 100vh;
 }
 
 .headline {
-    position: absolute;
-    top: calc(25% - 5.5rem);
-    left: 50vw;
-    right: auto;
-    transform: translateX(-25%);
-    z-index: 30;
-    font-size: clamp(26px, 5vw, 48px);
-    font-weight:200;
-    color: white;
+  position: fixed;
+  top: calc(25vh - 2.5rem);
+  left: 0;
+  right: 0;
+  width: 100vw;
+  max-height: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 5;
+  visibility: hidden;
+
+  @media screen and (min-width: 768px) {
+    visibility: visible;
+  }
+
+  h4 {
     text-align: center;
-  }
+    width: 30vw;
+    color: white;
+    font-size: $font-size-l;
 
-  .overlay {
-    z-index: 0;
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    left: 0;
-    top: 0;
-    background-color: rgba(0,0,0,.325);
-  }
-
-  .fullList {
-    position: absolute;
-    bottom: 10vh;
-    right: 10vw;
-    color: #ffffff;
-    /* background: rgb(116, 116, 116); */
-    padding: 0.25rem 0.5rem;
-    border-radius: 5px;
-    z-index: 2000;
-
-    &:hover {
-      transition: color 0.3s ease-in;
-      color: #f8f8f8;
+    @media screen and (min-width: 768px) {
+      visibility: visible;
+      &:nth-of-type(3) {
+        visibility: hidden;
+        width: 30vw;
+      }
     }
+
+    
   }
+}
+
+.overlay {
+  z-index: 0;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  background-color: rgba(0, 0, 0, 0.325);
+}
+
+.fullList {
+  position: absolute;
+  bottom: 10vh;
+  right: 10vw;
+  color: #ffffff;
+  /* background: rgb(116, 116, 116); */
+  padding: 0.25rem 0.5rem;
+  border-radius: 5px;
+  z-index: 2000;
+
+  &:hover {
+    transition: color 0.3s ease-in;
+    color: #f8f8f8;
+  }
+}

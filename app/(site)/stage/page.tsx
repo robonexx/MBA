@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
 import IMG from '/public/images/stageimage.jpg';
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 import { getStages } from '@/sanity/sanity-utils';
 
 // styles
@@ -15,23 +15,41 @@ export const revalidate = 20;
 export const fetchCache = 'force-no-store';
 export const dynamic = 'force-dynamic';
 
+const variants = {
+  initial: { opacity: 0 },
+  animate: {
+    opacity: 1,
+    transition: {
+      delay: 0.1,
+      duration: 0.8,
+    },
+  },
+};
 
 const Stage = () => {
- /*  const [show, setShow] = useState(false); */
+  /*  const [show, setShow] = useState(false); */
 
- const [stages, setStages] = useState<StageTypes[]>([]);
+  const [stages, setStages] = useState<StageTypes[]>([]);
+  const [currentStageIndex, setCurrentStageIndex] = useState(0);
 
- useEffect(() => {
-   const fetchData = async () => {
-     const stagesData = await getStages();
-     setStages(stagesData);
-   };
+  useEffect(() => {
+    const fetchData = async () => {
+      const stagesData = await getStages();
+      setStages(stagesData);
+    };
 
-   fetchData();
- }, []); // empty dependency array to ensure it runs once on mount
+    fetchData();
+  }, []);
 
- console.log(stages);
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentStageIndex((prevIndex) => (prevIndex + 1) % stages.length);
+    }, 10000);
 
+    return () => clearInterval(interval);
+  }, [stages]);
+
+  console.log(stages);
 
   /* const handleShow = () => {
     setShow((prev) => !prev);
@@ -43,14 +61,14 @@ const Stage = () => {
       animate={{ opacity: 1, filter: 'blur(0px)' }}
       transition={{ duration: 1 }}
     >
-      <motion.h2
-        initial={{ x: -200 }}
-        animate={{ x: 0 }}
-        transition={{ delay: 0.6, duration: 0.3 }}
-      >
-        Markus B Almqvist
-      </motion.h2>
       <div className={styles.headline}>
+        <motion.h4
+          initial={{ x: -200 }}
+          animate={{ x: 0 }}
+          transition={{ delay: 0.6, duration: 0.3 }}
+        >
+          Markus B Almqvist
+        </motion.h4>
         <motion.h4
           initial={{ y: 300 }}
           animate={{ y: 0 }}
@@ -58,16 +76,23 @@ const Stage = () => {
         >
           Works for stage
         </motion.h4>
+        <h4>empty</h4>
       </div>
-      <div className={styles.img}>
-        <Image src={IMG} alt='stage work' fill></Image>
-      </div>
-      {stages.map((data) => (
-        <StageItem data={data} key={data._id} />
-      ))}
+      <AnimatePresence>
+        {stages.map((data, index) => (
+          <motion.div
+            key={data._id}
+            style={{ display: index === currentStageIndex ? 'block' : 'none' }}
+            variants={variants}
+            animate={index == currentStageIndex ? 'animate' : 'initial'}
+          >
+            <StageItem data={data} />
+          </motion.div>
+        ))}
+      </AnimatePresence>
 
       <div className={styles.overlay}></div>
-     {/*  <button className={styles.fullList} onClick={handleShow}>
+      {/*  <button className={styles.fullList} onClick={handleShow}>
         see full list of works for stage
       </button>
       {show ? <StageList /> : <span></span>} */}

@@ -11,7 +11,7 @@ const film = {
             type: 'string',
             validation: (rule: { required: () => any }) => rule.required(),
         },
-     {
+        {
             name: "slug",
             title: "Slug",
             type: "slug",
@@ -52,7 +52,7 @@ const film = {
                     type: "string",
                 }
             ]
-        }
+        },
     ]
 }
 

@@ -91,7 +91,9 @@ groq`*[_type == "stage"]{
   producers,
   year,
   description,
-  links?
+  watch,
+  listen,
+  read
 }`
   )
 }
@@ -108,7 +110,9 @@ export async function getStage(slug: string): Promise<StageTypes> {
       producers?,
       year?,
       description?,
-      links?
+      watch,
+      listen,
+      read
     }`,
     { slug }
   )
