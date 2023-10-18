@@ -44,7 +44,7 @@ const Stage = () => {
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentStageIndex((prevIndex) => (prevIndex + 1) % stages.length);
-    }, 10000);
+    }, 6000);
 
     return () => clearInterval(interval);
   }, [stages]);
