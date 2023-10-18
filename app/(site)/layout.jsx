@@ -35,11 +35,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang='en'>
       <body className={`${inter.className}`}>
-      <Cursor cursor={cursor} onMouseMove = { (e) => {
-  const cursor = document.querySelector(".cursor")
-  cursor.style.left = `${e.pageX}px`
-  cursor.style.top = `${e.pageY}px`
-  }}/>
+     
         <Header></Header>
         <MenuBtn active={active} setActive={setActive} scrollY={scrollY} />
         <AnimatePresence mode='wait'>
