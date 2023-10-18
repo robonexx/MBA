@@ -8,15 +8,15 @@ interface Props {
 }
 
 const slideVariants = {
-  hidden: { opacity: 0, y: 200 },
+  hidden: { opacity: 0, x: -200 },
   visible: {
     opacity: 1,
-    y: 0,
-    transition: { duration: 1, delay: 0.1, ease: 'easeOut' },
+    x: 0,
+    transition: { duration: 0.6, delay: 0.5, ease: 'easeOut' },
   },
 };
 
-export const SlideUp = ({ children }: Props) => {
+export const SlideInLeft = ({ children }: Props) => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true });
 

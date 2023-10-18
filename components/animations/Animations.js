@@ -12,11 +12,11 @@ export const fadeIn = {
 };
 
 export const fadeInUp = {
-  initial: { y: 100, opacity: 0 },
+  initial: { y: 200, opacity: 0 },
   enter: {
     y: 0,
     opacity: 1,
-    transition: { duration: 0.6, ease: 'linear' },
+    transition: { duration: 1, delay: 0.4, ease: 'linear' },
   },
   exit: {
     y: 0,

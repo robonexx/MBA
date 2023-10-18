@@ -40,16 +40,43 @@ const testData = {
   songUrl: 'play',
 };
 
+const stageDummy = {
+  title: 'Title de lux',
+  producers: 'bill och bull',
+  year: '2023',
+  description: 'some desc, to be added',
+  image: StageImg,
+  links: {
+    watch: '',
+    listen: '',
+    read: '',
+  },
+};
+
 export default function Home() {
   const [dummyData, setDummyData] = useState(null);
+  const [stageData, setStageData] = useState(null);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const fetchData = () => {
-      // Simulating data fetching delay
-      new Promise((resolve) => setTimeout(() => resolve(testData), 1000))
-        .then((result) => {
-          setDummyData(result);
+      setLoading(true);
+
+      // two data fetches with fake delay
+      const promise1 = new Promise((resolve) =>
+        setTimeout(() => resolve(testData), 1000)
+      );
+      const promise2 = new Promise((resolve) =>
+        setTimeout(() => resolve(stageDummy), 1500)
+      );
+
+      Promise.all([promise1, promise2])
+        .then(([dummyResult, stageResult]) => {
+          setDummyData(dummyResult);
+          setStageData(stageResult);
+
+          console.log(stageResult, dummyResult);
+
           setLoading(false);
         })
         .catch((error) => {
@@ -62,20 +89,20 @@ export default function Home() {
   }, []);
 
   return (
-    <main
-      className={styles.homepage}
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      transition={{ duration: 0.2 }}
-    >
-      <SectionFullScreen>
-        <div className='absolute w-full h-full top-0 left-0 z-50 cursor-pointer pointer-events-auto bg-slate-200 flex flex-col justify-center align-items-center py-10'>
+    <main className={styles.homepage}>
+      <SectionFullScreen
+        variants={fadeIn}
+        initial='initial'
+        animate='enter'
+        exit='exit'
+      >
+        <div className='absolute w-full h-full top-0 left-0 z-50 cursor-pointer pointer-events-auto bg-slate-200 grid place-content-center py-20'>
           <h1
             variants={fadeInUp}
             initial='initial'
             animate='enter'
             exit='exit'
-            className={`h-fit text-2xl md:text-4xl lg:text-6xl font-thin text-center z-10 text-zinc-900 relative mt-36 ${playfair.className}`}
+            className={`h-fit text-3xl md:text-5xl lg:text-7xl font-thin text-center z-10 text-zinc-900 relative ${playfair.className}`}
           >
             Markus B. Almqvist
           </h1>
@@ -84,7 +111,7 @@ export default function Home() {
             initial={{ y: -100, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.4, delay: 0.5 }}
-            className='m-auto w-full max-h-fit lg:w-3/5 text-xs md:text-m text-center text-zinc-800 drop-shadow-md z-10 px-4 relative mt-28'
+            className='m-auto w-full max-h-fit lg:w-4/5 text-sm md:text-base text-center text-zinc-800 drop-shadow-md z-10 px-8 relative mt-32'
           >
             Award-winning composer based in Stockholm, Sweden. <br /> Writing
             music for ensembles, stage productions and film
@@ -102,13 +129,13 @@ export default function Home() {
       {/* one thirds  test */}
       <SectionFullScreen>
         <SectionOneThird>
-          <Link href='/writtenwork' />
+          <Link href='/written' />
           <WordFromLeft text='Written work' />
           <Image alt='piano img' src={PianoImg} fill priority />
         </SectionOneThird>
         <SectionOneThird>
           <Link
-            href='/worksforstage'
+            href='/stage'
             className='absolute w-full h-full top-0 left-0 z-50 cursor-pointer pointer-events-auto'
           />
           {/* <h2 className='relative h-fit text-white font-thin text-3xl md:text-4xl z-10'>
@@ -128,7 +155,7 @@ export default function Home() {
         </SectionOneThird>
         <SectionOneThird>
           <Link
-            href='/worksforfilm'
+            href='/film'
             className='absolute w-full h-full top-0 left-0 z-50 cursor-pointer pointer-events-auto'
           />
           <Reveal>
@@ -185,7 +212,7 @@ export default function Home() {
           animate='enter'
           exit='exit'
         >
-          <StageItem />
+          {stageData ? <StageItem data={stageData} /> : <div>Laoding...</div>}
         </motion.div>
       </SectionFullScreen>
       {loading ? (

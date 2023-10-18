@@ -9,7 +9,7 @@ const stage = {
             title: 'Title',
             description: 'The title of the project',
             type: 'string',
-            validation: (rule: { required: () => any }) => rule.required(),
+            validation: (rule: { required: () => any }) => rule.required()
         },
         {
             name: "slug",
@@ -19,22 +19,27 @@ const stage = {
             options: {
                 source: 'title'
             },
-            validation: (rule: { required: () => any }) => rule.required(),
+            validation: (rule: { required: () => any }) => rule.required()
         },
         {
             name: 'producers',
             title: 'Producers',
             description: 'Producers of the stage piece',
-            type: 'string',
+            type: 'string'
+        },
+        {
+            name: 'year',
+            title: 'Year',
+            description: 'Production year',
+            type: 'string'
         },
         {
             name: 'description',
             description: 'aditional content description / text',
             title: 'Description',
             type: 'array',
-            validation: (rule: { required: () => any }) => rule.required(),
-            of: [{ type: 'block' }],
-            
+            of: [{ type: 'block' }]
+        
         },
         {
             name: 'links',
@@ -44,25 +49,34 @@ const stage = {
                 {
                     name: 'watch',
                     title: 'Link to live project',
-                    type: 'url',
+                    type: 'url'
                 },
                 {
                     name: 'listen',
                     title: 'Link to audio sound',
-                    type: 'url',
+                    type: 'url'
                 },
                 {
                     name: 'read',
                     title: 'Link to file',
-                    type: 'url',
-                },
-            ],
+                    type: 'url'
+                }
+            ]
         },
         {
-            name: 'image',
-            title: 'Main image',
-            type: 'image',
-            validation: (rule: { required: () => any }) => rule.required(),
+            name: "image",
+            title: "Image",
+            type: "image",
+            options: {
+                hotspot: true,
+            },
+            fields: [
+                {
+                    name: "alt",
+                    title: "Alt",
+                    type: "string"
+                }
+            ]
         },
     ]
 }

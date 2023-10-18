@@ -58,8 +58,7 @@ export async function getFilms(): Promise<FilmTypes[]> {
       "image": image.asset->url,
       producers,
       description,
-      link?,
-      preview,
+      link
     }`
   )
 }
@@ -74,28 +73,29 @@ export async function getFilm(slug: string): Promise<FilmTypes> {
       "image": image.asset->url,
       producers,
       description,
-      link?,
-      preview,
+      link
     }`,
     { slug }
   )
 }
 
+
 export async function getStages(): Promise<StageTypes[]> {
   return await client.fetch(
-    groq`*[_type == "stage"]{
-      _id,
-      createdAt,
-      title,
-      "slug": slug.current,
-      "image": image.asset->url,
-      producers?,
-      description,
-      links?,
-      preview,
-    }`
+groq`*[_type == "stage"]{
+  _id,
+  createdAt,
+  title,
+  "slug": slug.current,
+  "image": image.asset->url,
+  producers,
+  year,
+  description,
+  links?
+}`
   )
 }
+
 
 export async function getStage(slug: string): Promise<StageTypes> {
   return await client.fetch(
@@ -106,9 +106,9 @@ export async function getStage(slug: string): Promise<StageTypes> {
       "slug": slug.current,
       "image": image.asset->url,
       producers?,
-      description,
-      links?,
-      preview,
+      year?,
+      description?,
+      links?
     }`,
     { slug }
   )

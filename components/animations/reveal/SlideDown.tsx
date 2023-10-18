@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from 'react';
 import { motion, useInView, useAnimation } from 'framer-motion';
 
-import styles from './reveal.module.scss';
+import styles from './slide.module.scss';
 
 interface Props {
   children: JSX.Element;

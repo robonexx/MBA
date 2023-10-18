@@ -7,7 +7,6 @@ export type FilmTypes = {
     slug: string;
     producers: string;
     description: PortableTextBlock[];
-    links?: string;
+    link?: string;
     image: string;
-    preview: File;
 }

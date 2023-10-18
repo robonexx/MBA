@@ -6,7 +6,8 @@ export const revalidate = 20;
 export const fetchCache = 'force-no-store';
 export const dynamic = 'force-dynamic';
 
-const Film = () => {
+const Film = ({ data }) => {
+  const {} = data;
   return (
     <div className='mt-5 grid md:grid-cols-2 gap-5'>
       {/* {projects.map((project) => (

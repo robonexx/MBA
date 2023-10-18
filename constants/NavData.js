@@ -1,19 +1,19 @@
 export const navData = [
   {
     title: 'written',
-    path: 'writtenwork',
+    path: 'written',
     cls: 'nav_item',
     id: 1,
   },
   {
     title: 'stage',
-    path: 'worksforstage',
+    path: 'stage',
     cls: 'nav_item',
     id: 2,
   },
   {
     title: 'film',
-    path: 'worksforfilm',
+    path: 'film',
     cls: 'nav_item',
     id: 3,
   },

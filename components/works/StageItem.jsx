@@ -1,5 +1,5 @@
 'use client';
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
 import BGIMG from 'public/Hemsida.jpg';
 import Button from '@/components/button/Button';
@@ -18,14 +18,45 @@ const Listen = () => {
   return <div>Sound link goes here</div>;
 };
 
-const btnList = [{ title: 'watch' }, { title: 'listen' }, { title: 'read' }];
+const btnList = [{ name: 'watch' }, { name: 'listen' }, { name: 'read' }];
 
-const StageItem = () => {
+const StageItem = ({ data }) => {
   const [modalOpen, setModalOpen] = useState(false);
   const [currentEl, setCurrentEl] = useState(null);
+  const [isLoading, setIsLoading] = useState(true);
 
   const close = () => setModalOpen(false);
   const open = () => setModalOpen(true);
+
+  const {
+    title,
+    producers,
+    year,
+    description,
+    image,
+    links: { watch, listen, read },
+  } = data;
+
+  useEffect(() => {
+    const fetchData = () => {
+      // Simulating data fetching delay
+      new Promise((resolve) => setTimeout(() => resolve(data), 1000))
+        .then(() => {
+          setIsLoading(false);
+        })
+        .catch((error) => {
+          console.error('Error fetching data:', error);
+          setIsLoading(false);
+        });
+    };
+
+    fetchData();
+  }, [data]);
+
+  if (!data) {
+    return <div>Laoding...</div>;
+  }
+
   return (
     <motion.div
       className={styles.stage}
@@ -39,14 +70,14 @@ const StageItem = () => {
           animate={{ y: 0, opacity: 1 }}
           transition={{ delay: 0.6, duration: 1, ease: 'easeOut' }}
         >
-          by Anika Edström Kawaji & Robin Haghi Premiere 2022
+          By: {producers} Premiere: {year}
         </motion.h2>
         <motion.h1
           initial={{ y: -100 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ delay: 0.6, duration: 0.3, ease: 'easeOut' }}
         >
-          Things That Could Survive in Space
+          {title}
         </motion.h1>
       </div>
       <motion.div
@@ -55,7 +86,7 @@ const StageItem = () => {
         animate={{ opacity: 1 }}
         transition={{ delay: 0.6, duration: 0.3, ease: 'easeOut' }}
       >
-        {btnList.map(({ title }, i) => (
+        {btnList.map(({ name }, i) => (
           <motion.div
             key={i}
             initial={{ opacity: 0, y: i % 2 === 0 ? 100 : 100 }}
@@ -64,12 +95,11 @@ const StageItem = () => {
           >
             <Button
               variant='default'
-              title={title}
-              /* onClick={() => (modalOpen ? close() : open())} */
+              name={name}
               onClick={(e) => {
-                console.log((i, title));
+                console.log((i, name));
                 modalOpen ? close() : open();
-                setCurrentEl(title);
+                setCurrentEl(name);
               }}
             />
           </motion.div>
@@ -83,20 +113,24 @@ const StageItem = () => {
           content={currentEl === 'watch' ? <Watch /> : null}
         ></Modal>
       )}
-
+      <p>{description}</p>
       <motion.div
         className={styles.bgWrapper}
         initial={{}}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.4, ease: 'easeOut' }}
       >
-        <Image
-          alt='background image'
-          src={BGIMG}
-          fill
-          priority
-          className={styles.img}
-        />
+        {image ? (
+          <Image
+            alt='background image'
+            src={image}
+            fill
+            priority
+            className={styles.img}
+          />
+        ) : (
+          <div>Image missing</div>
+        )}
       </motion.div>
       <div className={styles.overlay}></div>
     </motion.div>

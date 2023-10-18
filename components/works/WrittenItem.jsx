@@ -8,7 +8,7 @@ export const revalidate = 20;
 export const fetchCache = 'force-no-store';
 export const dynamic = 'force-dynamic';
 
-const Written = async () => {
+const WrittenItem = async () => {
   const works = await dummyDataWritten;
   return (
     <div className='mt-10 mb-10 px-5 grid md:grid-cols-2 gap-2'>
@@ -25,10 +25,10 @@ const Written = async () => {
                   src={work?.image}
                   alt={work.title}
                   fill
-                            priority
-                            sizes="(max-width: 768px) 100vw,
+                  priority
+                  sizes='(max-width: 768px) 100vw,
               (max-width: 1200px) 50vw,
-              33vw"
+              33vw'
                   className='object-cover hover:scale-105 transition duration-700'
                 />
               </div>
@@ -59,4 +59,4 @@ const Written = async () => {
   );
 };
 
-export default Written;
+export default WrittenItem;

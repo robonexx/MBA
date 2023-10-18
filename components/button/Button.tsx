@@ -1,31 +1,28 @@
-'use client'
-import React from "react";
+'use client';
+import React from 'react';
 
 // styles using module on this one
 import styles from './Button.module.scss';
 
 interface Props {
   children?: React.ReactNode;
-  title: string;
+  name: string;
   variant: string;
   onClick: () => void;
 }
 
-const Button: React.FC<Props> = ({ 
+const Button: React.FC<Props> = ({
   children,
   variant,
-  title,
+  name,
   onClick = () => {},
-  }) => { 
+}) => {
   return (
-    <button 
-      onClick={onClick}
-      className={`${styles.btn} ${styles[variant]}`}
-    >
-      {title}
-    {children}
+    <button onClick={onClick} className={`${styles.btn} ${styles[variant]}`}>
+      {name}
+      {children}
     </button>
   );
-}
+};
 
 export default Button;

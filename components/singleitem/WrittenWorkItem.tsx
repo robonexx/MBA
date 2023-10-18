@@ -11,6 +11,23 @@ interface WrittenWorkItemProps {
   data: WrittenTypes;
 }
 
+interface PDFViewerProps {
+  pdf: string; // Assuming the PDF is a URL
+}
+
+const PDFViewer: React.FC<PDFViewerProps> = ({ pdf }) => {
+  return (
+    <div>
+      <iframe
+        src={pdf}
+        title="PDF Viewer"
+        style={{ width: '100%', height: '100%' }}
+      />
+    </div>
+  );
+};
+
+
 const WrittenWorkItem: React.FC<WrittenWorkItemProps> = ({ data }) => {
   /* const [modalOpen, setModalOpen] = useState<boolean>(false);
 

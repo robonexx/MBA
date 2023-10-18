@@ -6,7 +6,8 @@ export type StageTypes = {
   title: string;
   slug: string;
   producers: string;
+  year: string;
   description: PortableTextBlock[];
-  links?: { watch?: string; listen?: string; read?: string };
+  links: object;
   image: string;
 }

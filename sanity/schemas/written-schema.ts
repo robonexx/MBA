@@ -42,22 +42,22 @@ const work = {
             name: "desc",
             title: "Desc",
             type: "array",
-            of: [{ type: 'block'}],
+            of: [{ type: 'block'}]
         },
         {
             name: "score",
             title: "Score",
-            type: "string",
+            type: "string"
         },
         {
             name: "songUrl",
             title: "Song url",
-            type: "url",
+            type: "url"
         },
         {
             name: "premier",
             title: "Premier",
-            type: "string",
+            type: "string"
         },
 
         {

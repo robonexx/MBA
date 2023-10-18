@@ -23,33 +23,36 @@ const film = {
         {
             name: 'producers',
             title: 'Producers',
-            type: 'array',
-            description: 'Who made the film',
-            of: [{ type: 'block' }],
+            type: "string",
+            description: 'Who made the film'
         },
         {
             name: 'description',
             description: 'aditional content description / text',
             title: 'Description',
             type: 'array',
-            of: [{ type: 'block' }],
+            of: [{ type: 'block' }]
         },
         {
             name: 'link',
             title: 'Link',
-            type: 'url',
+            type: 'url'
         },
         {
-            name: 'image',
-            title: 'Main image',
-            type: 'image',
-        },
-        {
-            name: 'preview',
-            title: 'Preview video',
-            description: 'The preview gif or movie file',
-            type: 'file',
-        },
+            name: "image",
+            title: "Image",
+            type: "image",
+            options: {
+                hotspot: true,
+            },
+            fields: [
+                {
+                    name: "alt",
+                    title: "Alt",
+                    type: "string",
+                }
+            ]
+        }
     ]
 }
 
