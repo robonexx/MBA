@@ -22,6 +22,14 @@ const SingleItem = ({ data }) => {
     score,
     songUrl,
   } = data;
+
+  if (!data) {
+
+    return (
+      <div>No data</div>
+    )
+    
+  }
   return (
 
     <div className={styles.single_item}>

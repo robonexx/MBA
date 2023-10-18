@@ -31,11 +31,7 @@ const WrittenWorkItem: React.FC<WrittenWorkItemProps> = ({ data }) => {
   } = data;
 
   if (!data) {
-
-    return (
-      <div>No data</div>
-    )
-    
+    return <div>No data</div>;
   }
 
   return (
@@ -44,9 +40,9 @@ const WrittenWorkItem: React.FC<WrittenWorkItemProps> = ({ data }) => {
         <h3>{author}</h3>
         <div className={styles.info}>
           <h3>{title}</h3>
-          <p>{customer}</p>
-          <p>{year}</p>
-          <p>Durata ca. {duration}&apos;</p>
+          <p><span className={styles.subtitle}>Customer:</span> {customer}</p><span></span>
+          <p><span className={styles.subtitle}>Production year:</span> {year}</p>
+          <p><span className={styles.subtitle}>Durata ca. </span>{duration}&apos;</p>
         </div>
         <div className={styles.description}>
           <PortableText value={desc}></PortableText>
@@ -55,13 +51,13 @@ const WrittenWorkItem: React.FC<WrittenWorkItemProps> = ({ data }) => {
           <p className={styles.play_button}>
             <span>
               <GiPlayButton />
-            </span>
-            {songUrl} this will be a audio file
+            </span>{' '}
+            this will be a audio file
           </p>
           {/* onClick={() => (modalOpen ? close() : open())} */}
           <p className={styles.score}>{score}</p>
         </div>
-        <p>{premier}</p>
+        <p>Premier: {premier}</p>
       </div>
       <div className={styles.image}>
         <Image

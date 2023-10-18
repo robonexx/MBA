@@ -71,9 +71,10 @@ export default function Home() {
       <SectionFullScreen>
         <div className='absolute w-full h-full top-0 left-0 z-50 cursor-pointer pointer-events-auto bg-slate-200 flex flex-col justify-center align-items-center py-10'>
           <h1
-            initial={{ y: -100, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
-            transition={{ duration: 0.4, delay: 0.3 }}
+            variants={fadeInUp}
+            initial='initial'
+            animate='enter'
+            exit='exit'
             className={`h-fit text-2xl md:text-4xl lg:text-6xl font-thin text-center z-10 text-zinc-900 relative mt-36 ${playfair.className}`}
           >
             Markus B. Almqvist
