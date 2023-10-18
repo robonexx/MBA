@@ -13,10 +13,10 @@ const Watch = () => {
   return <ContentWatch videoId='659455320' />;
 };
 const Read = () => {
-  return <div>Read the text of the project and all info here</div>;
+  return <div>Här kommer PDF vara</div>;
 };
 const Listen = () => {
-  return <div>Sound link goes here</div>;
+  return <div>Här kommer audio fil vara</div>;
 };
 
 const btnList = [{ name: 'watch' }, { name: 'listen' }, { name: 'read' }];
@@ -29,14 +29,8 @@ const StageItem = ({ data }) => {
   const close = () => setModalOpen(false);
   const open = () => setModalOpen(true);
 
-  const {
-    title,
-    producers,
-    year,
-    description,
-    image,
-    watch, listen, read
-  } = data;
+  const { title, producers, year, description, image, watch, listen, read } =
+    data;
 
   useEffect(() => {
     const fetchData = () => {
@@ -63,10 +57,10 @@ const StageItem = ({ data }) => {
       className={styles.stage}
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
-      exit={{opacity: 0}}
+      exit={{ opacity: 0 }}
       transition={{ delay: 0.2, duration: 1 }}
     >
-      <div className={styles.contentWrapper}>       
+      <div className={styles.contentWrapper}>
         <motion.h1
           initial={{ y: -100 }}
           animate={{ y: 0, opacity: 1 }}
@@ -112,11 +106,19 @@ const StageItem = ({ data }) => {
         <Modal
           modalOpen={modalOpen}
           handleClose={close}
-          content={currentEl === 'watch' ? <Watch /> : null}
+          content={
+            currentEl === 'watch' ? (
+              <Watch />
+            ) : null | (currentEl === 'read') ? (
+              <Read />
+            ) : null | (currentEl === 'listen') ? (
+              <Listen />
+            ) : null
+          }
         ></Modal>
       )}
       <div className={styles.desc}>
-       <PortableText value={description} />
+        <PortableText value={description} />
       </div>
       <motion.div
         className={styles.bgWrapper}
