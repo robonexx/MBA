@@ -12,12 +12,11 @@ const MenuBtn = ({ active, setActive, scrollY }) => {
     setActive(!active);
   };
 
-/*   console.log('scroll y pos is', scrollY)
+  /*   console.log('scroll y pos is', scrollY)
   console.log('scroll y pos is', 2 * window.innerHeight)
   console.log('window innerheight', window.innerHeight) */
 
   useEffect(() => {
-
     if (window !== undefined) {
       // browser code
       if (scrollY > 2 * window.innerHeight) {
@@ -26,17 +25,15 @@ const MenuBtn = ({ active, setActive, scrollY }) => {
       } else {
         // Remove the class if scroll position is less than 200vh
         menuRef.current.classList.remove(`${styles.menu_center}`);
+      }
     }
-    }
-    
   }, [scrollY]);
 
   return (
     <AnimatePresence mode='wait'>
       <motion.div
-         ref={menuRef}
-        className={`${styles.hamburger_wrapper}`}
-       
+        ref={menuRef}
+        className={styles.hamburger_wrapper}
         onClick={(e) => onClickHandler()}
         whileHover={{
           translateY: -2,

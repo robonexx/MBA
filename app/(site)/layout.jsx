@@ -35,12 +35,11 @@ export default function RootLayout({ children }) {
   return (
     <html lang='en'>
       <body className={`${inter.className}`}>
-     
         <Header></Header>
         <MenuBtn active={active} setActive={setActive} scrollY={scrollY} />
         <AnimatePresence mode='wait'>
           {active && (
-            <Nav active={active} setActive={setActive}>
+            <Nav active={active} setActive={setActive} scrollY={scrollY}>
               {navData.map(({ title, path, cls, id }, i) => (
                 <NavItem
                   title={title}
@@ -56,9 +55,9 @@ export default function RootLayout({ children }) {
           )}
         </AnimatePresence>
         <div className='scrolling'>
-        {scrollY > 500
-          ? 'Scrolled more than 500px'
-          : 'Still somewhere near the top!'}
+          {scrollY > 500
+            ? 'Scrolled more than 500px'
+            : 'Still somewhere near the top!'}
         </div>
         {children}
       </body>

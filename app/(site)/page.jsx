@@ -62,98 +62,18 @@ export default function Home() {
   }, []);
 
   return (
-    <main className={styles.homepage}>
-      {/*  <SectionFullScreen>
-        <SectionOneFourthScreen>
-          <Link
-            href='/'
-            prefetch={false}
-            className='absolute w-full h-full top-0 left-0 z-50 cursor-pointer pointer-events-auto'
-          />
-          <motion.h1
-            className='text-2xl md:text-4xl lg:text-6xl font-thin text-center z-10 invisible md:visible
-            absolute top-10'
-            variants={fadeIn}
-            initial='initial'
-            animate='enter'
-            exit='exit'
-          >
-            <span
-              className={`bg-gradient-to-r from-black via-zinc-900 to-black bg-clip-text text-transparent z-10 drop-shadow-sm ${playfair.className}`}
-            >
-              {' '}
-              Markus B. Almqvist
-            </span>
-          </motion.h1>
-          <motion.p
-            className='m-auto w-full lg:w-3/5 mt-2 text-xs md:text-m text-center text-zinc-800 drop-shadow-md z-10 px-4 absolute  top-28'
-            variants={fadeInUp}
-            initial='initial'
-            animate='enter'
-            exit='exit'
-          >
-            Award-winning composer based in Stockholm, Sweden. <br /> Writing
-            music for ensembles, stage productions and film
-          </motion.p>
-          <span className='bg-slate-100 w-full h-full absolute left-0 top-0 -z-0 opactiy-70'></span>
-        </SectionOneFourthScreen>
-        <SectionOneFourthScreen>
-          <Link href='/writtenwork' />
-          <Reveal>
-            <h2>Written work</h2>
-          </Reveal>
-          <Image alt='piano img' src={PianoImg} fill priority />
-        </SectionOneFourthScreen>
-        <SectionOneFourthScreen>
-          <Link
-            href='/worksforstage'
-            className='absolute w-full h-full top-0 left-0 z-50 cursor-pointer pointer-events-auto'
-          />
-          <h2>
-            Work for stage
-          </h2>
-          <Image
-            alt='piano img'
-            src={StageImg}
-            fill
-            priority
-            sizes='(max-width: 768px) 100vw,
-              (max-width: 1200px) 50vw,
-              33vw'
-            className='absolute left-0 top-0 -z-0 object-cover object-center group-hover:scale-110 transition-all duration-1000 cursor-pointer pointer-events-auto'
-          />
-        </SectionOneFourthScreen>
-        <SectionOneFourthScreen>
-          <Link
-            href='/worksforfilm'
-            className='absolute w-full h-full top-0 left-0 z-50 cursor-pointer pointer-events-auto'
-          />
-          <Reveal>
-            <h2>
-              Works for film
-            </h2>
-          </Reveal>
-          <Image
-            alt='piano img'
-            src={VidGif}
-            fill
-            priority
-            sizes='(max-width: 768px) 100vw,
-              (max-width: 1200px) 50vw,
-              33vw'
-            className='absolute left-0 top-0 -z-0 object-cover object-center group-hover:scale-110 transition-all duration-1000 cursor-pointer pointer-events-auto'
-          />
-        </SectionOneFourthScreen>
-      </SectionFullScreen> */}
-
-      {/* test full screen första mb, sen 3 rows, på nästa projekt */}
-      {/* markus b almqivst fullscreen, test */}
+    <main
+      className={styles.homepage}
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 0.2 }}
+    >
       <SectionFullScreen>
         <div className='absolute w-full h-full top-0 left-0 z-50 cursor-pointer pointer-events-auto bg-slate-200 flex flex-col justify-center align-items-center py-10'>
           <h1
             initial={{ y: -100, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
-            transition={{ duration: 0.4 }}
+            transition={{ duration: 0.4, delay: 0.3 }}
             className={`h-fit text-2xl md:text-4xl lg:text-6xl font-thin text-center z-10 text-zinc-900 relative mt-36 ${playfair.className}`}
           >
             Markus B. Almqvist
@@ -162,7 +82,7 @@ export default function Home() {
           <p
             initial={{ y: -100, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
-            transition={{ duration: 0.4, delay: 0.3 }}
+            transition={{ duration: 0.4, delay: 0.5 }}
             className='m-auto w-full max-h-fit lg:w-3/5 text-xs md:text-m text-center text-zinc-800 drop-shadow-md z-10 px-4 relative mt-28'
           >
             Award-winning composer based in Stockholm, Sweden. <br /> Writing

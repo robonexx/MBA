@@ -1,4 +1,4 @@
-nav {
+.nav {
   margin: 0;
   padding: 0;
   position: fixed;
@@ -7,14 +7,13 @@ nav {
   bottom: 0;
   z-index: 999;
   width: 100%;
-
 }
 
-nav.scroll {
+.nav.scroll {
   top: 0;
 }
 
-nav > ul {
+.nav > .menu {
   height: 100svh;
   width: 100%;
   position: relative;
@@ -57,8 +56,8 @@ nav > ul {
 }
 
 @media (min-width: 768px) {
-  nav {
-    top: calc(25% - 1.5rem);
+  .nav {
+    top: calc(25% - 3rem);
     right: 0;
     width: 100%;
     height: 3rem;
@@ -66,26 +65,19 @@ nav > ul {
     z-index: 999;
   }
 
-  nav.scroll {
-    top: calc(50% - 2.25rem);
+  .nav_center {
+    transition: transform 0.4s ease-in-out;
+    top: calc(50% + 1.75rem);
     transform: translateY(-50%);
-
-    nav ul {
-      background-color: red;
-    }
-    
+    background-color: transparent;
   }
-
-  .hide {
-    transition: 0.4s ease-in-out;
-    opacity: 0;
-  }
+  
 
   nav.border {
     border-bottom: 5px solid #888;
   }
 
-  nav > ul {
+  .nav > .menu {
     position: relative;
     margin: 0;
     padding: 0 1.5rem;
