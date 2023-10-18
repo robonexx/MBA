@@ -18,7 +18,7 @@ const Nav = ({ active, children, scrollY }) => {
       // browser code
       if (scrollY > 2 * window.innerHeight) {
         // Apply styles or add a class to center the button
-        console.log('nav is 2 vh down')
+        console.log('nav is 2 vh down');
         navRef.current.classList.add(`${styles.nav_center}`);
       } else {
         // Remove the class if scroll position is less than 200vh
@@ -37,7 +37,11 @@ const Nav = ({ active, children, scrollY }) => {
       exit='exit'
     >
       <ul className={`${styles.menu} ${active ? styles.open : ''}`}>
-        <Link className={`${playfair.className} ${styles.link}`} href='/'>
+        <Link
+          className={`${playfair.className} ${styles.link}`}
+          href='/'
+          onClick={() => setActive(false)}
+        >
           Markus B. Almqvist
         </Link>
         {children}

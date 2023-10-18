@@ -102,7 +102,7 @@ export default function Home() {
             initial='initial'
             animate='enter'
             exit='exit'
-            className={`h-fit text-3xl md:text-5xl lg:text-7xl font-thin text-center z-10 text-zinc-900 relative ${playfair.className}`}
+            className={`h-fit text-3xl md:text-5xl lg:text-7xl font-thin text-center z-10 text-zinc-900 mt-20 relative ${playfair.className}`}
           >
             Markus B. Almqvist
           </h1>

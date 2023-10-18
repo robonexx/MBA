@@ -2,6 +2,7 @@
 import React, { useState } from 'react';
 import Image from 'next/image';
 import './ImageLightBox.scss';
+import { RiArrowLeftCircleFill, RiArrowRightCircleFill } from 'react-icons/ri';
 
 const image1 =
   'https://images.unsplash.com/photo-1536924430914-91f9e2041b83?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fG1vZGVsc3xlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=500&q=60';
@@ -82,7 +83,9 @@ function ImageGallery() {
     e.stopPropagation();
     let currentIndex = images.indexOf(imageToShow);
     if (currentIndex >= images.length - 1) {
-      setLightBoxDisplay(false);
+      /* setLightBoxDisplay(false); */
+      let currentIndex = images[0];
+      setImageToShow(currentIndex);
     } else {
       let nextImage = images[currentIndex + 1];
       setImageToShow(nextImage);
@@ -94,7 +97,9 @@ function ImageGallery() {
     e.stopPropagation();
     let currentIndex = images.indexOf(imageToShow);
     if (currentIndex <= 0) {
-      setLightBoxDisplay(false);
+      /* setLightBoxDisplay(false); */
+      let currentIndex = images.length - 1;
+      setImageToShow(currentIndex);
     } else {
       let nextImage = images[currentIndex - 1];
       setImageToShow(nextImage);
@@ -107,9 +112,13 @@ function ImageGallery() {
 
       {lightboxDisplay ? (
         <div id='lightbox' onClick={hideLightBox}>
-          <button onClick={showPrev}>⭠</button>
+          <button onClick={showPrev}>
+            <RiArrowLeftCircleFill />
+          </button>
           <img id='lightbox-img' src={imageToShow}></img>
-          <button onClick={showNext}>⭢</button>
+          <button onClick={showNext}>
+            <RiArrowRightCircleFill />
+          </button>
         </div>
       ) : (
         ''
@@ -119,3 +128,8 @@ function ImageGallery() {
 }
 
 export default ImageLightBox;
+
+/* 
+
+
+*/
