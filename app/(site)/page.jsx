@@ -90,6 +90,7 @@ export default function Home() {
 
   return (
     <main className={styles.homepage}>
+    {/*   <div className={styles.wrapper}> */}
       <SectionFullScreen
         variants={fadeIn}
         initial='initial'
@@ -249,7 +250,8 @@ export default function Home() {
             Bara länk till annan sida, inget som skall finnas meds sen
           </h2>
         </div>
-      </SectionFullScreen>
+        </SectionFullScreen>
+       {/*  </div> */}
     </main>
   );
 }
