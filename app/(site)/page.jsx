@@ -125,7 +125,6 @@ export default function Home() {
           >
             <ScrollDown />
           </div>
-          <Button><p>My Work</p></Button>
         </div>
       </SectionFullScreen>
 
