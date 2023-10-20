@@ -25,6 +25,7 @@ import StageItem from '@/components/works/StageItem';
 import ItemsList from '@/components/works/ItemsList';
 import ImageGrid from '@/components/imageGrid/ImageGrid';
 import TextLeft from '@/components/sections/TextLeft';
+import Button from '@/components/button/Button';
 
 const playfair = Playfair_Display({ subsets: ['latin-ext'], weight: '400' });
 
@@ -90,7 +91,7 @@ export default function Home() {
 
   return (
     <main className={styles.homepage}>
-    {/*   <div className={styles.wrapper}> */}
+      {/*   <div className={styles.wrapper}> */}
       <SectionFullScreen
         variants={fadeIn}
         initial='initial'
@@ -124,6 +125,7 @@ export default function Home() {
           >
             <ScrollDown />
           </div>
+          <Button><p>My Work</p></Button>
         </div>
       </SectionFullScreen>
 
@@ -131,7 +133,7 @@ export default function Home() {
       <SectionFullScreen>
         <SectionOneThird>
           <Link href='/written' />
-          <WordFromLeft text='Written work' />
+          <LetterAnimation text='Work for stage' />
           <Image alt='piano img' src={PianoImg} fill priority />
         </SectionOneThird>
         <SectionOneThird>
@@ -142,7 +144,7 @@ export default function Home() {
           {/* <h2 className='relative h-fit text-white font-thin text-3xl md:text-4xl z-10'>
             
           </h2> */}
-          <LetterAnimation text='Work for stage' />
+          <LetterAnimation text='Works for stage' />
           <Image
             alt='piano img'
             src={StageImg}
@@ -159,9 +161,7 @@ export default function Home() {
             href='/film'
             className='absolute w-full h-full top-0 left-0 z-50 cursor-pointer pointer-events-auto'
           />
-          <Reveal>
-            <h2>Works for film</h2>
-          </Reveal>
+          <LetterAnimation text='Works for film' />
           <Image
             alt='piano img'
             src={VidGif}
@@ -250,8 +250,8 @@ export default function Home() {
             Bara länk till annan sida, inget som skall finnas meds sen
           </h2>
         </div>
-        </SectionFullScreen>
-       {/*  </div> */}
+      </SectionFullScreen>
+      {/*  </div> */}
     </main>
   );
 }
