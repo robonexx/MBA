@@ -145,7 +145,7 @@ export default function Home() {
 
       {/* test full screen första mb, sen 3 rows, på nästa projekt */}
       {/* markus b almqivst fullscreen, test */}
-      <SectionFullScreen>
+    {/*   <SectionFullScreen>
         <div className='absolute w-full h-full top-0 left-0 z-50 cursor-pointer pointer-events-auto bg-slate-200 flex flex-col justify-center align-items-center py-10'>
           <SlideUp>
             <h1
@@ -162,10 +162,10 @@ export default function Home() {
           </SlideUp>
           <ScrollDown />
         </div>
-      </SectionFullScreen>
+      </SectionFullScreen> */}
 
       {/* one thirds  test */}
-      <SectionFullScreen>
+     {/*  <SectionFullScreen>
         <SectionOneThird>
           <Link href='/writtenwork' />
           <WordFromLeft text='Written work' />
@@ -176,9 +176,6 @@ export default function Home() {
             href='/worksforstage'
             className='absolute w-full h-full top-0 left-0 z-50 cursor-pointer pointer-events-auto'
           />
-          {/* <h2 className='relative h-fit text-white font-thin text-3xl md:text-4xl z-10'>
-            
-          </h2> */}
           <LetterAnimation text='Work for stage' />
           <Image
             alt='piano img'
@@ -210,7 +207,7 @@ export default function Home() {
             className='absolute left-0 top-0 -z-0 object-cover object-center group-hover:scale-110 transition-all duration-1000 cursor-pointer pointer-events-auto'
           />
         </SectionOneThird>
-      </SectionFullScreen>
+      </SectionFullScreen> */}
 
       {/* resterande delar */}
 

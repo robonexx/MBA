@@ -8,6 +8,7 @@ import Header from 'components/header/Header';
 import MenuBtn from 'components/menuBtn/MenuBtn';
 import Nav from 'components/nav/Nav';
 import NavItem from 'components/nav/NavItem';
+import NavDefault from 'components/nav/NavDefault';
 import { navData } from 'constants/NavData';
 
 const inter = Inter({ subsets: ['latin'] });
@@ -36,7 +37,8 @@ export default function RootLayout({ children }) {
     <html lang='en'>
       <body className={`${inter.className}`}>
         <Header>{/*  <span>Markus B Almqvist</span> */}</Header>
-        <MenuBtn active={active} setActive={setActive} />
+        <NavDefault />
+        {/* <MenuBtn active={active} setActive={setActive} />
         <AnimatePresence mode='wait'>
           {active && (
             <Nav active={active} setActive={setActive}>
@@ -53,7 +55,7 @@ export default function RootLayout({ children }) {
               ))}
             </Nav>
           )}
-        </AnimatePresence>
+        </AnimatePresence> */}
         <div className='scrolling'>
         {scrollY > 500
           ? 'Scrolled more than 500px'
